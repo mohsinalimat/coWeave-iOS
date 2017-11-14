@@ -18,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ff-CEp">
-                                <rect key="frame" x="107" y="292.66666666666669" width="200" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ff-CEp">
+                                <rect key="frame" x="107.66666666666669" y="268.66666666666669" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0Eu-LR-gmj"/>
                                     <constraint firstAttribute="height" constant="200" id="Fzd-QX-7Jt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <state key="normal" title="New" backgroundImage="greenCircle">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" image="add_document" backgroundImage="greenCircle">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -34,17 +34,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="yr8-TM-mPx" kind="presentation" modalTransitionStyle="flipHorizontal" id="wQi-pO-VGB"/>
+                                    <segue destination="TcU-2a-MRU" kind="presentation" modalTransitionStyle="flipHorizontal" id="m1C-We-4zv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
-                                <rect key="frame" x="119.66666666666669" y="551.33333333333337" width="175" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
+                                <rect key="frame" x="120.33333333333331" y="527.33333333333337" width="175" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="ExN-S7-kt8"/>
                                     <constraint firstAttribute="height" constant="50" id="zTo-ih-WC3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Open" backgroundImage="orangeRectangle">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="  Open" image="open" backgroundImage="orangeRectangle">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -81,7 +81,7 @@
         <scene sceneID="pMt-fd-wj3">
             <objects>
                 <navigationController id="FZ6-0m-tls" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Document" id="Yr9-Bh-V5W"/>
+                    <tabBarItem key="tabBarItem" title="Document" image="document" id="Yr9-Bh-V5W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mf4-tR-XzJ">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -104,14 +104,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FZ6-0m-tls" kind="relationship" relationship="viewControllers" id="1Uc-yc-WzN"/>
+                        <segue destination="FZ6-0m-tls" kind="relationship" relationship="viewControllers" id="BCq-AI-WXI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuZ-Mz-d2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1182" y="480"/>
         </scene>
-        <!--View Controller-->
+        <!--Document-->
         <scene sceneID="sA9-tH-RmQ">
             <objects>
                 <viewController id="bgG-Ip-yWe" customClass="ViewController" customModule="eduFresh" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,8 +119,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ch3-2p-PwA">
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-oE-XYs">
-                                <rect key="frame" x="47" y="263" width="320" height="210"/>
+                                <rect key="frame" x="47" y="288" width="320" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-Rl-LBM">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -131,7 +134,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="ay7-J5-aeR"/>
                                                     <constraint firstAttribute="width" constant="100" id="dPK-1j-QLR"/>
                                                 </constraints>
-                                                <state key="normal" title="Photo" backgroundImage="yellowCircle">
+                                                <state key="normal" image="camera" backgroundImage="yellowCircle">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -146,7 +149,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="hTf-Xy-UT0"/>
                                                     <constraint firstAttribute="width" constant="100" id="mwr-1K-eCd"/>
                                                 </constraints>
-                                                <state key="normal" title="Video" backgroundImage="orangeCircle">
+                                                <state key="normal" image="video" backgroundImage="orangeCircle">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -161,7 +164,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="EAh-IO-gbI"/>
                                                     <constraint firstAttribute="width" constant="100" id="Sgq-GJ-q9q"/>
                                                 </constraints>
-                                                <state key="normal" title="Audio" backgroundImage="redCircle">
+                                                <state key="normal" image="micro" backgroundImage="redCircle">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -187,7 +190,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="1xy-Yk-70e"/>
                                                     <constraint firstAttribute="height" constant="100" id="tll-T7-deC"/>
                                                 </constraints>
-                                                <state key="normal" title="Draw" backgroundImage="greenCircle">
+                                                <state key="normal" image="draw" backgroundImage="greenCircle">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -202,7 +205,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="7w6-uk-ds6"/>
                                                     <constraint firstAttribute="height" constant="100" id="Lig-6h-ksm"/>
                                                 </constraints>
-                                                <state key="normal" title="Text" backgroundImage="blueCircle"/>
+                                                <state key="normal" image="text" backgroundImage="blueCircle"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
@@ -219,70 +222,82 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lha-RZ-q2b">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" image="left" id="n4Q-Nu-aEt"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lWo-7g-13y"/>
+                                    <barButtonItem title="Page" id="u8W-LJ-6iX">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IQV-N8-iVx"/>
+                                    <barButtonItem enabled="NO" title="&gt;" image="right" id="gl7-fm-rXK"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ch3-2p-PwA" firstAttribute="bottom" secondItem="Lha-RZ-q2b" secondAttribute="top" id="0C7-94-xDe"/>
+                            <constraint firstItem="Lha-RZ-q2b" firstAttribute="bottom" secondItem="28c-NT-aFF" secondAttribute="bottom" id="7B7-cQ-Omd"/>
+                            <constraint firstItem="Lha-RZ-q2b" firstAttribute="leading" secondItem="SOT-1L-hDx" secondAttribute="leading" id="8Bm-6a-cNn"/>
+                            <constraint firstItem="Ch3-2p-PwA" firstAttribute="top" secondItem="28c-NT-aFF" secondAttribute="top" id="I9k-AG-CpK"/>
                             <constraint firstItem="lJu-oE-XYs" firstAttribute="centerX" secondItem="28c-NT-aFF" secondAttribute="centerX" id="Ijv-Bs-o8n"/>
+                            <constraint firstItem="Lha-RZ-q2b" firstAttribute="centerX" secondItem="lJu-oE-XYs" secondAttribute="centerX" id="Ntm-Do-1pX"/>
+                            <constraint firstItem="Ch3-2p-PwA" firstAttribute="trailing" secondItem="Lha-RZ-q2b" secondAttribute="trailing" id="UJv-oI-odr"/>
+                            <constraint firstItem="Ch3-2p-PwA" firstAttribute="leading" secondItem="Lha-RZ-q2b" secondAttribute="leading" id="diU-fK-fX4"/>
                             <constraint firstItem="lJu-oE-XYs" firstAttribute="centerY" secondItem="28c-NT-aFF" secondAttribute="centerY" constant="-7.5" id="oFc-9k-Jio"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="28c-NT-aFF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RAc-wZ-JJU">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="Pxv-XR-MiO">
+                    <navigationItem key="navigationItem" title="Document" id="RAc-wZ-JJU">
+                        <barButtonItem key="leftBarButtonItem" title="Close" image="save" id="Lil-4J-AGt">
                             <connections>
-                                <segue destination="FZ6-0m-tls" kind="presentation" modalTransitionStyle="flipHorizontal" id="iXJ-lX-joR"/>
+                                <segue destination="PlZ-vE-sqY" kind="presentation" modalTransitionStyle="flipHorizontal" id="aY6-DC-Vop"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="xzz-9A-2Os"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfq-We-tKG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857.971014492754" y="62.771739130434788"/>
+            <point key="canvasLocation" x="2089.8550724637685" y="62.771739130434788"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="8eP-NN-2Dt">
+        <!--Navigation Controller-->
+        <scene sceneID="DCI-we-Xd3">
             <objects>
-                <navigationController id="7qu-Fa-Gt0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HVy-dI-S3J"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0R8-d2-Dnt">
+                <navigationController id="TcU-2a-MRU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eGE-7A-LOf">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bgG-Ip-yWe" kind="relationship" relationship="rootViewController" id="ETh-H5-vfN"/>
+                        <segue destination="bgG-Ip-yWe" kind="relationship" relationship="rootViewController" id="ctd-ri-Jei"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8hR-dU-kdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLc-px-n7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047" y="63"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="6Zd-3M-7aW">
-            <objects>
-                <tabBarController id="yr8-TM-mPx" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GiY-a9-o7y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="7qu-Fa-Gt0" kind="relationship" relationship="viewControllers" id="mWr-Bx-qtr"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SAz-gF-dTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1311" y="63"/>
+            <point key="canvasLocation" x="1341" y="64"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add_document" width="33" height="33"/>
         <image name="blueCircle" width="995" height="995"/>
+        <image name="camera" width="33" height="33"/>
+        <image name="document" width="25" height="25"/>
+        <image name="draw" width="33" height="33"/>
         <image name="greenCircle" width="995" height="995"/>
+        <image name="left" width="25" height="25"/>
+        <image name="micro" width="33" height="33"/>
+        <image name="open" width="25" height="25"/>
         <image name="orangeCircle" width="995" height="995"/>
         <image name="orangeRectangle" width="976" height="187"/>
         <image name="redCircle" width="995" height="995"/>
+        <image name="right" width="25" height="25"/>
+        <image name="save" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="text" width="33" height="33"/>
+        <image name="video" width="33" height="33"/>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="iXJ-lX-joR"/>
-    </inferredMetricsTieBreakers>
 </document>
