@@ -15,6 +15,11 @@
 		056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */; };
 		056C70FD1FBB496D00E79CA1 /* eduFreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70FC1FBB496D00E79CA1 /* eduFreshTests.swift */; };
 		056C71081FBB496D00E79CA1 /* eduFreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71071FBB496D00E79CA1 /* eduFreshUITests.swift */; };
+		056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */; };
+		056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */; };
+		056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */; };
+		056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */; };
+		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		056C71031FBB496D00E79CA1 /* eduFreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eduFreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C71071FBB496D00E79CA1 /* eduFreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduFreshUITests.swift; sourceTree = "<group>"; };
 		056C71091FBB496D00E79CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsNavigationViewController.swift; sourceTree = "<group>"; };
+		056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
+		056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 			children = (
 				056C70E41FBB496D00E79CA1 /* AppDelegate.swift */,
 				056C70E61FBB496D00E79CA1 /* ViewController.swift */,
+				056C711B1FBBB3D400E79CA1 /* View Controller */,
 				056C70E81FBB496D00E79CA1 /* Main.storyboard */,
 				056C70EE1FBB496D00E79CA1 /* Assets.xcassets */,
 				056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */,
@@ -126,6 +137,34 @@
 				056C71091FBB496D00E79CA1 /* Info.plist */,
 			);
 			path = eduFreshUITests;
+			sourceTree = "<group>";
+		};
+		056C711B1FBBB3D400E79CA1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
+				056C71211FBBB42C00E79CA1 /* Document Detail View */,
+				056C711C1FBBB3E900E79CA1 /* Documents */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		056C711C1FBBB3E900E79CA1 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */,
+				056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		056C71211FBBB42C00E79CA1 /* Document Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */,
+				056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */,
+			);
+			path = "Document Detail View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */,
 				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
+				056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */,
+				056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */,
+				056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */,
 				056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */,
+				056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */,
 				056C70ED1FBB496D00E79CA1 /* eduFresh.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
