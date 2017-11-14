@@ -20,6 +20,8 @@
 		056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */; };
 		056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */; };
 		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
+		056C71231FBBB83D00E79CA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 056C71221FBBB83D00E79CA1 /* Podfile */; };
+		74B8B9750D1F139FF475270E /* Pods_eduFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
 		056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailNavigationViewController.swift; sourceTree = "<group>"; };
+		056C71221FBBB83D00E79CA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduFresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh.debug.xcconfig"; sourceTree = "<group>"; };
+		6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduFresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh.release.xcconfig"; sourceTree = "<group>"; };
+		9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eduFresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B8B9750D1F139FF475270E /* Pods_eduFresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +96,13 @@
 		056C70D81FBB496D00E79CA1 = {
 			isa = PBXGroup;
 			children = (
+				056C71221FBBB83D00E79CA1 /* Podfile */,
 				056C70E31FBB496D00E79CA1 /* eduFresh */,
 				056C70FB1FBB496D00E79CA1 /* eduFreshTests */,
 				056C71061FBB496D00E79CA1 /* eduFreshUITests */,
 				056C70E21FBB496D00E79CA1 /* Products */,
+				704CB1AFE17917C850FFCB55 /* Pods */,
+				FAEF7FE42CBCC25352F453F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +177,23 @@
 			path = "Document Detail View";
 			sourceTree = "<group>";
 		};
+		704CB1AFE17917C850FFCB55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */,
+				6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056C710C1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFresh" */;
 			buildPhases = (
+				879AEA76563C42520868FB0F /* [CP] Check Pods Manifest.lock */,
 				056C70DD1FBB496D00E79CA1 /* Sources */,
 				056C70DE1FBB496D00E79CA1 /* Frameworks */,
 				056C70DF1FBB496D00E79CA1 /* Resources */,
+				416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */,
+				2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,6 +306,7 @@
 			files = (
 				056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */,
 				056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */,
+				056C71231FBBB83D00E79CA1 /* Podfile in Resources */,
 				056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +326,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879AEA76563C42520868FB0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		056C70DD1FBB496D00E79CA1 /* Sources */ = {
@@ -472,6 +551,7 @@
 		};
 		056C710D1FBB496D00E79CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +567,7 @@
 		};
 		056C710E1FBB496D00E79CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
