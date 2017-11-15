@@ -1,6 +1,6 @@
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target 'eduFresh' do
-    pod 'Fusuma'
+    pod 'Fusuma', :git => 'https://github.com/ytakzk/Fusuma', :branch => 'swift4'
 end
