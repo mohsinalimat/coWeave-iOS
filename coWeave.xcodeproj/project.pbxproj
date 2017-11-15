@@ -13,8 +13,8 @@
 		056C70ED1FBB496D00E79CA1 /* eduFresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 056C70EB1FBB496D00E79CA1 /* eduFresh.xcdatamodeld */; };
 		056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056C70EE1FBB496D00E79CA1 /* Assets.xcassets */; };
 		056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */; };
-		056C70FD1FBB496D00E79CA1 /* eduFreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70FC1FBB496D00E79CA1 /* eduFreshTests.swift */; };
-		056C71081FBB496D00E79CA1 /* eduFreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71071FBB496D00E79CA1 /* eduFreshUITests.swift */; };
+		056C70FD1FBB496D00E79CA1 /* coWeaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70FC1FBB496D00E79CA1 /* coWeaveTests.swift */; };
+		056C71081FBB496D00E79CA1 /* coWeaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71071FBB496D00E79CA1 /* coWeaveUITests.swift */; };
 		056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */; };
 		056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */; };
 		056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */; };
@@ -22,7 +22,7 @@
 		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
 		056C71231FBBB83D00E79CA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 056C71221FBBB83D00E79CA1 /* Podfile */; };
 		056C71271FBBC1B200E79CA1 /* AudioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */; };
-		74B8B9750D1F139FF475270E /* Pods_eduFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */; };
+		91690C84E62B51CA6F50C5AE /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		056C70E11FBB496D00E79CA1 /* eduFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eduFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		056C70E91FBB496D00E79CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,11 +51,11 @@
 		056C70EE1FBB496D00E79CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		056C70F11FBB496D00E79CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		056C70F31FBB496D00E79CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		056C70F81FBB496D00E79CA1 /* eduFreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eduFreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		056C70FC1FBB496D00E79CA1 /* eduFreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduFreshTests.swift; sourceTree = "<group>"; };
+		056C70F81FBB496D00E79CA1 /* coWeaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coWeaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		056C70FC1FBB496D00E79CA1 /* coWeaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveTests.swift; sourceTree = "<group>"; };
 		056C70FE1FBB496D00E79CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		056C71031FBB496D00E79CA1 /* eduFreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eduFreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		056C71071FBB496D00E79CA1 /* eduFreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduFreshUITests.swift; sourceTree = "<group>"; };
+		056C71031FBB496D00E79CA1 /* coWeaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coWeaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		056C71071FBB496D00E79CA1 /* coWeaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveUITests.swift; sourceTree = "<group>"; };
 		056C71091FBB496D00E79CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsNavigationViewController.swift; sourceTree = "<group>"; };
@@ -64,9 +64,9 @@
 		056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailNavigationViewController.swift; sourceTree = "<group>"; };
 		056C71221FBBB83D00E79CA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordViewController.swift; sourceTree = "<group>"; };
-		66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduFresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh.debug.xcconfig"; sourceTree = "<group>"; };
-		6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduFresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh.release.xcconfig"; sourceTree = "<group>"; };
-		9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eduFresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A67D0AC5A03BF14CCF6EB1D /* Pods-coWeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeave.release.xcconfig"; path = "Pods/Target Support Files/Pods-coWeave/Pods-coWeave.release.xcconfig"; sourceTree = "<group>"; };
+		E7977491B759A23494D3945D /* Pods-coWeave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coWeave/Pods-coWeave.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B8B9750D1F139FF475270E /* Pods_eduFresh.framework in Frameworks */,
+				91690C84E62B51CA6F50C5AE /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				056C71221FBBB83D00E79CA1 /* Podfile */,
-				056C70E31FBB496D00E79CA1 /* eduFresh */,
-				056C70FB1FBB496D00E79CA1 /* eduFreshTests */,
-				056C71061FBB496D00E79CA1 /* eduFreshUITests */,
+				056C70E31FBB496D00E79CA1 /* coWeave */,
+				056C70FB1FBB496D00E79CA1 /* coWeaveTests */,
+				056C71061FBB496D00E79CA1 /* coWeaveUITests */,
 				056C70E21FBB496D00E79CA1 /* Products */,
 				704CB1AFE17917C850FFCB55 /* Pods */,
 				FAEF7FE42CBCC25352F453F3 /* Frameworks */,
@@ -111,14 +111,14 @@
 		056C70E21FBB496D00E79CA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				056C70E11FBB496D00E79CA1 /* eduFresh.app */,
-				056C70F81FBB496D00E79CA1 /* eduFreshTests.xctest */,
-				056C71031FBB496D00E79CA1 /* eduFreshUITests.xctest */,
+				056C70E11FBB496D00E79CA1 /* coWeave.app */,
+				056C70F81FBB496D00E79CA1 /* coWeaveTests.xctest */,
+				056C71031FBB496D00E79CA1 /* coWeaveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		056C70E31FBB496D00E79CA1 /* eduFresh */ = {
+		056C70E31FBB496D00E79CA1 /* coWeave */ = {
 			isa = PBXGroup;
 			children = (
 				056C70E41FBB496D00E79CA1 /* AppDelegate.swift */,
@@ -130,25 +130,25 @@
 				056C70F31FBB496D00E79CA1 /* Info.plist */,
 				056C70EB1FBB496D00E79CA1 /* eduFresh.xcdatamodeld */,
 			);
-			path = eduFresh;
+			path = coWeave;
 			sourceTree = "<group>";
 		};
-		056C70FB1FBB496D00E79CA1 /* eduFreshTests */ = {
+		056C70FB1FBB496D00E79CA1 /* coWeaveTests */ = {
 			isa = PBXGroup;
 			children = (
-				056C70FC1FBB496D00E79CA1 /* eduFreshTests.swift */,
+				056C70FC1FBB496D00E79CA1 /* coWeaveTests.swift */,
 				056C70FE1FBB496D00E79CA1 /* Info.plist */,
 			);
-			path = eduFreshTests;
+			path = coWeaveTests;
 			sourceTree = "<group>";
 		};
-		056C71061FBB496D00E79CA1 /* eduFreshUITests */ = {
+		056C71061FBB496D00E79CA1 /* coWeaveUITests */ = {
 			isa = PBXGroup;
 			children = (
-				056C71071FBB496D00E79CA1 /* eduFreshUITests.swift */,
+				056C71071FBB496D00E79CA1 /* coWeaveUITests.swift */,
 				056C71091FBB496D00E79CA1 /* Info.plist */,
 			);
-			path = eduFreshUITests;
+			path = coWeaveUITests;
 			sourceTree = "<group>";
 		};
 		056C711B1FBBB3D400E79CA1 /* View Controller */ = {
@@ -183,8 +183,8 @@
 		704CB1AFE17917C850FFCB55 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */,
-				6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */,
+				E7977491B759A23494D3945D /* Pods-coWeave.debug.xcconfig */,
+				4A67D0AC5A03BF14CCF6EB1D /* Pods-coWeave.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D60FD0284DBFB50355F1621 /* Pods_eduFresh.framework */,
+				2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		056C70E01FBB496D00E79CA1 /* eduFresh */ = {
+		056C70E01FBB496D00E79CA1 /* coWeave */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 056C710C1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFresh" */;
+			buildConfigurationList = 056C710C1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeave" */;
 			buildPhases = (
 				879AEA76563C42520868FB0F /* [CP] Check Pods Manifest.lock */,
 				056C70DD1FBB496D00E79CA1 /* Sources */,
@@ -215,14 +215,14 @@
 			);
 			dependencies = (
 			);
-			name = eduFresh;
+			name = coWeave;
 			productName = eduFresh;
-			productReference = 056C70E11FBB496D00E79CA1 /* eduFresh.app */;
+			productReference = 056C70E11FBB496D00E79CA1 /* coWeave.app */;
 			productType = "com.apple.product-type.application";
 		};
-		056C70F71FBB496D00E79CA1 /* eduFreshTests */ = {
+		056C70F71FBB496D00E79CA1 /* coWeaveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 056C710F1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFreshTests" */;
+			buildConfigurationList = 056C710F1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveTests" */;
 			buildPhases = (
 				056C70F41FBB496D00E79CA1 /* Sources */,
 				056C70F51FBB496D00E79CA1 /* Frameworks */,
@@ -233,14 +233,14 @@
 			dependencies = (
 				056C70FA1FBB496D00E79CA1 /* PBXTargetDependency */,
 			);
-			name = eduFreshTests;
+			name = coWeaveTests;
 			productName = eduFreshTests;
-			productReference = 056C70F81FBB496D00E79CA1 /* eduFreshTests.xctest */;
+			productReference = 056C70F81FBB496D00E79CA1 /* coWeaveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		056C71021FBB496D00E79CA1 /* eduFreshUITests */ = {
+		056C71021FBB496D00E79CA1 /* coWeaveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 056C71121FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFreshUITests" */;
+			buildConfigurationList = 056C71121FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveUITests" */;
 			buildPhases = (
 				056C70FF1FBB496D00E79CA1 /* Sources */,
 				056C71001FBB496D00E79CA1 /* Frameworks */,
@@ -251,9 +251,9 @@
 			dependencies = (
 				056C71051FBB496D00E79CA1 /* PBXTargetDependency */,
 			);
-			name = eduFreshUITests;
+			name = coWeaveUITests;
 			productName = eduFreshUITests;
-			productReference = 056C71031FBB496D00E79CA1 /* eduFreshUITests.xctest */;
+			productReference = 056C71031FBB496D00E79CA1 /* coWeaveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -282,7 +282,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 056C70DC1FBB496D00E79CA1 /* Build configuration list for PBXProject "eduFresh" */;
+			buildConfigurationList = 056C70DC1FBB496D00E79CA1 /* Build configuration list for PBXProject "coWeave" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -295,9 +295,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				056C70E01FBB496D00E79CA1 /* eduFresh */,
-				056C70F71FBB496D00E79CA1 /* eduFreshTests */,
-				056C71021FBB496D00E79CA1 /* eduFreshUITests */,
+				056C70E01FBB496D00E79CA1 /* coWeave */,
+				056C70F71FBB496D00E79CA1 /* coWeaveTests */,
+				056C71021FBB496D00E79CA1 /* coWeaveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */ = {
@@ -358,7 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduFresh/Pods-eduFresh-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		879AEA76563C42520868FB0F /* [CP] Check Pods Manifest.lock */ = {
@@ -399,7 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				056C70FD1FBB496D00E79CA1 /* eduFreshTests.swift in Sources */,
+				056C70FD1FBB496D00E79CA1 /* coWeaveTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				056C71081FBB496D00E79CA1 /* eduFreshUITests.swift in Sources */,
+				056C71081FBB496D00E79CA1 /* coWeaveUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,12 +416,12 @@
 /* Begin PBXTargetDependency section */
 		056C70FA1FBB496D00E79CA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 056C70E01FBB496D00E79CA1 /* eduFresh */;
+			target = 056C70E01FBB496D00E79CA1 /* coWeave */;
 			targetProxy = 056C70F91FBB496D00E79CA1 /* PBXContainerItemProxy */;
 		};
 		056C71051FBB496D00E79CA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 056C70E01FBB496D00E79CA1 /* eduFresh */;
+			target = 056C70E01FBB496D00E79CA1 /* coWeave */;
 			targetProxy = 056C71041FBB496D00E79CA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -555,14 +555,14 @@
 		};
 		056C710D1FBB496D00E79CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66A193E18C73846ED0F3D591 /* Pods-eduFresh.debug.xcconfig */;
+			baseConfigurationReference = E7977491B759A23494D3945D /* Pods-coWeave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFresh/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFresh;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,14 +571,14 @@
 		};
 		056C710E1FBB496D00E79CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D8D522A2A88666001015D51 /* Pods-eduFresh.release.xcconfig */;
+			baseConfigurationReference = 4A67D0AC5A03BF14CCF6EB1D /* Pods-coWeave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFresh/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFresh;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -598,7 +598,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eduFresh.app/eduFresh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coWeave.app/coWeave";
 			};
 			name = Debug;
 		};
@@ -615,7 +615,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eduFresh.app/eduFresh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coWeave.app/coWeave";
 			};
 			name = Release;
 		};
@@ -654,7 +654,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		056C70DC1FBB496D00E79CA1 /* Build configuration list for PBXProject "eduFresh" */ = {
+		056C70DC1FBB496D00E79CA1 /* Build configuration list for PBXProject "coWeave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				056C710A1FBB496D00E79CA1 /* Debug */,
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		056C710C1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFresh" */ = {
+		056C710C1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				056C710D1FBB496D00E79CA1 /* Debug */,
@@ -672,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		056C710F1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFreshTests" */ = {
+		056C710F1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				056C71101FBB496D00E79CA1 /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		056C71121FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "eduFreshUITests" */ = {
+		056C71121FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				056C71131FBB496D00E79CA1 /* Debug */,
