@@ -16,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls[urls.count - 1] as URL)
         UINavigationBar.appearance().barTintColor = UIColor(red:0.48, green:0.75, blue:0.19, alpha:1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
         UITabBar.appearance().tintColor = UIColor(red:0.48, green:0.75, blue:0.19, alpha:1.0)
         UIToolbar.appearance().tintColor = UIColor(red:0.48, green:0.75, blue:0.19, alpha:1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         return true
     }

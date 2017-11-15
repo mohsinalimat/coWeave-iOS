@@ -8,8 +8,11 @@
 
 import UIKit
 import Fusuma
+import iOSPhotoEditor
 
-class DocumentDetailViewController: UIViewController, FusumaDelegate {
+
+class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEditorDelegate {
+    var image : UIImage!
     /**
      *  Center Buttons, to add new data.
      */
@@ -64,6 +67,25 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate {
     }
     
     @IBAction func drawAction(_ sender: Any) {
+        if (self.image == nil) {
+            self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
+        }
+        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+        
+        //PhotoEditorDelegate
+        photoEditor.photoEditorDelegate = self
+        
+        //The image to be edited
+        photoEditor.image = self.image
+        
+        //Optional: To hide controls - array of enum control
+        photoEditor.hiddenControls = [.crop, .share, .save, .sticker]
+        
+        //Optional: Colors for drawing and Text, If not set default values will be used
+        //photoEditor.colors = [.red,.blue,.green]
+        
+        //Present the View Controller
+        present(photoEditor, animated: true, completion: nil)
     }
     
     @IBAction func textAction(_ sender: Any) {
@@ -73,6 +95,7 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate {
     // Return the image which is selected from camera roll or is taken via the camera.
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         self.backgroundImageView.image = image;
+        self.image = image;
         videoButton.isEnabled = false;
         print("Image selected")
     }
@@ -90,7 +113,6 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate {
     
     // When camera roll is not authorized, this method is called.
     func fusumaCameraRollUnauthorized() {
-        
         print("Camera roll unauthorized")
     }
     
@@ -99,6 +121,15 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate {
     }
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
+    }
+    
+    func doneEditing(image: UIImage) {
+        self.image = image;
+        self.backgroundImageView.image = image;
+    }
+    
+    func canceledEditing() {
+        print("Canceled")
     }
     
     
@@ -113,4 +144,18 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate {
     }
     */
 
+}
+
+public extension UIImage {
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
+    }
 }

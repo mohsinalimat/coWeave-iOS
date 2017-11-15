@@ -2,5 +2,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'eduFresh' do
-    pod 'Fusuma', :git => 'https://github.com/ytakzk/Fusuma', :branch => 'swift4'
+    pod 'Fusuma'
+    pod 'AudioKit', '~> 4.0'
+    pod 'iOSPhotoEditor'
 end
