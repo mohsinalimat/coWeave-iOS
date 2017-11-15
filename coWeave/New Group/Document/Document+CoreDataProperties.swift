@@ -24,6 +24,7 @@ extension Document {
     @NSManaged public var name: String?
     @NSManaged public var template: Bool
     @NSManaged public var pages: NSSet?
+    @NSManaged public var user: User?
 
 }
 

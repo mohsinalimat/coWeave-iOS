@@ -19,5 +19,23 @@ extension Group {
 
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
+    @NSManaged public var users: NSSet?
+
+}
+
+// MARK: Generated accessors for users
+extension Group {
+
+    @objc(addUsersObject:)
+    @NSManaged public func addToUsers(_ value: User)
+
+    @objc(removeUsersObject:)
+    @NSManaged public func removeFromUsers(_ value: User)
+
+    @objc(addUsers:)
+    @NSManaged public func addToUsers(_ values: NSSet)
+
+    @objc(removeUsers:)
+    @NSManaged public func removeFromUsers(_ values: NSSet)
 
 }
