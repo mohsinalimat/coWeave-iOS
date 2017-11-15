@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
+		0547AC381FBCC39900432850 /* Fusuma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC391FBCC39900432850 /* Fusuma.framework */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -22,7 +24,6 @@
 		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
 		056C71231FBBB83D00E79CA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 056C71221FBBB83D00E79CA1 /* Podfile */; };
 		056C71271FBBC1B200E79CA1 /* AudioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */; };
-		91690C84E62B51CA6F50C5AE /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0547AC351FBCC39200432850 /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91690C84E62B51CA6F50C5AE /* Pods_coWeave.framework in Frameworks */,
+				0547AC381FBCC39900432850 /* Fusuma.framework in Frameworks */,
+				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +197,9 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0547AC391FBCC39900432850 /* Fusuma.framework */,
+				0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */,
+				0547AC351FBCC39200432850 /* Pods_coWeave.framework */,
 				2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */,
 			);
 			name = Frameworks;
@@ -268,6 +276,7 @@
 				TargetAttributes = {
 					056C70E01FBB496D00E79CA1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					056C70F71FBB496D00E79CA1 = {
@@ -352,9 +361,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
+				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,13 +385,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coWeave-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,7 +598,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Fusuma\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/iOSPhotoEditor\"",
+					"\"${PODS_ROOT}/AudioKit/iOS\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";

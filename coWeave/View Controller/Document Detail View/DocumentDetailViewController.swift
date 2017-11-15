@@ -67,9 +67,10 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func galleryAction(_ sender: Any) {
-        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        imagePicker.allowsEditing = true
-        self.present(imagePicker, animated: true, completion: nil)
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func audioAction(_ sender: Any) {
@@ -87,7 +88,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
      * Help Functions for Camera Picker
      */
     
-    //MARK: - Done image capture here
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage

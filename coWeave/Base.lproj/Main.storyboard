@@ -20,48 +20,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ff-CEp">
-                                <rect key="frame" x="107.66666666666669" y="268.66666666666669" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0Eu-LR-gmj"/>
-                                    <constraint firstAttribute="height" constant="200" id="Fzd-QX-7Jt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" image="add_document" backgroundImage="greenCircle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="TcU-2a-MRU" kind="presentation" modalTransitionStyle="flipHorizontal" id="m1C-We-4zv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
-                                <rect key="frame" x="120.33333333333331" y="527.33333333333337" width="175" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="ExN-S7-kt8"/>
-                                    <constraint firstAttribute="height" constant="50" id="zTo-ih-WC3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="  Open" image="open" backgroundImage="orangeRectangle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-HF-0FN">
+                                <rect key="frame" x="107" y="226" width="200" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ff-CEp">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="WzX-r3-x6g"/>
+                                            <constraint firstAttribute="height" constant="200" id="rnV-ea-xo9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" image="add_document" backgroundImage="greenCircle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="TcU-2a-MRU" kind="presentation" modalTransitionStyle="flipHorizontal" id="m1C-We-4zv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
+                                        <rect key="frame" x="0.0" y="250" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="N95-U9-p7E"/>
+                                            <constraint firstAttribute="width" constant="200" id="t8H-al-FDx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="  Open" image="open" backgroundImage="orangeRectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sMw-Yq-UwW" firstAttribute="top" secondItem="off-Ff-CEp" secondAttribute="bottom" constant="58.666666666666629" id="Ipe-H6-JOD"/>
-                            <constraint firstItem="off-Ff-CEp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-7.5" id="MHh-AI-fd4"/>
-                            <constraint firstItem="off-Ff-CEp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OV8-zT-WAY"/>
-                            <constraint firstItem="sMw-Yq-UwW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zQU-SB-gNQ"/>
+                            <constraint firstItem="UW6-HF-0FN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lQJ-r9-Utd"/>
+                            <constraint firstItem="UW6-HF-0FN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s3K-mt-0qr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -455,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="1265" y="-44"/>
         </scene>
-        <!--eduLino-->
+        <!--coWeave-->
         <scene sceneID="u0a-LX-JC8">
             <objects>
                 <viewController id="6nP-q6-oSh" customClass="ViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
@@ -463,57 +466,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pO-wq-cpj">
-                                <rect key="frame" x="107.66666666666669" y="268" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fxZ-JH-hDP">
+                                <rect key="frame" x="87" y="311.66666666666669" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="cRa-2k-oqc"/>
-                                    <constraint firstAttribute="width" constant="200" id="pdl-Ib-4oR"/>
+                                    <constraint firstAttribute="width" constant="240" id="YGJ-zw-GMx"/>
+                                    <constraint firstAttribute="height" constant="128" id="vVh-35-pSy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" image="add_document" backgroundImage="greenCircle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-wf-Omb">
-                                <rect key="frame" x="120.33333333333331" y="526.66666666666663" width="175" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="JHr-Ha-zep"/>
-                                    <constraint firstAttribute="height" constant="50" id="y3o-PO-vSU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="  Open" image="open" backgroundImage="orangeRectangle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="eduLino" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-SX-cb8">
-                                <rect key="frame" x="20" y="171" width="374" height="55"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="52"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5pO-wq-cpj" firstAttribute="centerY" secondItem="Y1j-C8-5B1" secondAttribute="centerY" constant="-7.5" id="F3a-EW-42C"/>
-                            <constraint firstItem="X9A-wf-Omb" firstAttribute="top" secondItem="5pO-wq-cpj" secondAttribute="bottom" constant="58.666666666666629" id="Nvw-xP-hYw"/>
-                            <constraint firstItem="kSo-SX-cb8" firstAttribute="centerX" secondItem="Y1j-C8-5B1" secondAttribute="centerX" id="WA2-3A-hH6"/>
-                            <constraint firstItem="5pO-wq-cpj" firstAttribute="top" secondItem="kSo-SX-cb8" secondAttribute="bottom" constant="42" id="k50-tA-YPw"/>
-                            <constraint firstItem="5pO-wq-cpj" firstAttribute="centerX" secondItem="Y1j-C8-5B1" secondAttribute="centerX" id="qa0-Ha-Qqd"/>
-                            <constraint firstItem="X9A-wf-Omb" firstAttribute="centerX" secondItem="Y1j-C8-5B1" secondAttribute="centerX" id="tI4-Rm-IxX"/>
+                            <constraint firstItem="fxZ-JH-hDP" firstAttribute="centerX" secondItem="Y1j-C8-5B1" secondAttribute="centerX" id="MZf-Is-1A4"/>
+                            <constraint firstItem="fxZ-JH-hDP" firstAttribute="centerY" secondItem="Y1j-C8-5B1" secondAttribute="centerY" id="slE-yE-UOY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y1j-C8-5B1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="eduLino" id="Gxs-ny-FrE"/>
+                    <navigationItem key="navigationItem" title="coWeave" id="Gxs-ny-FrE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kU-Io-ddp" sceneMemberID="firstResponder"/>
             </objects>
@@ -536,7 +504,7 @@
             </objects>
             <point key="canvasLocation" x="-359" y="770"/>
         </scene>
-        <!--eduLino-->
+        <!--coWeave-->
         <scene sceneID="Q0e-Mw-RGM">
             <objects>
                 <viewController id="WOd-7Y-dM6" customClass="ViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
@@ -544,57 +512,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-0v-SgL">
-                                <rect key="frame" x="107.66666666666669" y="268" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Lzl-GN-Px0">
+                                <rect key="frame" x="87" y="311.66666666666669" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Nl7-bf-xDX"/>
-                                    <constraint firstAttribute="height" constant="200" id="mm9-aR-fTd"/>
+                                    <constraint firstAttribute="width" constant="240" id="IRR-sc-1bQ"/>
+                                    <constraint firstAttribute="height" constant="128" id="ZCN-Oe-rH0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" image="add_document" backgroundImage="greenCircle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIj-Yj-Yfc">
-                                <rect key="frame" x="120.33333333333331" y="526.66666666666663" width="175" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="Gwi-fq-fYd"/>
-                                    <constraint firstAttribute="height" constant="50" id="SeM-cp-zhm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="  Open" image="open" backgroundImage="orangeRectangle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="eduLino" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ict-ch-NUF">
-                                <rect key="frame" x="20" y="171" width="374" height="55"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="52"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fcf-0v-SgL" firstAttribute="centerY" secondItem="blb-Zh-3De" secondAttribute="centerY" constant="-7.5" id="24s-cc-HWu"/>
-                            <constraint firstItem="Ict-ch-NUF" firstAttribute="centerX" secondItem="blb-Zh-3De" secondAttribute="centerX" id="4b8-ng-C97"/>
-                            <constraint firstItem="fcf-0v-SgL" firstAttribute="top" secondItem="Ict-ch-NUF" secondAttribute="bottom" constant="42" id="6eX-lx-igb"/>
-                            <constraint firstItem="bIj-Yj-Yfc" firstAttribute="top" secondItem="fcf-0v-SgL" secondAttribute="bottom" constant="58.666666666666629" id="IOE-qp-VMX"/>
-                            <constraint firstItem="fcf-0v-SgL" firstAttribute="centerX" secondItem="blb-Zh-3De" secondAttribute="centerX" id="LVt-26-xua"/>
-                            <constraint firstItem="bIj-Yj-Yfc" firstAttribute="centerX" secondItem="blb-Zh-3De" secondAttribute="centerX" id="SZk-82-MA9"/>
+                            <constraint firstItem="Lzl-GN-Px0" firstAttribute="centerX" secondItem="blb-Zh-3De" secondAttribute="centerX" id="KsT-cK-KLN"/>
+                            <constraint firstItem="Lzl-GN-Px0" firstAttribute="centerY" secondItem="blb-Zh-3De" secondAttribute="centerY" id="a7B-0d-T4l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="blb-Zh-3De"/>
                     </view>
-                    <navigationItem key="navigationItem" title="eduLino" id="UPX-9c-YLP"/>
+                    <navigationItem key="navigationItem" title="coWeave" id="UPX-9c-YLP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8U-gM-k87" sceneMemberID="firstResponder"/>
             </objects>
@@ -822,6 +755,7 @@
         <image name="draw" width="33" height="33"/>
         <image name="greenCircle" width="995" height="995"/>
         <image name="left" width="25" height="25"/>
+        <image name="logo" width="475" height="125"/>
         <image name="micro" width="33" height="33"/>
         <image name="open" width="25" height="25"/>
         <image name="orangeCircle" width="995" height="995"/>
