@@ -1,0 +1,20 @@
+PODS:
+  - AudioKit (4.0.3):
+    - AudioKit/UI (= 4.0.3)
+  - AudioKit/UI (4.0.3)
+  - Fusuma (1.2.0)
+  - iOSPhotoEditor (0.5)
+
+DEPENDENCIES:
+  - AudioKit (~> 4.0)
+  - Fusuma
+  - iOSPhotoEditor
+
+SPEC CHECKSUMS:
+  AudioKit: 914e5e8fcbf35099ff2398775342446a2d81476d
+  Fusuma: e8158ad6650507455c9898c22bc01583fbc86d8e
+  iOSPhotoEditor: 0ddc84bcef9fe73fe8cc45ac999b89e0aa207aea
+
+PODFILE CHECKSUM: 1d998cdc90cc267666706db3caeb377f808e23b5
+
+COCOAPODS: 1.2.1
