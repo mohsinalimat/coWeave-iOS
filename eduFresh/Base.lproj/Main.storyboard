@@ -181,7 +181,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="hTf-Xy-UT0"/>
                                                     <constraint firstAttribute="width" constant="100" id="mwr-1K-eCd"/>
                                                 </constraints>
-                                                <state key="normal" image="video" backgroundImage="orangeCircle">
+                                                <state key="normal" image="cameraroll" backgroundImage="orangeCircle">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -190,7 +190,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="videoAction:" destination="bgG-Ip-yWe" eventType="touchUpInside" id="XcM-Gy-jQg"/>
+                                                    <action selector="galleryAction:" destination="bgG-Ip-yWe" eventType="touchUpInside" id="3W2-4s-bqU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-ga-TFf">
@@ -329,6 +329,7 @@
                         <outlet property="audioButton" destination="zhJ-ga-TFf" id="4yh-K0-Pen"/>
                         <outlet property="backgroundImageView" destination="Ch3-2p-PwA" id="KJx-v6-pbC"/>
                         <outlet property="drawButton" destination="3HV-Eb-zD2" id="qIy-4r-Evb"/>
+                        <outlet property="galleryButton" destination="nff-Ji-2aN" id="0si-j0-yuq"/>
                         <outlet property="nextPageButton" destination="gl7-fm-rXK" id="cNA-84-vSv"/>
                         <outlet property="pageNameButton" destination="u8W-LJ-6iX" id="YJE-WV-FH0"/>
                         <outlet property="pagesListButton" destination="N4G-nH-tVb" id="mT8-Qx-dnM"/>
@@ -337,7 +338,6 @@
                         <outlet property="previousPageButton" destination="n4Q-Nu-aEt" id="kEg-Gu-52c"/>
                         <outlet property="settingsButton" destination="xzz-9A-2Os" id="Rn0-2b-V7J"/>
                         <outlet property="textButton" destination="wOZ-EV-ybp" id="5na-0f-tsB"/>
-                        <outlet property="videoButton" destination="nff-Ji-2aN" id="gwZ-8a-IqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfq-We-tKG" sceneMemberID="firstResponder"/>
@@ -825,6 +825,7 @@
         <image name="add_document" width="33" height="33"/>
         <image name="blueCircle" width="995" height="995"/>
         <image name="camera" width="33" height="33"/>
+        <image name="cameraroll" width="33" height="33"/>
         <image name="document" width="25" height="25"/>
         <image name="draw" width="33" height="33"/>
         <image name="greenCircle" width="995" height="995"/>
@@ -841,7 +842,6 @@
         <image name="settings" width="25" height="25"/>
         <image name="text" width="33" height="33"/>
         <image name="users" width="25" height="25"/>
-        <image name="video" width="33" height="33"/>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>

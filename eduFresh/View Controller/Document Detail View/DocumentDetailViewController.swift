@@ -7,17 +7,16 @@
 //
 
 import UIKit
-import Fusuma
 import iOSPhotoEditor
+import MobileCoreServices
 
-
-class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEditorDelegate {
+class DocumentDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PhotoEditorDelegate {
     var image : UIImage!
     /**
      *  Center Buttons, to add new data.
      */
     @IBOutlet var photoButton: UIButton!
-    @IBOutlet var videoButton: UIButton!
+    @IBOutlet var galleryButton: UIButton!
     @IBOutlet var audioButton: UIButton!
     @IBOutlet var drawButton: UIButton!
     @IBOutlet var textButton: UIButton!
@@ -34,9 +33,11 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
     @IBOutlet var previewButton: UIBarButtonItem!
     @IBOutlet var settingsButton: UIBarButtonItem!
     /**
-     *
+     * Background
      */
     @IBOutlet var backgroundImageView: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
     
     
     
@@ -53,14 +54,22 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
     
 
     @IBAction func photoAction(_ sender: Any) {
-        let fusuma = FusumaViewController()
-        fusuma.delegate = self
-        fusuma.cropHeightRatio = 0.6 // Height-to-width ratio. The default value is 1, which means a squared-size photo.
-        fusuma.allowMultipleSelection = false // You can select multiple photos from the camera roll. The default value is false.
-        self.present(fusuma, animated: true, completion: nil)
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
+            imagePicker =  UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
-    @IBAction func videoAction(_ sender: Any) {
+    @IBAction func galleryAction(_ sender: Any) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func audioAction(_ sender: Any) {
@@ -73,6 +82,21 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
     }
+    
+    /**
+     * Help Functions for Camera Picker
+     */
+    
+    //MARK: - Done image capture here
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.image = backgroundImageView.image
+    }
+    
+    /**
+     * Help Functions for Draw
+     */
     
     func drawText() {
         if (self.image == nil) {
@@ -115,37 +139,6 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
         present(photoEditor, animated: true, completion: nil)
     }
     
-    
-    // Return the image which is selected from camera roll or is taken via the camera.
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
-        self.backgroundImageView.image = image;
-        self.image = image;
-        videoButton.isEnabled = false;
-        print("Image selected")
-    }
-    
-    // Return the image but called after is dismissed.
-    func fusumaDismissedWithImage(image: UIImage, source: FusumaMode) {
-        
-        print("Called just after FusumaViewController is dismissed.")
-    }
-    
-    func fusumaVideoCompleted(withFileURL fileURL: URL) {
-        
-        print("Called just after a video has been selected.")
-    }
-    
-    // When camera roll is not authorized, this method is called.
-    func fusumaCameraRollUnauthorized() {
-        print("Camera roll unauthorized")
-    }
-    
-    // Return an image and the detailed information.
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode, metaData: ImageMetadata) {
-    }
-    
-    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
-    }
     
     func doneEditing(image: UIImage) {
         self.image = image;
