@@ -67,6 +67,14 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
     }
     
     @IBAction func drawAction(_ sender: Any) {
+       self.drawText()
+    }
+    
+    @IBAction func textAction(_ sender: Any) {
+       self.drawText()
+    }
+    
+    func drawText() {
         if (self.image == nil) {
             self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
         }
@@ -79,16 +87,32 @@ class DocumentDetailViewController: UIViewController, FusumaDelegate, PhotoEdito
         photoEditor.image = self.image
         
         //Optional: To hide controls - array of enum control
-        photoEditor.hiddenControls = [.crop, .share, .save, .sticker]
+        photoEditor.hiddenControls = [.share, .save]
+        
+        //Stickers that the user will choose from to add on the image
+        photoEditor.stickers.append(UIImage(named: "yellowCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "redCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueCircle" )!)
+        
+        photoEditor.stickers.append(UIImage(named: "yellowTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "redTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueTriangle" )!)
+        
+        photoEditor.stickers.append(UIImage(named: "yellowRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "redRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueRectangle" )!)
         
         //Optional: Colors for drawing and Text, If not set default values will be used
         //photoEditor.colors = [.red,.blue,.green]
         
         //Present the View Controller
         present(photoEditor, animated: true, completion: nil)
-    }
-    
-    @IBAction func textAction(_ sender: Any) {
     }
     
     
