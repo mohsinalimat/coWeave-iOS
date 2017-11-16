@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PlZ-vE-sqY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jrt-XD-lqN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,7 +39,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="TcU-2a-MRU" kind="presentation" modalTransitionStyle="flipHorizontal" id="m1C-We-4zv"/>
+                                            <segue destination="TcU-2a-MRU" kind="presentation" identifier="addDocument" modalTransitionStyle="flipHorizontal" id="m1C-We-4zv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
@@ -94,7 +94,7 @@
         <!--Root Tab Bar View Controller-->
         <scene sceneID="7ML-ed-OCj">
             <objects>
-                <tabBarController id="PlZ-vE-sqY" customClass="RootTabBarViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBar" id="PlZ-vE-sqY" customClass="RootTabBarViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="clW-kl-Yd6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -456,7 +456,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLc-px-n7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="-44"/>
+            <point key="canvasLocation" x="1194" y="-44"/>
         </scene>
         <!--coWeave-->
         <scene sceneID="u0a-LX-JC8">
@@ -745,6 +745,34 @@
             </objects>
             <point key="canvasLocation" x="1898" y="962"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="x0T-eJ-1z6">
+            <objects>
+                <viewController id="jrt-XD-lqN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHq-BX-yKd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="QN7-Fb-2kb">
+                                <rect key="frame" x="69.666666666666686" y="303" width="275" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="PTx-g8-pNn"/>
+                                    <constraint firstAttribute="height" constant="150" id="lE3-yA-JH3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QN7-Fb-2kb" firstAttribute="centerX" secondItem="snq-V2-7gi" secondAttribute="centerX" id="GW7-mZ-UWG"/>
+                            <constraint firstItem="QN7-Fb-2kb" firstAttribute="centerY" secondItem="snq-V2-7gi" secondAttribute="centerY" id="cKz-AF-zEw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="snq-V2-7gi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isn-hz-Yte" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2141" y="479"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_document" width="33" height="33"/>
@@ -756,6 +784,7 @@
         <image name="greenCircle" width="995" height="995"/>
         <image name="left" width="25" height="25"/>
         <image name="logo" width="475" height="125"/>
+        <image name="logo_white" width="475" height="148"/>
         <image name="micro" width="33" height="33"/>
         <image name="open" width="25" height="25"/>
         <image name="orangeCircle" width="995" height="995"/>
@@ -771,6 +800,7 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ctd-ri-Jei"/>
         <segue reference="qO6-Z5-cN9"/>
     </inferredMetricsTieBreakers>
 </document>

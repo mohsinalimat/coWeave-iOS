@@ -9,9 +9,13 @@
 import UIKit
 import iOSPhotoEditor
 import MobileCoreServices
+import CoreData
 
 class DocumentDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PhotoEditorDelegate {
     var image : UIImage!
+    var imagePicker = UIImagePickerController()
+    var document : Document!
+    var managedObjectContext: NSManagedObjectContext!
     /**
      *  Center Buttons, to add new data.
      */
@@ -37,14 +41,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
      */
     @IBOutlet var backgroundImageView: UIImageView!
     
-    var imagePicker = UIImagePickerController()
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        document = createDocument()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +53,28 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    func createDocument() -> Document {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
+        
+        document.addedDate = NSDate()
+        document.name = "New Document"
+        
+        do {
+            // Save Record
+            try document.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        
+        return document
+    }
+    
+    // MARK: - IBActions
 
     @IBAction func photoAction(_ sender: Any) {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){

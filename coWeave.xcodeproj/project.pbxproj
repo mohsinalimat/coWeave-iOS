@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
 		0547AC381FBCC39900432850 /* Fusuma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC391FBCC39900432850 /* Fusuma.framework */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		0547AC351FBCC39200432850 /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052982CA1FBDE9D6002C0ACA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		056C70D81FBB496D00E79CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 			children = (
 				056C70E41FBB496D00E79CA1 /* AppDelegate.swift */,
 				056C70E61FBB496D00E79CA1 /* ViewController.swift */,
+				052982CA1FBDE9D6002C0ACA /* Helper */,
 				05D6593A1FBCDBC1009019A9 /* Model */,
 				056C711B1FBBB3D400E79CA1 /* View Controller */,
 				056C70E81FBB496D00E79CA1 /* Main.storyboard */,
@@ -502,6 +513,7 @@
 				056C71271FBBC1B200E79CA1 /* AudioRecordViewController.swift in Sources */,
 				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
+				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,
 				05F70E491FBCF1FB007FD9E4 /* Group+CoreDataClass.swift in Sources */,
 				056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */,
 				05F70E481FBCF1FB007FD9E4 /* Page+CoreDataProperties.swift in Sources */,
