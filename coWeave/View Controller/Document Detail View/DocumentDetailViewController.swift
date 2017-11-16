@@ -33,7 +33,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     @IBOutlet var previousPageButton: UIBarButtonItem!
     @IBOutlet var nextPageButton: UIBarButtonItem!
     @IBOutlet var pageNameButton: UIBarButtonItem!
-    @IBOutlet var pagesListButton: UIBarButtonItem!
+    @IBOutlet var undoButton: UIBarButtonItem!
+    @IBOutlet var redoButton: UIBarButtonItem!
     /**
      *  Navigation Bar Buttons
      */
@@ -91,28 +92,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
     }
-    
-    @IBAction func previousPage(_ sender: Any) {
-        resetPage()
-        if (page.previous != nil) {
-            page = page.previous
-        }
-        updatePage(page: page)
-        updatePageControls(page: page)
-    }
-    
-    @IBAction func nextPage(_ sender: Any) {
-        resetPage()
-        if (page.next == nil) {
-            self.pageNumber = pageNumber + 1
-            page = createPage(number: pageNumber, previous: page, doc: self.document)
-        } else {
-            page = page.next
-        }
-        updatePage(page: page)
-        updatePageControls(page: page)
-    }
-    
     
     func createDocument() -> Document {
         // Create Entity
@@ -181,6 +160,28 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             self.backgroundImageView.image = self.image
             self.pageImage = page.image!
         }
+        updateImageControls(image: pageImage)
+    }
+    
+    @IBAction func previousPage(_ sender: Any) {
+        resetPage()
+        if (page.previous != nil) {
+            page = page.previous
+        }
+        updatePage(page: page)
+        updatePageControls(page: page)
+    }
+    
+    @IBAction func nextPage(_ sender: Any) {
+        resetPage()
+        if (page.next == nil) {
+            self.pageNumber = pageNumber + 1
+            page = createPage(number: pageNumber, previous: page, doc: self.document)
+        } else {
+            page = page.next
+        }
+        updatePage(page: page)
+        updatePageControls(page: page)
     }
     
     /**
@@ -191,6 +192,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         self.image = image;
         self.backgroundImageView.image = image;
         pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
+        updateImageControls(image: pageImage)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -198,6 +200,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.image = backgroundImageView.image
         pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
+        updateImageControls(image: pageImage)
         self.drawText()
     }
     
@@ -228,6 +231,43 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         return image
     }
     
+    /**
+     * Undo and Redo Actions on Images.
+     */
+    
+    func updateImageControls(image: Image? = nil) {
+        if (image == nil) {
+            self.undoButton.isEnabled = false;
+            self.redoButton.isEnabled = false;
+        } else {
+            self.undoButton.isEnabled = (image?.previous != nil) ? true : false;
+            self.redoButton.isEnabled = (image?.next != nil) ? true : false;
+        }
+    }
+    
+    @IBAction func undoAction(_ sender: Any) {
+        print("undo")
+        if (pageImage != nil) {
+            if (pageImage.previous != nil) {
+                self.image = UIImage(data: pageImage.previous!.image! as Data, scale: 1.0)
+                self.backgroundImageView.image = self.image
+                self.pageImage = pageImage.previous!
+                updateImageControls(image: pageImage)
+            }
+        }
+    }
+    
+    @IBAction func redoAction(_ sender: Any) {
+        print("redo")
+        if (pageImage != nil) {
+            if (pageImage.next != nil) {
+                self.image = UIImage(data: pageImage.next!.image! as Data, scale: 1.0)
+                self.backgroundImageView.image = self.image
+                self.pageImage = pageImage.next!
+                updateImageControls(image: pageImage)
+            }
+        }
+    }
     
     /**
      * Help Functions for Draw
