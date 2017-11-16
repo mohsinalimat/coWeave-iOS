@@ -50,11 +50,15 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //create new doc
         if (document == nil) {
             document = createDocument()
+        } else {
+            self.page = document?.pages!.allObjects[0] as! Page
+            updatePage(page: self.page)
         }
         
-        self.navigationItem.title = document?.name
+        self.navigationItem.title = document?.name!
         updatePageControls(page: page)
     }
 

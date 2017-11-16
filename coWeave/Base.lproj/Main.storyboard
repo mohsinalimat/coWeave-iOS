@@ -795,15 +795,15 @@
             <objects>
                 <tableViewController id="HdL-jE-nDp" customClass="OpenDocumentsTableViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="k73-q3-KTv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Document" textLabel="Sfh-O3-pLU" detailTextLabel="2mh-b4-SZn" rowHeight="60" style="IBUITableViewCellStyleValue1" id="QEa-Bu-CJP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Document" textLabel="Sfh-O3-pLU" detailTextLabel="2mh-b4-SZn" rowHeight="60" style="IBUITableViewCellStyleValue1" id="QEa-Bu-CJP">
                                 <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QEa-Bu-CJP" id="701-4A-BRs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="59.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sfh-O3-pLU">
@@ -814,7 +814,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2mh-b4-SZn">
-                                            <rect key="frame" x="350" y="20" width="44" height="20.333333333333332"/>
+                                            <rect key="frame" x="332" y="20" width="44" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -823,7 +823,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="TcU-2a-MRU" kind="presentation" modalTransitionStyle="flipHorizontal" id="Lw5-fN-x3z"/>
+                                    <segue destination="TcU-2a-MRU" kind="presentation" identifier="open" modalTransitionStyle="flipHorizontal" id="Lw5-fN-x3z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -841,7 +841,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_document" width="33" height="33"/>
+        <image name="add_document" width="50" height="50"/>
         <image name="blueCircle" width="995" height="995"/>
         <image name="camera" width="33" height="33"/>
         <image name="cameraroll" width="33" height="33"/>

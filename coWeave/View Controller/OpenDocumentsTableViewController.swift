@@ -17,7 +17,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Document> = Document.fetchRequest()
         
         // Add Sort Descriptors
-        let date = NSSortDescriptor(key: "addedDate", ascending: true)
+        let date = NSSortDescriptor(key: "addedDate", ascending: false)
         let name = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [date, name]
         
@@ -130,6 +130,17 @@ class OpenDocumentsTableViewController: UITableViewController {
                 
                 // Present the controller
                 self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "open") {
+            let classVc = segue.destination as! DocumentDetailNavigationViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+            classVc.document = doc
         }
     }
 }
