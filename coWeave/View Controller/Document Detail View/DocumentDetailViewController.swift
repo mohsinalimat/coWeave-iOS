@@ -49,6 +49,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         super.viewDidLoad()
         document = createDocument()
         self.navigationItem.title = document.name
+        updatePageControls(page: page)
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,16 +113,31 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
        self.drawText()
     }
     @IBAction func previousPage(_ sender: Any) {
-        
+        resetPage()
+        if (page.previous != nil) {
+            page = page.previous
+        }
+        updatePageControls(page: page)
     }
     
     @IBAction func nextPage(_ sender: Any) {
         resetPage()
-        self.pageNumber = pageNumber + 1
-        page = createPage(number: pageNumber, doc: self.document)
+        if (page.next == nil) {
+            self.pageNumber = pageNumber + 1
+            page = createPage(number: pageNumber, previous: page, doc: self.document)
+        } else {
+            page = page.next
+        }
+        updatePageControls(page: page)
     }
     
-    func createPage(number: Int16, doc: Document) -> Page {
+    func updatePageControls(page: Page) {
+        self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
+        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
+        self.pageNameButton.title = "Page \(page.number)"
+    }
+    
+    func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
         // Create Entity
         let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
         
@@ -131,6 +147,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         page.addedDate = NSDate()
         page.number = number
         page.document = doc
+        page.previous = previous
+        
+        if (previous != nil) {
+            previous!.next = page
+        }
         
         do {
             // Save Record
