@@ -11,12 +11,14 @@ import CoreData
 
 class DocumentDetailNavigationViewController: UINavigationController {
     var managedObjectContext: NSManagedObjectContext!
+    var document: Document? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let controller = self.viewControllers[0] as! DocumentDetailViewController
         controller.managedObjectContext = managedObjectContext
+        controller.document = document
     }
 }
 

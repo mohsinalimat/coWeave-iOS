@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
+		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
 		0547AC381FBCC39900432850 /* Fusuma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC391FBCC39900432850 /* Fusuma.framework */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
+		0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDocumentsTableViewController.swift; sourceTree = "<group>"; };
 		0547AC351FBCC39200432850 /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
+				0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */,
 				056C71211FBBB42C00E79CA1 /* Document Detail View */,
 				056C711C1FBBB3E900E79CA1 /* Documents */,
 			);
@@ -527,6 +530,7 @@
 				056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */,
 				05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */,
 				05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */,
+				0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */,
 				05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */,
 				056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */,
 			);

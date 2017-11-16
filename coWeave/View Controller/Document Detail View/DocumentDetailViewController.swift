@@ -14,7 +14,7 @@ import CoreData
 class DocumentDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PhotoEditorDelegate {
     var image : UIImage!
     var imagePicker = UIImagePickerController()
-    var document : Document!
+    var document : Document? = nil
     var page : Page!
     var pageImage : Image! = nil
     var pageNumber: Int16 = 1
@@ -49,8 +49,12 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        document = createDocument()
-        self.navigationItem.title = document.name
+        
+        if (document == nil) {
+            document = createDocument()
+        }
+        
+        self.navigationItem.title = document?.name
         updatePageControls(page: page)
     }
 
@@ -177,7 +181,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         resetPage()
         if (page.next == nil) {
             self.pageNumber = pageNumber + 1
-            page = createPage(number: pageNumber, previous: page, doc: self.document)
+            page = createPage(number: pageNumber, previous: page, doc: self.document!)
         } else {
             page = page.next
         }

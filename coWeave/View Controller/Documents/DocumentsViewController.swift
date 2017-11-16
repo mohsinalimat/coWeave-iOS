@@ -35,6 +35,11 @@ class DocumentsViewController: UIViewController {
             let classVc = segue.destination as! DocumentDetailNavigationViewController
             classVc.managedObjectContext = self.managedObjectContext
         }
+        
+        if (segue.identifier == "open") {
+            let classVc = segue.destination as! OpenDocumentsTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+        }
     }
 
 }
