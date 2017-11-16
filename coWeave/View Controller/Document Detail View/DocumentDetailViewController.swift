@@ -151,6 +151,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     func updatePageControls(page: Page) {
         self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
         self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
+        self.nextPageButton.image = (page.next == nil) ? UIImage(named: "right-add") : UIImage(named: "right")
         self.pageNameButton.title = "Page \(page.number)"
     }
     
@@ -246,7 +247,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func undoAction(_ sender: Any) {
-        print("undo")
         if (pageImage != nil) {
             if (pageImage.previous != nil) {
                 self.image = UIImage(data: pageImage.previous!.image! as Data, scale: 1.0)
@@ -258,7 +258,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func redoAction(_ sender: Any) {
-        print("redo")
         if (pageImage != nil) {
             if (pageImage.next != nil) {
                 self.image = UIImage(data: pageImage.next!.image! as Data, scale: 1.0)

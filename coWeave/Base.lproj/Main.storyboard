@@ -287,7 +287,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IQV-N8-iVx"/>
-                                    <barButtonItem image="right" id="gl7-fm-rXK">
+                                    <barButtonItem image="right-add" id="gl7-fm-rXK">
                                         <connections>
                                             <action selector="nextPage:" destination="bgG-Ip-yWe" id="Cf9-A8-BVK"/>
                                         </connections>
@@ -806,7 +806,7 @@
         <image name="preview" width="25" height="25"/>
         <image name="redCircle" width="995" height="995"/>
         <image name="redo" width="25" height="25"/>
-        <image name="right" width="25" height="25"/>
+        <image name="right-add" width="25" height="25"/>
         <image name="save" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="text" width="33" height="33"/>
