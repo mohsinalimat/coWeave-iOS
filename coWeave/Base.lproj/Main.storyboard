@@ -264,7 +264,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lha-RZ-q2b">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem enabled="NO" image="left" id="n4Q-Nu-aEt"/>
+                                    <barButtonItem enabled="NO" image="left" id="n4Q-Nu-aEt">
+                                        <connections>
+                                            <action selector="previousPage:" destination="bgG-Ip-yWe" id="oGB-L1-5vV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lWo-7g-13y"/>
                                     <barButtonItem title="Page" id="u8W-LJ-6iX">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -278,7 +282,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IQV-N8-iVx"/>
-                                    <barButtonItem image="right" id="gl7-fm-rXK"/>
+                                    <barButtonItem image="right" id="gl7-fm-rXK">
+                                        <connections>
+                                            <action selector="nextPage:" destination="bgG-Ip-yWe" id="Cf9-A8-BVK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

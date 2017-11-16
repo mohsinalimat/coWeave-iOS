@@ -15,6 +15,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     var image : UIImage!
     var imagePicker = UIImagePickerController()
     var document : Document!
+    var page : Page!
+    var pageNumber: Int16 = 1
     var managedObjectContext: NSManagedObjectContext!
     /**
      *  Center Buttons, to add new data.
@@ -72,6 +74,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             print("\(saveError), \(saveError.userInfo)")
         }
         
+        page = createPage(number: 1, doc: document)
+        
         return document
     }
     
@@ -106,6 +110,41 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
+    }
+    @IBAction func previousPage(_ sender: Any) {
+        
+    }
+    
+    @IBAction func nextPage(_ sender: Any) {
+        resetPage()
+        self.pageNumber = pageNumber + 1
+        page = createPage(number: pageNumber, doc: self.document)
+    }
+    
+    func createPage(number: Int16, doc: Document) -> Page {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let page = Page(entity: entity!, insertInto: self.managedObjectContext)
+        
+        page.addedDate = NSDate()
+        page.number = number
+        page.document = doc
+        
+        do {
+            // Save Record
+            try page.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        return page
+    }
+    
+    func resetPage() {
+        self.image = nil
+        self.backgroundImageView = nil
     }
     
     /**
