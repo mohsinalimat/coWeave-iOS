@@ -54,7 +54,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         if (document == nil) {
             document = createDocument()
         } else {
-            self.page = document?.pages!.allObjects[0] as! Page
+            self.pageNumber = Int16(document!.pages!.count)
+            self.page = document?.pages!.allObjects[(self.pageNumber - 1)] as! Page
             updatePage(page: self.page)
         }
         
@@ -108,8 +109,12 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         // Initialize Record
         let document = Document(entity: entity!, insertInto: self.managedObjectContext)
         
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date
+        formatter.dateFormat = "dd.MM.yyyy"
+        
         document.addedDate = NSDate()
-        document.name = "New Document"
+        document.name = "Document \(formatter.string(from: NSDate() as Date))"
         
         do {
             // Save Record
@@ -335,6 +340,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         if (segue.identifier == "home") {
             let classVc = segue.destination as! RootTabBarViewController
             classVc.managedObjectContext = self.managedObjectContext
+        }
+        if (segue.identifier == "pages") {
+            let classVc = segue.destination as! PagesTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            classVc.document = self.document
         }
     }
 
