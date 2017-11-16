@@ -46,6 +46,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         document = createDocument()
+        self.navigationItem.title = document.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -177,16 +178,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     
-    
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "home") {
+            let classVc = segue.destination as! RootTabBarViewController
+            classVc.managedObjectContext = self.managedObjectContext
+        }
     }
-    */
 
 }
 

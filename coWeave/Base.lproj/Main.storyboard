@@ -304,7 +304,7 @@
                         <leftBarButtonItems>
                             <barButtonItem title="Close" image="save" id="Lil-4J-AGt">
                                 <connections>
-                                    <segue destination="PlZ-vE-sqY" kind="presentation" modalTransitionStyle="flipHorizontal" id="aY6-DC-Vop"/>
+                                    <segue destination="PlZ-vE-sqY" kind="presentation" identifier="home" modalTransitionStyle="flipHorizontal" id="aY6-DC-Vop"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="preview" id="AkS-DM-Drs">
@@ -800,7 +800,7 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ctd-ri-Jei"/>
+        <segue reference="aY6-DC-Vop"/>
         <segue reference="qO6-Z5-cN9"/>
     </inferredMetricsTieBreakers>
 </document>
