@@ -16,6 +16,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     var imagePicker = UIImagePickerController()
     var document : Document!
     var page : Page!
+    var pageImage : Image! = nil
     var pageNumber: Int16 = 1
     var managedObjectContext: NSManagedObjectContext!
     /**
@@ -57,28 +58,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func createDocument() -> Document {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
-        
-        document.addedDate = NSDate()
-        document.name = "New Document"
-        
-        do {
-            // Save Record
-            try document.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        
-        page = createPage(number: 1, doc: document)
-        
-        return document
-    }
     
     // MARK: - IBActions
 
@@ -112,11 +91,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
     }
+    
     @IBAction func previousPage(_ sender: Any) {
         resetPage()
         if (page.previous != nil) {
             page = page.previous
         }
+        updatePage(page: page)
         updatePageControls(page: page)
     }
     
@@ -128,13 +109,32 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         } else {
             page = page.next
         }
+        updatePage(page: page)
         updatePageControls(page: page)
     }
     
-    func updatePageControls(page: Page) {
-        self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
-        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
-        self.pageNameButton.title = "Page \(page.number)"
+    
+    func createDocument() -> Document {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
+        
+        document.addedDate = NSDate()
+        document.name = "New Document"
+        
+        do {
+            // Save Record
+            try document.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        
+        page = createPage(number: 1, doc: document)
+        
+        return document
     }
     
     func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
@@ -165,19 +165,69 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     func resetPage() {
         self.image = nil
-        self.backgroundImageView = nil
+        self.backgroundImageView.image = nil
+        self.pageImage = nil
+    }
+    
+    func updatePageControls(page: Page) {
+        self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
+        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
+        self.pageNameButton.title = "Page \(page.number)"
+    }
+    
+    func updatePage(page: Page) {
+        if (page.image != nil) {
+            self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
+            self.backgroundImageView.image = self.image
+            self.pageImage = page.image!
+        }
     }
     
     /**
-     * Help Functions for Camera Picker
+     * Save Image
      */
+    
+    func doneEditing(image: UIImage) {
+        self.image = image;
+        self.backgroundImageView.image = image;
+        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.image = backgroundImageView.image
+        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
         self.drawText()
     }
+    
+    func createImage(imageValue: UIImage, previous: Image? = nil, page: Page) -> Image {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let image = Image(entity: entity!, insertInto: self.managedObjectContext)
+        let imageData: NSData = UIImagePNGRepresentation(imageValue)! as NSData
+        
+        image.addedDate = NSDate()
+        image.image = imageData
+        image.previous = previous
+        image.page = page
+        
+        if (previous != nil) {
+            previous!.next = image
+        }
+        
+        do {
+            // Save Record
+            try image.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        return image
+    }
+    
     
     /**
      * Help Functions for Draw
@@ -186,6 +236,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     func drawText() {
         if (self.image == nil) {
             self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
+            pageImage = createImage(imageValue: self.image, page: self.page)
         }
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         
@@ -225,12 +276,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         //Present the View Controller
         present(photoEditor, animated: true, completion: nil)
-    }
-    
-    
-    func doneEditing(image: UIImage) {
-        self.image = image;
-        self.backgroundImageView.image = image;
     }
     
     func canceledEditing() {
