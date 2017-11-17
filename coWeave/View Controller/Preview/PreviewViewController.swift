@@ -1,18 +1,17 @@
 //
-//  DocumentDetailViewController.swift
-//  eduFresh
+//  PreviewViewController.swift
+//  coWeave
 //
-//  Created by Benoît Frisch on 15/11/2017.
+//  Created by Benoît Frisch on 18/11/2017.
 //  Copyright © 2017 Benoît Frisch. All rights reserved.
 //
 
 import UIKit
-import iOSPhotoEditor
 import MobileCoreServices
 import CoreData
 import AVFoundation
 
-class DocumentDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PhotoEditorDelegate {
+class PreviewViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var image : UIImage!
     var imagePicker = UIImagePickerController()
     var document : Document? = nil
@@ -30,26 +29,15 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     var audio : Bool = false
     var playing : Bool = false
     /**
-     *  Center Buttons, to add new data.
-     */
-    @IBOutlet var photoButton: UIButton!
-    @IBOutlet var galleryButton: UIButton!
-    @IBOutlet var audioButton: UIButton!
-    @IBOutlet var drawButton: UIButton!
-    @IBOutlet var textButton: UIButton!
-    /**
      *  Toolbar Buttons
      */
     @IBOutlet var previousPageButton: UIBarButtonItem!
     @IBOutlet var nextPageButton: UIBarButtonItem!
     @IBOutlet var pageNameButton: UIBarButtonItem!
-    @IBOutlet var undoButton: UIBarButtonItem!
-    @IBOutlet var redoButton: UIBarButtonItem!
     /**
      *  Navigation Bar Buttons
      */
-    @IBOutlet var previewButton: UIBarButtonItem!
-    @IBOutlet var settingsButton: UIBarButtonItem!
+    @IBOutlet var audioButton: UIBarButtonItem!
     /**
      * Background
      */
@@ -60,14 +48,9 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //create new doc
-        if (document == nil) {
-            document = createDocument()
-        } else {
-            self.pageNumber = Int16(document!.pages!.count)
-            self.page = document?.firstPage
-            updatePage(page: self.page)
-        }
+        self.pageNumber = Int16(document!.pages!.count)
+        self.page = document?.firstPage
+        updatePage(page: self.page)
         
         self.navigationItem.title = document?.name!
         updatePageControls(page: page)
@@ -76,35 +59,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = document?.name!
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - IBActions
-
-    @IBAction func photoAction(_ sender: Any) {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
-            imagePicker =  UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func galleryAction(_ sender: Any) {
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
+   
     @IBAction func audioAction(_ sender: Any) {
         print("audio")
         if audio && !playing { // if sound recorded, play it.
@@ -116,97 +77,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             stopPlay()
             return
         }
-        if (!audio) {
-            if recorder == nil {
-                print("recording. recorder nil")
-                self.audioButton.setImage(UIImage(named: "stop"), for: .normal)
-        
-                recordWithPermission(true)
-                return
-            }
-        }
-        if recorder != nil && recorder.isRecording {
-            print("\(#function)")
-        
-            recorder?.stop()
-            player?.stop()
-            
-            meterTimer.invalidate()
-            
-            let session = AVAudioSession.sharedInstance()
-            do {
-                try session.setActive(false)
-            } catch {
-                print("could not make session inactive")
-                print(error.localizedDescription)
-            }
-        }
     }
     
-    
-    @IBAction func drawAction(_ sender: Any) {
-       self.drawText()
-    }
-    
-    @IBAction func textAction(_ sender: Any) {
-       self.drawText()
-    }
-    
-    func createDocument() -> Document {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
-        
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date
-        formatter.dateFormat = "dd.MM.yyyy"
-        
-        document.addedDate = NSDate()
-        document.name = "Document \(formatter.string(from: NSDate() as Date))"
-        page = createPage(number: 1, doc: document)
-        document.firstPage = page
-        do {
-            // Save Record
-            try document.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        
-        
-        
-        return document
-    }
-    
-    func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let page = Page(entity: entity!, insertInto: self.managedObjectContext)
-        
-        page.addedDate = NSDate()
-        page.number = number
-        page.document = doc
-        page.previous = previous
-        
-        doc.lastPage = page
-        
-        if (previous != nil) {
-            previous!.next = page
-        }
-        
-        do {
-            // Save Record
-            try page.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        return page
-    }
     
     func resetPage() {
         self.image = nil
@@ -217,11 +89,9 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     func updatePageControls(page: Page) {
         self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
-        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
-        self.nextPageButton.image = (page.next == nil) ? UIImage(named: "right-add") : UIImage(named: "right")
+        self.nextPageButton.isEnabled = (page.next != nil) ? true : false;
         self.pageNameButton.title = "Page \(page.number)"
-        
-        self.audioButton.imageView?.image = (page.audio == nil) ? UIImage(named: "micro") : UIImage(named: "play")
+        self.audioButton.isEnabled = (page.audio == nil) ? false : true
     }
     
     func updatePage(page: Page) {
@@ -230,7 +100,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             self.backgroundImageView.image = self.image
             self.pageImage = page.image!
         }
-        updateImageControls(image: pageImage)
         loadAudio(page: page)
     }
     
@@ -240,7 +109,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             format.dateFormat="yyyy-MM-dd-HH-mm-ss"
             let currentFileName = "audio-page\(page.number)-\(format.string(from: Date())).m4a"
             print(currentFileName)
-        
+            
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             self.soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
             do {
@@ -281,13 +150,9 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func nextPage(_ sender: Any) {
+        print("next")
+        page = page.next
         resetPage()
-        if (page.next == nil) {
-            self.pageNumber = pageNumber + 1
-            page = createPage(number: pageNumber, previous: page, doc: self.document!)
-        } else {
-            page = page.next
-        }
         self.recorder = nil
         self.player = nil
         self.meterTimer = nil
@@ -302,148 +167,15 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
      * Save Image
      */
     
-    func doneEditing(image: UIImage) {
-        self.image = image;
-        self.backgroundImageView.image = image;
-        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
-        updateImageControls(image: pageImage)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.image = backgroundImageView.image
-        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
-        updateImageControls(image: pageImage)
-        self.drawText()
-    }
-    
-    func createImage(imageValue: UIImage, previous: Image? = nil, page: Page) -> Image {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let image = Image(entity: entity!, insertInto: self.managedObjectContext)
-        let imageData: NSData = UIImagePNGRepresentation(imageValue)! as NSData
-        
-        image.addedDate = NSDate()
-        image.image = imageData
-        image.previous = previous
-        image.page = page
-        
-        if (previous != nil) {
-            previous!.next = image
-        }
-        
-        do {
-            // Save Record
-            try image.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        return image
-    }
-    
-    /**
-     * Undo and Redo Actions on Images.
-     */
-    
-    func updateImageControls(image: Image? = nil) {
-        if (image == nil) {
-            self.undoButton.isEnabled = false;
-            self.redoButton.isEnabled = false;
-        } else {
-            self.undoButton.isEnabled = (image?.previous != nil) ? true : false;
-            self.redoButton.isEnabled = (image?.next != nil) ? true : false;
-        }
-    }
-    
-    @IBAction func undoAction(_ sender: Any) {
-        if (pageImage != nil) {
-            if (pageImage.previous != nil) {
-                self.image = UIImage(data: pageImage.previous!.image! as Data, scale: 1.0)
-                self.backgroundImageView.image = self.image
-                self.pageImage = pageImage.previous!
-                updateImageControls(image: pageImage)
-            }
-        }
-    }
-    
-    @IBAction func redoAction(_ sender: Any) {
-        if (pageImage != nil) {
-            if (pageImage.next != nil) {
-                self.image = UIImage(data: pageImage.next!.image! as Data, scale: 1.0)
-                self.backgroundImageView.image = self.image
-                self.pageImage = pageImage.next!
-                updateImageControls(image: pageImage)
-            }
-        }
-    }
-    
-    /**
-     * Help Functions for Draw
-     */
-    
-    func drawText() {
-        if (self.image == nil) {
-            self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
-            pageImage = createImage(imageValue: self.image, page: self.page)
-        }
-        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
-        
-        //PhotoEditorDelegate
-        photoEditor.photoEditorDelegate = self
-        
-        //The image to be edited
-        photoEditor.image = self.image
-        
-        //Optional: To hide controls - array of enum control
-        photoEditor.hiddenControls = [.share, .save]
-        
-        //Stickers that the user will choose from to add on the image
-        photoEditor.stickers.append(UIImage(named: "yellowCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "redCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueCircle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "yellowTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "redTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueTriangle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "yellowRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "redRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueRectangle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "logo" )!)
-        photoEditor.stickers.append(UIImage(named: "logo_white" )!)
-        
-        //Optional: Colors for drawing and Text, If not set default values will be used
-        //photoEditor.colors = [.red,.blue,.green]
-        
-        //Present the View Controller
-        present(photoEditor, animated: true, completion: nil)
-    }
-    
-    func canceledEditing() {
-        print("Canceled")
-    }
-    
-    
     func startPlay() {
         play()
-        self.audioButton.setImage(UIImage(named: "stop"), for: .normal)
+        self.audioButton.image = UIImage(named: "stop")
         playing = true
     }
     
     func stopPlay() {
         player.stop()
-        self.audioButton.setImage(UIImage(named: "play"), for: .normal)
+        self.audioButton.image = UIImage(named: "play")
         playing = false
     }
     
@@ -454,7 +186,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
                 let min = Int(recorder.currentTime / 60)
                 let sec = Int(recorder.currentTime.truncatingRemainder(dividingBy: 60))
                 let s = String(format: "%02d:%02d", min, sec)
-                self.audioButton.setTitle(s, for: .normal)
                 recorder.updateMeters()
             }
         }
@@ -472,7 +203,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         do {
             self.player = try AVAudioPlayer(contentsOf: url!)
-            self.audioButton.imageView?.image = UIImage(named: "stop")
+            self.audioButton.image = UIImage(named: "stop")
             player.delegate = self
             player.prepareToPlay()
             player.volume = 1.0
@@ -682,47 +413,18 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "home") {
-            let classVc = segue.destination as! RootTabBarViewController
-            classVc.managedObjectContext = self.managedObjectContext
-        }
-        if (segue.identifier == "pages") {
-            let classVc = segue.destination as! PagesTableViewController
-            classVc.managedObjectContext = self.managedObjectContext
-            classVc.document = self.document
-        }
-        if (segue.identifier == "modify") {
-            let classVc = segue.destination as! ModifyDocumentTableViewController
-            classVc.managedObjectContext = self.managedObjectContext
-            classVc.document = self.document
-        }
-        if (segue.identifier == "preview") {
-            let classVc = segue.destination as! PreviewNavigationViewController
+        if (segue.identifier == "close") {
+            let classVc = segue.destination as! DocumentDetailNavigationViewController
             classVc.managedObjectContext = self.managedObjectContext
             classVc.document = self.document
         }
     }
-
+    
 }
-
-public extension UIImage {
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
-        let rect = CGRect(origin: .zero, size: size)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        color.setFill()
-        UIRectFill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        guard let cgImage = image?.cgImage else { return nil }
-        self.init(cgImage: cgImage)
-    }
-}
-
 
 
 // MARK: AVAudioRecorderDelegate
-extension DocumentDetailViewController : AVAudioRecorderDelegate {
+extension PreviewViewController : AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder,
                                          successfully flag: Bool) {
         
@@ -741,9 +443,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             print("keep was tapped")
             self.recorder = nil
             self.audio = true
-            
-            self.audioButton.setImage(UIImage(named: "play"), for: .normal)
-            self.audioButton.setTitle("", for: .normal)
+           
             
             do {
                 let audioData =  try Data(contentsOf: self.soundFileURL!)
@@ -765,8 +465,6 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             self.soundFileURL = nil
             
             self.player.stop()
-            self.audioButton.setImage(UIImage(named: "micro"), for: .normal)
-            self.audioButton.setTitle("", for: .normal)
         }))
         self.present(alert, animated:true, completion:nil)
     }
@@ -783,13 +481,12 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
 }
 
 // MARK: AVAudioPlayerDelegate
-extension DocumentDetailViewController : AVAudioPlayerDelegate {
+extension PreviewViewController : AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("\(#function)")
         
         print("finished playing \(flag)")
-        self.audioButton.setImage(UIImage(named: "play"), for: .normal)
-        self.audioButton.setTitle("", for: .normal)
+        self.audioButton.image = UIImage(named: "play")
     }
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {

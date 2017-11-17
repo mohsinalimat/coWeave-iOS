@@ -13,6 +13,8 @@
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
 		056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */; };
 		056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */; };
+		056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253011FBFA81C005B92D9 /* PreviewViewController.swift */; };
+		056253041FBFA832005B92D9 /* PreviewNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 3.xcdatamodel"; sourceTree = "<group>"; };
 		056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDocumentTableViewController.swift; sourceTree = "<group>"; };
 		056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
+		056253011FBFA81C005B92D9 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNavigationViewController.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		056253051FBFA855005B92D9 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				056253011FBFA81C005B92D9 /* PreviewViewController.swift */,
+				056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
 		056C70D81FBB496D00E79CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
 				0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */,
 				0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */,
+				056253051FBFA855005B92D9 /* Preview */,
 				056C71211FBBB42C00E79CA1 /* Document Detail View */,
 				056C711C1FBBB3E900E79CA1 /* Documents */,
 			);
@@ -512,6 +526,7 @@
 				056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */,
 				056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */,
 				056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */,
+				056253041FBFA832005B92D9 /* PreviewNavigationViewController.swift in Sources */,
 				05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */,
 				056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */,
 				05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */,
@@ -520,6 +535,7 @@
 				0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */,
 				05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */,
 				056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */,
+				056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
