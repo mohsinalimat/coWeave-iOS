@@ -28,5 +28,6 @@ extension Page {
     @NSManaged public var next: Page?
     @NSManaged public var previous: Page?
     @NSManaged public var newRelationship: Document?
+    @NSManaged public var newRelationship1: Document?
 
 }

@@ -26,6 +26,7 @@ extension Document {
     @NSManaged public var pages: NSSet?
     @NSManaged public var user: User?
     @NSManaged public var lastPage: Page?
+    @NSManaged public var firstPage: Page?
 
 }
 
