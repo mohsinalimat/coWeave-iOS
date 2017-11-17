@@ -717,10 +717,10 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
         //recordButton.setTitle("Record", for:UIControlState())
         
         // iOS8 and later
-        let alert = UIAlertController(title: "Playing recorded audio....",
-                                      message: "Would you like to keep or delete?",
+        let alert = UIAlertController(title: "Playing recorded audio...",
+                                      message: "Would you like to save or delete it?",
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Keep", style: .default, handler: {action in
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {action in
             print("keep was tapped")
             self.recorder = nil
             self.audio = true
@@ -738,6 +738,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
                     print("\(saveError), \(saveError.userInfo)")
                 }
             } catch {}
+            self.player.stop()
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
             print("delete was tapped")
@@ -746,6 +747,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             self.recorder = nil
             self.soundFileURL = nil
             
+            self.player.stop()
             self.audioButton.setImage(UIImage(named: "micro"), for: .normal)
             self.audioButton.setTitle("", for: .normal)
         }))
