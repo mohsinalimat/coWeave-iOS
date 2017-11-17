@@ -667,16 +667,14 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
         print("\(#function)")
         
         print("finished recording \(flag)")
+        self.play()
         
         //recordButton.setTitle("Record", for:UIControlState())
         
         // iOS8 and later
-        let alert = UIAlertController(title: "Recorder",
-                                      message: "Finished Recording",
+        let alert = UIAlertController(title: "Playing recorded audio....",
+                                      message: "Would you like to keep or delete?",
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Play", style: .default, handler: {action in
-            self.play()
-        }))
         alert.addAction(UIAlertAction(title: "Keep", style: .default, handler: {action in
             print("keep was tapped")
             self.recorder = nil
@@ -685,7 +683,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             self.audioButton.setImage(UIImage(named: "play"), for: .normal)
             self.audioButton.setTitle("", for: .normal)
         }))
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {action in
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
             print("delete was tapped")
             self.recorder.deleteRecording()
             self.audio = false
