@@ -660,7 +660,6 @@ public extension UIImage {
 
 // MARK: AVAudioRecorderDelegate
 extension DocumentDetailViewController : AVAudioRecorderDelegate {
-    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder,
                                          successfully flag: Bool) {
         
@@ -682,6 +681,18 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             
             self.audioButton.setImage(UIImage(named: "play"), for: .normal)
             self.audioButton.setTitle("", for: .normal)
+            
+            do {
+                let audioData =  try Data(contentsOf: self.soundFileURL!)
+                self.page.audio = audioData as NSData
+                do {
+                    try self.page.managedObjectContext?.save()
+                } catch {
+                    let saveError = error as NSError
+                    print("\(saveError), \(saveError.userInfo)")
+                }
+            } catch {}
+            
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
             print("delete was tapped")
