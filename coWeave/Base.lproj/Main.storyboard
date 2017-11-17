@@ -189,7 +189,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="GBU-mP-a0y" kind="show" id="Ssd-bY-Tb1"/>
+                                                    <action selector="audioAction:" destination="bgG-Ip-yWe" eventType="touchUpInside" id="XBr-bF-uub"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -530,13 +530,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZJI-KR-HhK">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-8W-RST">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102.33333333333333"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMe-3K-lhO" customClass="AKNodeOutputPlot" customModule="AudioKitUI">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="102.33333333333333"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8u-AT-e8c">
                                                         <rect key="frame" x="8" y="8" width="39" height="21"/>
@@ -549,7 +549,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMu-jz-3s7" customClass="AKOutputWaveformPlot" customModule="AudioKitUI">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="96"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="102.33333333333333"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Output" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yey-JC-56A">
                                                         <rect key="frame" x="8" y="8" width="54" height="21"/>
@@ -567,14 +567,14 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNe-t9-TCv">
-                                        <rect key="frame" x="0.0" y="96" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="102.33333333333334" width="414" height="102.33333333333334"/>
                                         <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bg-nt-p4O">
-                                        <rect key="frame" x="0.0" y="192" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="204.66666666666666" width="414" height="102.33333333333334"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.65490196079999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Record">
@@ -585,10 +585,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lsN-2e-g37">
-                                        <rect key="frame" x="0.0" y="288" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="307" width="414" height="102"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXf-mT-zYr">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="102"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.56470588239999997" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <state key="normal" title="Loop is On">
@@ -599,7 +599,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHT-7o-MkL">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="96"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="102"/>
                                                 <color key="backgroundColor" red="0.6705882353" green="0.41176470590000003" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <state key="normal" title="Reset">
@@ -612,20 +612,20 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moog Ladder Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb1-5T-cIA">
-                                        <rect key="frame" x="0.0" y="384" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="409" width="414" height="102.33333333333331"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.50980392159999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-nL-bW0">
-                                        <rect key="frame" x="0.0" y="480" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="511.33333333333331" width="414" height="102.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-U1-KIN">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="102.33333333333333"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vX1-mc-v4P" customClass="AKSlider" customModule="AudioKitUI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102.33333333333333"/>
                                                         <color key="backgroundColor" red="0.95223861929999998" green="0.6002943516" blue="0.44777637720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="property" value="Frequency"/>
@@ -653,13 +653,13 @@
                                         <color key="backgroundColor" red="0.95223861929999998" green="0.6002943516" blue="0.44777637720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hcp-Sl-y5y">
-                                        <rect key="frame" x="0.0" y="576" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="613.66666666666663" width="414" height="102.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hh-Ah-sXJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="102.33333333333333"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSz-UN-JnF" customClass="AKSlider" customModule="AudioKitUI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102.33333333333333"/>
                                                         <color key="backgroundColor" red="0.90007048850000004" green="0.62913995980000004" blue="0.40531009439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -817,7 +817,6 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aY6-DC-Vop"/>
         <segue reference="Lw5-fN-x3z"/>
     </inferredMetricsTieBreakers>
 </document>
