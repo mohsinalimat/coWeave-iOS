@@ -63,6 +63,7 @@
 		0547AC351FBCC39200432850 /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 3.xcdatamodel"; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +314,6 @@
 				056C70DF1FBB496D00E79CA1 /* Resources */,
 				416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */,
 				2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */,
-				05D6591F1FBCC8CD009019A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -436,19 +436,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05D6591F1FBCC8CD009019A9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/AudioKit.framework/fix-framework.sh\"";
-		};
 		2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -845,10 +832,11 @@
 		05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */,
 				052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */,
 				05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */,
 			);
-			currentVersion = 052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */;
+			currentVersion = 056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */;
 			path = coWeave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

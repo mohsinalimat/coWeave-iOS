@@ -2,7 +2,7 @@
 //  Page+CoreDataProperties.swift
 //  coWeave
 //
-//  Created by Benoît Frisch on 16/11/2017.
+//  Created by Benoît Frisch on 17/11/2017.
 //  Copyright © 2017 Benoît Frisch. All rights reserved.
 //
 //
@@ -27,5 +27,6 @@ extension Page {
     @NSManaged public var image: Image?
     @NSManaged public var next: Page?
     @NSManaged public var previous: Page?
+    @NSManaged public var newRelationship: Document?
 
 }

@@ -2,7 +2,7 @@
 //  Document+CoreDataProperties.swift
 //  coWeave
 //
-//  Created by Benoît Frisch on 15/11/2017.
+//  Created by Benoît Frisch on 17/11/2017.
 //  Copyright © 2017 Benoît Frisch. All rights reserved.
 //
 //
@@ -25,6 +25,7 @@ extension Document {
     @NSManaged public var template: Bool
     @NSManaged public var pages: NSSet?
     @NSManaged public var user: User?
+    @NSManaged public var lastPage: Page?
 
 }
 

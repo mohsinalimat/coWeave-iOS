@@ -3,5 +3,4 @@ use_frameworks!
 
 target 'coWeave' do
     pod 'iOSPhotoEditor'
-    pod 'AudioKit', '~> 4.0'
 end
