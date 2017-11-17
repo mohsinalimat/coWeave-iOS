@@ -140,6 +140,294 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     
+    @IBAction func drawAction(_ sender: Any) {
+       self.drawText()
+    }
+    
+    @IBAction func textAction(_ sender: Any) {
+       self.drawText()
+    }
+    
+    func createDocument() -> Document {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
+        
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        document.addedDate = NSDate()
+        document.name = "Document \(formatter.string(from: NSDate() as Date))"
+        
+        do {
+            // Save Record
+            try document.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        
+        page = createPage(number: 1, doc: document)
+        
+        return document
+    }
+    
+    func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let page = Page(entity: entity!, insertInto: self.managedObjectContext)
+        
+        page.addedDate = NSDate()
+        page.number = number
+        page.document = doc
+        page.previous = previous
+        
+        if (previous != nil) {
+            previous!.next = page
+        }
+        
+        do {
+            // Save Record
+            try page.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        return page
+    }
+    
+    func resetPage() {
+        self.image = nil
+        self.backgroundImageView.image = nil
+        self.pageImage = nil
+        removeAudioFile(url: self.soundFileURL)
+    }
+    
+    func updatePageControls(page: Page) {
+        self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
+        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
+        self.nextPageButton.image = (page.next == nil) ? UIImage(named: "right-add") : UIImage(named: "right")
+        self.pageNameButton.title = "Page \(page.number)"
+        
+        self.audioButton.imageView?.image = (page.audio == nil) ? UIImage(named: "micro") : UIImage(named: "play")
+    }
+    
+    func updatePage(page: Page) {
+        if (page.image != nil) {
+            self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
+            self.backgroundImageView.image = self.image
+            self.pageImage = page.image!
+        }
+        updateImageControls(image: pageImage)
+        loadAudio(page: page)
+    }
+    
+    func loadAudio(page: Page) {
+        if (page.audio != nil) {
+            let format = DateFormatter()
+            format.dateFormat="yyyy-MM-dd-HH-mm-ss"
+            let currentFileName = "audio-page\(page.number)-\(format.string(from: Date())).m4a"
+            print(currentFileName)
+        
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            self.soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
+            do {
+                try page.audio?.write(to: self.soundFileURL, options: .atomic)
+            } catch {}
+            self.recorder = nil
+            self.player = nil
+            self.meterTimer = nil
+            self.audio = true
+            self.playing = false
+        } else {
+            self.recorder = nil
+            self.player = nil
+            self.meterTimer = nil
+            self.soundFileURL = nil
+            self.audio = false
+            self.playing = false
+        }
+    }
+    
+    func removeAudioFile(url : URL? = nil) {
+        if (url != nil) {
+            do {
+                try FileManager.default.removeItem(at: url!)
+            } catch let error as NSError {
+                print("Error: \(error.domain)")
+            }
+        }
+    }
+    
+    @IBAction func previousPage(_ sender: Any) {
+        resetPage()
+        if (page.previous != nil) {
+            page = page.previous
+        }
+        updatePage(page: page)
+        updatePageControls(page: page)
+    }
+    
+    @IBAction func nextPage(_ sender: Any) {
+        resetPage()
+        if (page.next == nil) {
+            self.pageNumber = pageNumber + 1
+            page = createPage(number: pageNumber, previous: page, doc: self.document!)
+        } else {
+            page = page.next
+        }
+        self.recorder = nil
+        self.player = nil
+        self.meterTimer = nil
+        self.soundFileURL = nil
+        self.audio = false
+        self.playing = false
+        updatePage(page: page)
+        updatePageControls(page: page)
+    }
+    
+    /**
+     * Save Image
+     */
+    
+    func doneEditing(image: UIImage) {
+        self.image = image;
+        self.backgroundImageView.image = image;
+        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
+        updateImageControls(image: pageImage)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.image = backgroundImageView.image
+        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
+        updateImageControls(image: pageImage)
+        self.drawText()
+    }
+    
+    func createImage(imageValue: UIImage, previous: Image? = nil, page: Page) -> Image {
+        // Create Entity
+        let entity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
+        
+        // Initialize Record
+        let image = Image(entity: entity!, insertInto: self.managedObjectContext)
+        let imageData: NSData = UIImagePNGRepresentation(imageValue)! as NSData
+        
+        image.addedDate = NSDate()
+        image.image = imageData
+        image.previous = previous
+        image.page = page
+        
+        if (previous != nil) {
+            previous!.next = image
+        }
+        
+        do {
+            // Save Record
+            try image.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+        return image
+    }
+    
+    /**
+     * Undo and Redo Actions on Images.
+     */
+    
+    func updateImageControls(image: Image? = nil) {
+        if (image == nil) {
+            self.undoButton.isEnabled = false;
+            self.redoButton.isEnabled = false;
+        } else {
+            self.undoButton.isEnabled = (image?.previous != nil) ? true : false;
+            self.redoButton.isEnabled = (image?.next != nil) ? true : false;
+        }
+    }
+    
+    @IBAction func undoAction(_ sender: Any) {
+        if (pageImage != nil) {
+            if (pageImage.previous != nil) {
+                self.image = UIImage(data: pageImage.previous!.image! as Data, scale: 1.0)
+                self.backgroundImageView.image = self.image
+                self.pageImage = pageImage.previous!
+                updateImageControls(image: pageImage)
+            }
+        }
+    }
+    
+    @IBAction func redoAction(_ sender: Any) {
+        if (pageImage != nil) {
+            if (pageImage.next != nil) {
+                self.image = UIImage(data: pageImage.next!.image! as Data, scale: 1.0)
+                self.backgroundImageView.image = self.image
+                self.pageImage = pageImage.next!
+                updateImageControls(image: pageImage)
+            }
+        }
+    }
+    
+    /**
+     * Help Functions for Draw
+     */
+    
+    func drawText() {
+        if (self.image == nil) {
+            self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
+            pageImage = createImage(imageValue: self.image, page: self.page)
+        }
+        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+        
+        //PhotoEditorDelegate
+        photoEditor.photoEditorDelegate = self
+        
+        //The image to be edited
+        photoEditor.image = self.image
+        
+        //Optional: To hide controls - array of enum control
+        photoEditor.hiddenControls = [.share, .save]
+        
+        //Stickers that the user will choose from to add on the image
+        photoEditor.stickers.append(UIImage(named: "yellowCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "redCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenCircle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueCircle" )!)
+        
+        photoEditor.stickers.append(UIImage(named: "yellowTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "redTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenTriangle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueTriangle" )!)
+        
+        photoEditor.stickers.append(UIImage(named: "yellowRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "orangeRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "redRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "greenRectangle" )!)
+        photoEditor.stickers.append(UIImage(named: "blueRectangle" )!)
+        
+        photoEditor.stickers.append(UIImage(named: "logo" )!)
+        photoEditor.stickers.append(UIImage(named: "logo_white" )!)
+        
+        //Optional: Colors for drawing and Text, If not set default values will be used
+        //photoEditor.colors = [.red,.blue,.green]
+        
+        //Present the View Controller
+        present(photoEditor, animated: true, completion: nil)
+    }
+    
+    func canceledEditing() {
+        print("Canceled")
+    }
+    
+    
     func startPlay() {
         play()
         self.audioButton.setImage(UIImage(named: "stop"), for: .normal)
@@ -384,248 +672,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         }
     }
     
-    @IBAction func drawAction(_ sender: Any) {
-       self.drawText()
-    }
-    
-    @IBAction func textAction(_ sender: Any) {
-       self.drawText()
-    }
-    
-    func createDocument() -> Document {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let document = Document(entity: entity!, insertInto: self.managedObjectContext)
-        
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date
-        formatter.dateFormat = "dd.MM.yyyy"
-        
-        document.addedDate = NSDate()
-        document.name = "Document \(formatter.string(from: NSDate() as Date))"
-        
-        do {
-            // Save Record
-            try document.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        
-        page = createPage(number: 1, doc: document)
-        
-        return document
-    }
-    
-    func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let page = Page(entity: entity!, insertInto: self.managedObjectContext)
-        
-        page.addedDate = NSDate()
-        page.number = number
-        page.document = doc
-        page.previous = previous
-        
-        if (previous != nil) {
-            previous!.next = page
-        }
-        
-        do {
-            // Save Record
-            try page.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        return page
-    }
-    
-    func resetPage() {
-        self.image = nil
-        self.backgroundImageView.image = nil
-        self.pageImage = nil
-    }
-    
-    func updatePageControls(page: Page) {
-        self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
-        self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
-        self.nextPageButton.image = (page.next == nil) ? UIImage(named: "right-add") : UIImage(named: "right")
-        self.pageNameButton.title = "Page \(page.number)"
-        
-        self.audioButton.imageView?.image = (page.audio == nil) ? UIImage(named: "micro") : UIImage(named: "play")
-    }
-    
-    func updatePage(page: Page) {
-        if (page.image != nil) {
-            self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
-            self.backgroundImageView.image = self.image
-            self.pageImage = page.image!
-        }
-        updateImageControls(image: pageImage)
-    }
-    
-    @IBAction func previousPage(_ sender: Any) {
-        resetPage()
-        if (page.previous != nil) {
-            page = page.previous
-        }
-        updatePage(page: page)
-        updatePageControls(page: page)
-    }
-    
-    @IBAction func nextPage(_ sender: Any) {
-        resetPage()
-        if (page.next == nil) {
-            self.pageNumber = pageNumber + 1
-            page = createPage(number: pageNumber, previous: page, doc: self.document!)
-        } else {
-            page = page.next
-        }
-        updatePage(page: page)
-        updatePageControls(page: page)
-    }
-    
-    /**
-     * Save Image
-     */
-    
-    func doneEditing(image: UIImage) {
-        self.image = image;
-        self.backgroundImageView.image = image;
-        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
-        updateImageControls(image: pageImage)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        backgroundImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.image = backgroundImageView.image
-        pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
-        updateImageControls(image: pageImage)
-        self.drawText()
-    }
-    
-    func createImage(imageValue: UIImage, previous: Image? = nil, page: Page) -> Image {
-        // Create Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
-        
-        // Initialize Record
-        let image = Image(entity: entity!, insertInto: self.managedObjectContext)
-        let imageData: NSData = UIImagePNGRepresentation(imageValue)! as NSData
-        
-        image.addedDate = NSDate()
-        image.image = imageData
-        image.previous = previous
-        image.page = page
-        
-        if (previous != nil) {
-            previous!.next = image
-        }
-        
-        do {
-            // Save Record
-            try image.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print("\(saveError), \(saveError.userInfo)")
-        }
-        return image
-    }
-    
-    /**
-     * Undo and Redo Actions on Images.
-     */
-    
-    func updateImageControls(image: Image? = nil) {
-        if (image == nil) {
-            self.undoButton.isEnabled = false;
-            self.redoButton.isEnabled = false;
-        } else {
-            self.undoButton.isEnabled = (image?.previous != nil) ? true : false;
-            self.redoButton.isEnabled = (image?.next != nil) ? true : false;
-        }
-    }
-    
-    @IBAction func undoAction(_ sender: Any) {
-        if (pageImage != nil) {
-            if (pageImage.previous != nil) {
-                self.image = UIImage(data: pageImage.previous!.image! as Data, scale: 1.0)
-                self.backgroundImageView.image = self.image
-                self.pageImage = pageImage.previous!
-                updateImageControls(image: pageImage)
-            }
-        }
-    }
-    
-    @IBAction func redoAction(_ sender: Any) {
-        if (pageImage != nil) {
-            if (pageImage.next != nil) {
-                self.image = UIImage(data: pageImage.next!.image! as Data, scale: 1.0)
-                self.backgroundImageView.image = self.image
-                self.pageImage = pageImage.next!
-                updateImageControls(image: pageImage)
-            }
-        }
-    }
-    
-    /**
-     * Help Functions for Draw
-     */
-    
-    func drawText() {
-        if (self.image == nil) {
-            self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
-            pageImage = createImage(imageValue: self.image, page: self.page)
-        }
-        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
-        
-        //PhotoEditorDelegate
-        photoEditor.photoEditorDelegate = self
-        
-        //The image to be edited
-        photoEditor.image = self.image
-        
-        //Optional: To hide controls - array of enum control
-        photoEditor.hiddenControls = [.share, .save]
-        
-        //Stickers that the user will choose from to add on the image
-        photoEditor.stickers.append(UIImage(named: "yellowCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "redCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenCircle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueCircle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "yellowTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "redTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenTriangle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueTriangle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "yellowRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "orangeRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "redRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "greenRectangle" )!)
-        photoEditor.stickers.append(UIImage(named: "blueRectangle" )!)
-        
-        photoEditor.stickers.append(UIImage(named: "logo" )!)
-        photoEditor.stickers.append(UIImage(named: "logo_white" )!)
-        
-        //Optional: Colors for drawing and Text, If not set default values will be used
-        //photoEditor.colors = [.red,.blue,.green]
-        
-        //Present the View Controller
-        present(photoEditor, animated: true, completion: nil)
-    }
-    
-    func canceledEditing() {
-        print("Canceled")
-    }
-    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -692,7 +738,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
                     print("\(saveError), \(saveError.userInfo)")
                 }
             } catch {}
-            
+            self.removeAudioFile(url: self.soundFileURL)
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
             print("delete was tapped")
