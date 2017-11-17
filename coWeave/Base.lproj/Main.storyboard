@@ -308,11 +308,7 @@
                             </barButtonItem>
                             <barButtonItem enabled="NO" image="preview" id="AkS-DM-Drs"/>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="settings" id="xzz-9A-2Os">
-                            <connections>
-                                <segue destination="ivf-b4-6EC" kind="show" id="UvG-jq-hk6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="settings" id="xzz-9A-2Os"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -821,6 +817,7 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aY6-DC-Vop"/>
         <segue reference="Lw5-fN-x3z"/>
     </inferredMetricsTieBreakers>
 </document>
