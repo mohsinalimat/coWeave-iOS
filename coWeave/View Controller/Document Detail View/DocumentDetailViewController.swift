@@ -72,6 +72,10 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         self.navigationItem.title = document?.name!
         updatePageControls(page: page)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = document?.name!
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -684,6 +688,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         }
         if (segue.identifier == "pages") {
             let classVc = segue.destination as! PagesTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            classVc.document = self.document
+        }
+        if (segue.identifier == "modify") {
+            let classVc = segue.destination as! ModifyDocumentTableViewController
             classVc.managedObjectContext = self.managedObjectContext
             classVc.document = self.document
         }

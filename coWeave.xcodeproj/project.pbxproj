@@ -11,6 +11,7 @@
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
+		056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 3.xcdatamodel"; sourceTree = "<group>"; };
+		056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDocumentTableViewController.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */,
 				056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */,
+				056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */,
 			);
 			path = "Document Detail View";
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				05F70E461FBCF1FB007FD9E4 /* Image+CoreDataProperties.swift in Sources */,
 				05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */,
 				056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */,
+				056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */,
 				056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */,
 				05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */,
 				056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */,
@@ -699,9 +703,7 @@
 				DEVELOPMENT_TEAM = 82T63N97ZX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Fusuma\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/iOSPhotoEditor\"",
-					"\"${PODS_ROOT}/AudioKit/iOS\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
