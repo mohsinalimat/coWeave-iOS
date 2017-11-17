@@ -738,7 +738,6 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
                     print("\(saveError), \(saveError.userInfo)")
                 }
             } catch {}
-            self.removeAudioFile(url: self.soundFileURL)
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
             print("delete was tapped")
