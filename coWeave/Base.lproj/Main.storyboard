@@ -425,7 +425,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="SC4-FH-hV4" kind="show" id="MjL-PT-u3U"/>
+                                            <segue destination="SC4-FH-hV4" kind="show" identifier="loadTemplate" id="MjL-PT-u3U"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -667,10 +667,10 @@
             </objects>
             <point key="canvasLocation" x="1193" y="-765"/>
         </scene>
-        <!--Documents-->
+        <!--Template Table View Controller-->
         <scene sceneID="yDG-l0-GUh">
             <objects>
-                <tableViewController id="SC4-FH-hV4" customClass="OpenDocumentsTableViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="SC4-FH-hV4" customClass="TemplateTableViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Gyx-Vv-80i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -699,6 +699,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TcU-2a-MRU" kind="presentation" identifier="open" modalTransitionStyle="flipHorizontal" id="ZLQ-qZ-kUn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -706,7 +709,7 @@
                             <outlet property="delegate" destination="SC4-FH-hV4" id="Qvx-0q-dhV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Documents" id="kaU-Yf-KJV"/>
+                    <navigationItem key="navigationItem" id="kaU-Yf-KJV"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtg-jc-Z3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -741,6 +744,6 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lw5-fN-x3z"/>
+        <segue reference="ZLQ-qZ-kUn"/>
     </inferredMetricsTieBreakers>
 </document>

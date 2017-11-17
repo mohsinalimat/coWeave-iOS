@@ -12,6 +12,7 @@
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
 		056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */; };
+		056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 3.xcdatamodel"; sourceTree = "<group>"; };
 		056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDocumentTableViewController.swift; sourceTree = "<group>"; };
+		056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */,
 				056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */,
 				056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */,
+				056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */,
 			);
 			path = "Document Detail View";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			files = (
 				05F70E471FBCF1FB007FD9E4 /* Page+CoreDataClass.swift in Sources */,
 				056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */,
+				056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */,
 				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
 				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,

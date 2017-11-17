@@ -17,7 +17,7 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Document Settings"
         nameField.text = document.name
         nameField.delegate = self
         templateSwitch.setOn(document.template, animated: true)
@@ -56,6 +56,16 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
         self.view.endEditing(true)
         return true
     }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "loadTemplate") {
+            let classVc = segue.destination as! TemplateTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            classVc.document = self.document
+        }
+    }
+    
 }
 // Put this piece of code anywhere you like
 extension UIViewController {
