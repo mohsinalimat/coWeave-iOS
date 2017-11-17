@@ -65,7 +65,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             document = createDocument()
         } else {
             self.pageNumber = Int16(document!.pages!.count)
-            self.page = document?.pages!.allObjects[(self.pageNumber - 1)] as! Page
+            self.page = document?.firstPage
             updatePage(page: self.page)
         }
         
@@ -161,7 +161,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         document.addedDate = NSDate()
         document.name = "Document \(formatter.string(from: NSDate() as Date))"
-        
+        page = createPage(number: 1, doc: document)
+        document.firstPage = page
         do {
             // Save Record
             try document.managedObjectContext?.save()
@@ -170,7 +171,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             print("\(saveError), \(saveError.userInfo)")
         }
         
-        page = createPage(number: 1, doc: document)
+        
         
         return document
     }
@@ -186,6 +187,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         page.number = number
         page.document = doc
         page.previous = previous
+        
+        doc.lastPage = page
         
         if (previous != nil) {
             previous!.next = page

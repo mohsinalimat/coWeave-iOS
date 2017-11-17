@@ -7,6 +7,7 @@
         <attribute name="modifyDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="template" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="firstPage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="newRelationship1" inverseEntity="Page" syncable="YES"/>
         <relationship name="lastPage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="newRelationship" inverseEntity="Page" syncable="YES"/>
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="document" inverseEntity="Page" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="documents" inverseEntity="User" syncable="YES"/>
@@ -34,6 +35,7 @@
         <relationship name="document" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Document" inverseName="pages" inverseEntity="Document" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="page" inverseEntity="Image" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Document" inverseName="lastPage" inverseEntity="Document" syncable="YES"/>
+        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Document" inverseName="firstPage" inverseEntity="Document" syncable="YES"/>
         <relationship name="next" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="previous" inverseEntity="Page" syncable="YES"/>
         <relationship name="previous" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="next" inverseEntity="Page" syncable="YES"/>
     </entity>
@@ -44,10 +46,10 @@
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="users" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Document" positionX="-8982" positionY="-1008" width="144" height="178"/>
+        <element name="Document" positionX="-8982" positionY="-1015" width="144" height="193"/>
         <element name="Group" positionX="-8982" positionY="-1242" width="144" height="88"/>
         <element name="Image" positionX="-8579" positionY="-718" width="128" height="133"/>
-        <element name="Page" positionX="-8766" positionY="-895" width="126" height="208"/>
+        <element name="Page" positionX="-8766" positionY="-895" width="126" height="223"/>
         <element name="User" positionX="-8759" positionY="-1141" width="128" height="103"/>
     </elements>
 </model>

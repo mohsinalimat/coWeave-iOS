@@ -24,7 +24,6 @@
 		056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */; };
 		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
 		056C71231FBBB83D00E79CA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 056C71221FBBB83D00E79CA1 /* Podfile */; };
-		056C71271FBBC1B200E79CA1 /* AudioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */; };
 		05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */; };
 		05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */; };
 		05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */; };
@@ -83,7 +82,6 @@
 		056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
 		056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailNavigationViewController.swift; sourceTree = "<group>"; };
 		056C71221FBBB83D00E79CA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordViewController.swift; sourceTree = "<group>"; };
 		05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coWeave1.xcdatamodel; sourceTree = "<group>"; };
 		05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			children = (
 				056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */,
 				056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */,
-				056C71261FBBC1B200E79CA1 /* AudioRecordViewController.swift */,
 			);
 			path = "Document Detail View";
 			sourceTree = "<group>";
@@ -458,14 +455,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +493,6 @@
 			files = (
 				05F70E471FBCF1FB007FD9E4 /* Page+CoreDataClass.swift in Sources */,
 				056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */,
-				056C71271FBBC1B200E79CA1 /* AudioRecordViewController.swift in Sources */,
 				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
 				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,

@@ -7,47 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		066F1F27299EFFFE173FC55AE41737E4 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950599B77D9F934BB21EBBD4D6C37DF3 /* PhotoEditorViewController.swift */; };
-		06F35A2BA046908A145EBD75A54A6B7B /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC89FD592581C9C9265AA9D376BFC06 /* PhotoCropEditorBorder@2x.png */; };
-		0B19A03BEDFC77FF8C9B8382210D84FE /* PhotoEditor+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562FFF8BF24F3C6AF79897E5D931DC9 /* PhotoEditor+UITextView.swift */; };
-		1177617ECA30615F5B3C9E661847B40F /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F0F7299286DDFD4E759A00CC17936 /* CropRectView.swift */; };
-		12825715E714C8AD8FC44473010BA874 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D03E87ABC6AF76F235FF9DB1F4E00C9 /* StickerCollectionViewCell.xib */; };
-		2604A984F26FFBE1892933A2D9EE6C82 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26DDEBF8D54BD65F385AFFB037A8CCD /* EmojiCollectionViewCell.xib */; };
-		30B932B54B5D653430A305EFB1DC5CFC /* PhotoEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A4C2B056B387606CF21F72DE8BD39E /* PhotoEditorViewController.xib */; };
-		376A50B1EB1599376E2C5294B1EAE76E /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2811729999EBED95E8EFA60BF0246049 /* icomoon.ttf */; };
-		3901F0B849A74AA63B9A60AA6A37E18E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB694FC6B0324A05CB9DA73DC6F68BE8 /* GradientView.swift */; };
-		423A05566D339A641144A025358F2DC5 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7652A1EB9CC3417BA73656F3C2AB8D5 /* StickerCollectionViewCell.swift */; };
-		443B72940108F6740A69B09452430051 /* StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECB7308CF11D2BE86CB74ED76C36CDE /* StickersViewController.swift */; };
-		454FCF9ED745334D0D59EE31947CA036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9C58D4457FD1C7102110094724538 /* LaunchScreen.storyboard */; };
-		4B68F04B70A73083439E17DD2DE85CAF /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B0BDB31AD4B068E54E46ECAAF0E56 /* EmojiCollectionViewCell.swift */; };
-		4BE6CA61642AC6B4C785E2C5DFB8F1E5 /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7813A445B49248929ACEC95023F5F2 /* PhotoCropEditorBorder.png */; };
-		5AB494B86F88EE59DE65533CED011632 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3BB9FDED97E7B22BFC44A0E21A659 /* ColorsCollectionViewDelegate.swift */; };
-		6030B71BAE05D7EA93323BC95DE6872B /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D33D61EC8B64F419DB069FF64D5CC0 /* UIView+Image.swift */; };
-		69B6566CCB6801C0F92AB30D96016127 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB9E09EEDE26FB9F8BB4D924711BE3 /* Protocols.swift */; };
-		7273AB4418572B942FDC3DE345FF07DD /* PhotoEditor+Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122F417AC3D5FE72F2B0B62B0FE3C95 /* PhotoEditor+Controls.swift */; };
-		7861E33A88B3001E6AB51E68971FD4CE /* PhotoEditor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04977C2CF68025856F8AA477B1BA35B7 /* PhotoEditor+Gestures.swift */; };
-		78D6F93C4C666ED6502803D1660BFA3D /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECA631EE7A528970B4E5F5AB585737 /* EmojisCollectionViewDelegate.swift */; };
-		804115C72489F5F71F077B145FEAC14C /* PhotoEditor+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC8857CC064830FA02EC00DA86FA2 /* PhotoEditor+Drawing.swift */; };
-		8163DC504586E8F7B64937990E5C560A /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645DA6408421BA15912E921C28E179B /* ResizeControl.swift */; };
+		066F1F27299EFFFE173FC55AE41737E4 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBC55596ED1205DB753E812F02FFB2 /* PhotoEditorViewController.swift */; };
+		06F35A2BA046908A145EBD75A54A6B7B /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E17349005052D6A2A6E5B07650EE1 /* PhotoCropEditorBorder@2x.png */; };
+		0B19A03BEDFC77FF8C9B8382210D84FE /* PhotoEditor+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF905D3B76E0CFA150B5332216E9754 /* PhotoEditor+UITextView.swift */; };
+		1177617ECA30615F5B3C9E661847B40F /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47315B4B46F24C41633769B46BAC9E86 /* CropRectView.swift */; };
+		12825715E714C8AD8FC44473010BA874 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D7298EFA8FA0AEDB3A7EBFCE491F36 /* StickerCollectionViewCell.xib */; };
+		2604A984F26FFBE1892933A2D9EE6C82 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497AF688B919EB43F5F6B5970FFE3F8 /* EmojiCollectionViewCell.xib */; };
+		30B932B54B5D653430A305EFB1DC5CFC /* PhotoEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 056CFC0C0B0EE8CDD45ADC6A92061384 /* PhotoEditorViewController.xib */; };
+		376A50B1EB1599376E2C5294B1EAE76E /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C9552BD5ABF658B2F3098D6A4BB8F9 /* icomoon.ttf */; };
+		3901F0B849A74AA63B9A60AA6A37E18E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AB801F7D9811134A7A28D61621A924 /* GradientView.swift */; };
+		423A05566D339A641144A025358F2DC5 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95BAC1B047D38D4768140ADADF6788 /* StickerCollectionViewCell.swift */; };
+		443B72940108F6740A69B09452430051 /* StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6EB1EC1DF00E3D7186FFDFC2B2B9 /* StickersViewController.swift */; };
+		454FCF9ED745334D0D59EE31947CA036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A330C8D516106FA113DCDC2F8CAB4E5 /* LaunchScreen.storyboard */; };
+		4B68F04B70A73083439E17DD2DE85CAF /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101A94248DC15F58C05F8DF56E17EC6 /* EmojiCollectionViewCell.swift */; };
+		4BE6CA61642AC6B4C785E2C5DFB8F1E5 /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC57D504A038998E3FD713A2BCCF803 /* PhotoCropEditorBorder.png */; };
+		5AB494B86F88EE59DE65533CED011632 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD695169BA9D7A92CA268CD91D922617 /* ColorsCollectionViewDelegate.swift */; };
+		6030B71BAE05D7EA93323BC95DE6872B /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B420B1DC00E8F7D940264184BD69B /* UIView+Image.swift */; };
+		69B6566CCB6801C0F92AB30D96016127 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BC7C31E4E1040161BBF85D4DAB3A2 /* Protocols.swift */; };
+		7273AB4418572B942FDC3DE345FF07DD /* PhotoEditor+Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586749267E0AE18E0C3A896BF1FD85C5 /* PhotoEditor+Controls.swift */; };
+		7861E33A88B3001E6AB51E68971FD4CE /* PhotoEditor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF1B775E6C00E72C30A411B4EA2BF3 /* PhotoEditor+Gestures.swift */; };
+		78D6F93C4C666ED6502803D1660BFA3D /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451D26290F65E36C44EE6E5C0DA31D65 /* EmojisCollectionViewDelegate.swift */; };
+		804115C72489F5F71F077B145FEAC14C /* PhotoEditor+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA06E4A97C6A3DFC5E771608306BB /* PhotoEditor+Drawing.swift */; };
+		8163DC504586E8F7B64937990E5C560A /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC495C63B0226DCECA939F1574B7676B /* ResizeControl.swift */; };
 		890D10AB899C54F732463E6EA2E42F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		8A7B5901670741270C0B20FB7FE9812E /* Pods-coWeave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE0DA9D9BE5FE5EAC258685FFCE9DCD3 /* Pods-coWeave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C3E1C34492CF0D14379318D53BD9473 /* iOSPhotoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 020C139E45497A27A83676692DA02787 /* iOSPhotoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F40C4CC44D80954FC92F5C3C1CD3E55 /* PhotoCropEditorBorder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D268302BFFEE8C57747D4D1F3534D6 /* PhotoCropEditorBorder@3x.png */; };
-		9AB6B538272011469A599749FD52EEA1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A378ADF54A416CB7E4811D88E1E8AB /* UIImage+Size.swift */; };
+		8C3E1C34492CF0D14379318D53BD9473 /* iOSPhotoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA57E7E4395568E38661D69658173C4F /* iOSPhotoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F40C4CC44D80954FC92F5C3C1CD3E55 /* PhotoCropEditorBorder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB96AFCB8E478F801D1F6D512115C476 /* PhotoCropEditorBorder@3x.png */; };
+		9AB6B538272011469A599749FD52EEA1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB19297DB13EBE27E24879D62CDA58 /* UIImage+Size.swift */; };
 		9ADBF0550696C2A7869D4A38E7240B95 /* Pods-coWeave-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D339A6D887CC5DA24146C9B642D8F2D9 /* Pods-coWeave-dummy.m */; };
-		9F691B2889FE9E6C6D2657F0DBEA4C77 /* PhotoEditor+StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339C85F6C1C27FA777F8CE67D345F88B /* PhotoEditor+StickersViewController.swift */; };
-		AA5EB325655B43B3AFF1765AD3AB8986 /* iOSPhotoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F4E5ACDD85B19CCDCEB9CA6D2D627 /* iOSPhotoEditor-dummy.m */; };
-		B3510FB9AFA23852E95C4D9189D40E06 /* PhotoEditor+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6316B00D9B4A8F16498962FE4BA4573 /* PhotoEditor+Crop.swift */; };
-		C262200BCC17A1031194EA6690FAD64E /* PhotoEditor+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4F543606398626D856831309CA96A /* PhotoEditor+Keyboard.swift */; };
-		C2B22AC07ADD5CB0BD1557720A7F8825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579832CAF70F86C9CE9E9A42CF87E0EF /* LaunchScreen.storyboard */; };
-		C64739510AADA263D78CAA87FB43A390 /* StickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79AC8B86DC468ACA1C981EE0A71EFDF /* StickersViewController.xib */; };
-		C826B41223E1CD5AF684DBFCF53F8EBF /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3037DDD5A8B8A4BAFA5395C1812F0EE /* UIImage+Crop.swift */; };
-		CA6BF0AEAFCD0B60AC9B3CC6497CB7DA /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098753DF26563E588317781764191243 /* UIImageView+Alpha.swift */; };
-		D16A08F185A4CB01E3026D90FF72B26E /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11C560B3AEE0CE354F60CAC7560B64 /* CropViewController.swift */; };
-		D99C00A6BE893145B319AE99F12B48E4 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF95F09DD37BDB58C33ABE36D5F953 /* ColorCollectionViewCell.xib */; };
-		DC04FF8DBEF9DD59378A8BF03FFBDEBF /* PhotoEditor+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1123A45EEE1288D08A13C19ED2A3D /* PhotoEditor+Font.swift */; };
-		DC677D660600BA45A74704A6E03254CC /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD910B594763463034697D7C07FD8D /* CropView.swift */; };
-		E70FA3F5B8B9E6155D85C175D249F1E7 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4BB4972F474DC4947D3129DFA2F5F /* ColorCollectionViewCell.swift */; };
+		9F691B2889FE9E6C6D2657F0DBEA4C77 /* PhotoEditor+StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712EB2AFEA54B626C54218F2C959A893 /* PhotoEditor+StickersViewController.swift */; };
+		AA5EB325655B43B3AFF1765AD3AB8986 /* iOSPhotoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46389999ED9249B8F133BE17D162B97E /* iOSPhotoEditor-dummy.m */; };
+		B3510FB9AFA23852E95C4D9189D40E06 /* PhotoEditor+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C8B5171D871BC18EC7BE74C7D87C0 /* PhotoEditor+Crop.swift */; };
+		C262200BCC17A1031194EA6690FAD64E /* PhotoEditor+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C83ADC6948DC7F873358025CB4308F /* PhotoEditor+Keyboard.swift */; };
+		C2B22AC07ADD5CB0BD1557720A7F8825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362BA405555F363710A5B8CE3469FD4C /* LaunchScreen.storyboard */; };
+		C64739510AADA263D78CAA87FB43A390 /* StickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC17C1C5C1FA738C2EBCF94FEE3B71F3 /* StickersViewController.xib */; };
+		C826B41223E1CD5AF684DBFCF53F8EBF /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3657DC6EED2F06C75263A8D5E771568 /* UIImage+Crop.swift */; };
+		CA6BF0AEAFCD0B60AC9B3CC6497CB7DA /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B6944F6C0CAB8C5D219A37836839A /* UIImageView+Alpha.swift */; };
+		D16A08F185A4CB01E3026D90FF72B26E /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE3D20ACB7DCB545C3B4B4C3CAC067 /* CropViewController.swift */; };
+		D99C00A6BE893145B319AE99F12B48E4 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31997A6868C9BE8852A583A7AEC2086D /* ColorCollectionViewCell.xib */; };
+		DC04FF8DBEF9DD59378A8BF03FFBDEBF /* PhotoEditor+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1D53E2B0576397A8F28DA54828FD79 /* PhotoEditor+Font.swift */; };
+		DC677D660600BA45A74704A6E03254CC /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0B486A1CE015F442D3F87D0435475 /* CropView.swift */; };
+		E70FA3F5B8B9E6155D85C175D249F1E7 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F620374DEA45A0C334AC71E37769FE3 /* ColorCollectionViewCell.swift */; };
 		F91EBF5168BE93FDF5EF41BC341AEC71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,172 +62,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0020D4C372C4A64D9A98ADD468AA9235 /* AKModalResonanceFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKModalResonanceFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKModalResonanceFilterAudioUnit.h; sourceTree = "<group>"; };
-		020C139E45497A27A83676692DA02787 /* iOSPhotoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-umbrella.h"; sourceTree = "<group>"; };
-		03890ECB26DCE7572D84C4BE5F19FC46 /* AKFMOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFMOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFMOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
-		04977C2CF68025856F8AA477B1BA35B7 /* PhotoEditor+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Gestures.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Gestures.swift"; sourceTree = "<group>"; };
-		076C5A506A7159ED658E064DEA61AED7 /* AKPhaserAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaserAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaserAudioUnit.h; sourceTree = "<group>"; };
-		0889BB1E6331B3E5EFFCF429D1EFD5E3 /* AKPinkNoiseAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPinkNoiseAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPinkNoiseAudioUnit.h; sourceTree = "<group>"; };
-		092425C127B2D7A8BFD75775ED1C5BE6 /* AKFlatFrequencyResponseReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFlatFrequencyResponseReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFlatFrequencyResponseReverbAudioUnit.h; sourceTree = "<group>"; };
-		092F4E5ACDD85B19CCDCEB9CA6D2D627 /* iOSPhotoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSPhotoEditor-dummy.m"; sourceTree = "<group>"; };
-		098753DF26563E588317781764191243 /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Alpha.swift"; path = "Photo Editor/Photo Editor/UIImageView+Alpha.swift"; sourceTree = "<group>"; };
-		0AAF9F35E645A28BAB4F0A2B4C8BD91E /* AKBandRejectButterworthFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBandRejectButterworthFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBandRejectButterworthFilterAudioUnit.h; sourceTree = "<group>"; };
-		105A59DD4E233D8C99481F515F4F4C35 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = iOS/AudioKit.framework/Headers/EZAudio.h; sourceTree = "<group>"; };
-		116C09E8D8E9FF7A8C96A8DB846896B6 /* AKPhaseDistortionOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaseDistortionOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaseDistortionOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
-		119443AAF974311B88558E8FF2F4410A /* AKPhaseDistortionOscillatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaseDistortionOscillatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaseDistortionOscillatorAudioUnit.h; sourceTree = "<group>"; };
-		1228B57EF3F6D9C0A46E45A3C7A1186F /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = iOS/AudioKitUI.framework/Headers/EZAudioPlot.h; sourceTree = "<group>"; };
-		135223D23CF76A031AB6EB3717C0C959 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = iOS/AudioKit.framework/Headers/EZAudioPlayer.h; sourceTree = "<group>"; };
-		140C6CC6CBFF3D138605B0B887D24728 /* AK4ChowningReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AK4ChowningReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AK4ChowningReverbAudioUnit.h; sourceTree = "<group>"; };
-		15A08F927B00C5D7908E7083E819102A /* AKBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBankAudioUnit.h; sourceTree = "<group>"; };
-		160D8127C0C3205A5651AE2BB6CFFC94 /* AKTubularBellsAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTubularBellsAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKTubularBellsAudioUnit.h; sourceTree = "<group>"; };
-		1996676A680762EBFFDD7C88EA836464 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = iOS/AudioKit.framework/Headers/EZRecorder.h; sourceTree = "<group>"; };
-		19F5FD889C191FF9EEC3936E7B168EE3 /* AKLazyTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKLazyTap.h; path = iOS/AudioKit.framework/Headers/AKLazyTap.h; sourceTree = "<group>"; };
-		1AAF3BDE324CDE51598A7EB1D62E697F /* AKDripAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDripAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDripAudioUnit.h; sourceTree = "<group>"; };
-		1B36533A89DC7F99330E5DC3B7A49655 /* AKPhaseLockedVocoderAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaseLockedVocoderAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaseLockedVocoderAudioUnit.h; sourceTree = "<group>"; };
-		1C985897B4A2F7C8997794883ADD0DE9 /* iOSPhotoEditor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.xcconfig; sourceTree = "<group>"; };
-		1CED0D731694D0E4D665D2026E278DAA /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = iOS/AudioKit.framework/Headers/TPCircularBuffer.h; sourceTree = "<group>"; };
-		23A4121DE3DC0CA064B8E2AAFA0F8D40 /* AKOperationGeneratorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOperationGeneratorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOperationGeneratorAudioUnit.h; sourceTree = "<group>"; };
-		25BF13368E0F0B2E8FCBC47D7B2A8975 /* AKClipperAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKClipperAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKClipperAudioUnit.h; sourceTree = "<group>"; };
-		2811729999EBED95E8EFA60BF0246049 /* icomoon.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = icomoon.ttf; path = "Photo Editor/Photo Editor/icomoon.ttf"; sourceTree = "<group>"; };
-		29205840C65E2E1291E0F038203845D4 /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = iOS/AudioKit.framework/Headers/EZAudioFloatConverter.h; sourceTree = "<group>"; };
-		2E8C14C51F06CA2E5B804ED04C7DCABE /* AKSamplePlayerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSamplePlayerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKSamplePlayerAudioUnit.h; sourceTree = "<group>"; };
-		2FC8632074583382C286D97187B708B1 /* AKMorphingOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMorphingOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMorphingOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
-		339C85F6C1C27FA777F8CE67D345F88B /* PhotoEditor+StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+StickersViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+StickersViewController.swift"; sourceTree = "<group>"; };
-		34A4C2B056B387606CF21F72DE8BD39E /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PhotoEditorViewController.xib; path = "Photo Editor/Photo Editor/PhotoEditorViewController.xib"; sourceTree = "<group>"; };
-		355B0B629CB32BFCF84C1DD475A976FD /* AKPannerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPannerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPannerAudioUnit.h; sourceTree = "<group>"; };
-		36271C1D1C664D1347F4527F027E595F /* AKMetalBarAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMetalBarAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMetalBarAudioUnit.h; sourceTree = "<group>"; };
-		39486B51E6AD85A5C83CECCF3E27626D /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TPCircularBuffer+AudioBufferList.h"; path = "iOS/AudioKit.framework/Headers/TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
+		0497AF688B919EB43F5F6B5970FFE3F8 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = EmojiCollectionViewCell.xib; path = "Photo Editor/Photo Editor/EmojiCollectionViewCell.xib"; sourceTree = "<group>"; };
+		056CFC0C0B0EE8CDD45ADC6A92061384 /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PhotoEditorViewController.xib; path = "Photo Editor/Photo Editor/PhotoEditorViewController.xib"; sourceTree = "<group>"; };
+		0F620374DEA45A0C334AC71E37769FE3 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.swift"; sourceTree = "<group>"; };
+		123AA06E4A97C6A3DFC5E771608306BB /* PhotoEditor+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Drawing.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Drawing.swift"; sourceTree = "<group>"; };
+		140BC7C31E4E1040161BBF85D4DAB3A2 /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = "Photo Editor/Photo Editor/Protocols.swift"; sourceTree = "<group>"; };
+		1C95BAC1B047D38D4768140ADADF6788 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.swift"; sourceTree = "<group>"; };
+		2EF905D3B76E0CFA150B5332216E9754 /* PhotoEditor+UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+UITextView.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+UITextView.swift"; sourceTree = "<group>"; };
+		2F1B6944F6C0CAB8C5D219A37836839A /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Alpha.swift"; path = "Photo Editor/Photo Editor/UIImageView+Alpha.swift"; sourceTree = "<group>"; };
+		31997A6868C9BE8852A583A7AEC2086D /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ColorCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.xib"; sourceTree = "<group>"; };
+		36B2299E4C06B77641BA0069E13D02B1 /* iOSPhotoEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-prefix.pch"; sourceTree = "<group>"; };
 		3B4E1CD35C41101130A072EBA498B0E3 /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_coWeave.framework; path = "Pods-coWeave.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CBB8FDED7EC3D33002CEC1B3795D33C /* AKMorphingOscillatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMorphingOscillatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMorphingOscillatorAudioUnit.h; sourceTree = "<group>"; };
-		40AB2752DD201C999B66F77F22743753 /* AKAmplitudeEnvelopeAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAmplitudeEnvelopeAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAmplitudeEnvelopeAudioUnit.h; sourceTree = "<group>"; };
-		4423B7B581C2B0E785332CD43208D388 /* iOSPhotoEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-prefix.pch"; sourceTree = "<group>"; };
-		45014B6D6EACD946B62A02AA01FBFB7B /* TPCircularBuffer+Unit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TPCircularBuffer+Unit.h"; path = "iOS/AudioKit.framework/Headers/TPCircularBuffer+Unit.h"; sourceTree = "<group>"; };
-		46B8E9AE1654CF765B3768B856819F18 /* AKMicrophoneTrackerEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMicrophoneTrackerEngine.h; path = iOS/AudioKit.framework/Headers/AKMicrophoneTrackerEngine.h; sourceTree = "<group>"; };
-		4BB508D2F1F4207FC0D3735DC8ED9054 /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = iOS/AudioKit.framework/Headers/EZAudioFFT.h; sourceTree = "<group>"; };
-		4F6F0F7299286DDFD4E759A00CC17936 /* CropRectView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropRectView.swift; path = "Photo Editor/Photo Editor/CropRectView.swift"; sourceTree = "<group>"; };
-		55D33D61EC8B64F419DB069FF64D5CC0 /* UIView+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Image.swift"; path = "Photo Editor/Photo Editor/UIView+Image.swift"; sourceTree = "<group>"; };
-		56AF95F09DD37BDB58C33ABE36D5F953 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ColorCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.xib"; sourceTree = "<group>"; };
-		5A2813472F4D6672DD12270B5231F3EF /* AKOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
+		3B5B420B1DC00E8F7D940264184BD69B /* UIView+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Image.swift"; path = "Photo Editor/Photo Editor/UIView+Image.swift"; sourceTree = "<group>"; };
+		451D26290F65E36C44EE6E5C0DA31D65 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmojisCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/EmojisCollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		46389999ED9249B8F133BE17D162B97E /* iOSPhotoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSPhotoEditor-dummy.m"; sourceTree = "<group>"; };
+		47315B4B46F24C41633769B46BAC9E86 /* CropRectView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropRectView.swift; path = "Photo Editor/Photo Editor/CropRectView.swift"; sourceTree = "<group>"; };
+		47CF1B775E6C00E72C30A411B4EA2BF3 /* PhotoEditor+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Gestures.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Gestures.swift"; sourceTree = "<group>"; };
+		4A330C8D516106FA113DCDC2F8CAB4E5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Photo Editor/Photo Editor/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		4A8E17349005052D6A2A6E5B07650EE1 /* PhotoCropEditorBorder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@2x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@2x.png"; sourceTree = "<group>"; };
+		4AAE3D20ACB7DCB545C3B4B4C3CAC067 /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = "Photo Editor/Photo Editor/CropViewController.swift"; sourceTree = "<group>"; };
+		5633199933D95A619855E0585754A483 /* iOSPhotoEditor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.xcconfig; sourceTree = "<group>"; };
+		586749267E0AE18E0C3A896BF1FD85C5 /* PhotoEditor+Controls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Controls.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Controls.swift"; sourceTree = "<group>"; };
+		59C9552BD5ABF658B2F3098D6A4BB8F9 /* icomoon.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = icomoon.ttf; path = "Photo Editor/Photo Editor/icomoon.ttf"; sourceTree = "<group>"; };
 		5CD876CC2E6C17E78494A4239BECD59B /* Pods-coWeave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-coWeave.modulemap"; sourceTree = "<group>"; };
-		5DC36808CBE2CD7712982E2923244F03 /* AKDynamicRangeCompressorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDynamicRangeCompressorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDynamicRangeCompressorAudioUnit.h; sourceTree = "<group>"; };
-		5E5F79BA8A42307B9567BF752EB57756 /* AKEqualizerFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKEqualizerFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKEqualizerFilterAudioUnit.h; sourceTree = "<group>"; };
-		5F653331A37A68879D2025BB140F94CD /* AudioKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioKit.h; path = iOS/AudioKit.framework/Headers/AudioKit.h; sourceTree = "<group>"; };
 		5FAE87A99B9D23A88EC38BBE6DD834FB /* Pods-coWeave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-coWeave.debug.xcconfig"; sourceTree = "<group>"; };
-		60D268302BFFEE8C57747D4D1F3534D6 /* PhotoCropEditorBorder@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@3x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@3x.png"; sourceTree = "<group>"; };
-		60FE6475C1E087C51F29B63F585DFB04 /* AKLowShelfParametricEqualizerFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKLowShelfParametricEqualizerFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKLowShelfParametricEqualizerFilterAudioUnit.h; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6BCE4C59FE386A3CE1F7F25E9AFD0DE7 /* AKStringResonatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKStringResonatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKStringResonatorAudioUnit.h; sourceTree = "<group>"; };
-		6BF1123A45EEE1288D08A13C19ED2A3D /* PhotoEditor+Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Font.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Font.swift"; sourceTree = "<group>"; };
 		6CF986CDF1539757DA0B4A1376BD35BC /* Pods-coWeave-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-coWeave-resources.sh"; sourceTree = "<group>"; };
-		6D75CAA36661A99F35958C1969E8A4DE /* AKBandPassButterworthFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBandPassButterworthFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBandPassButterworthFilterAudioUnit.h; sourceTree = "<group>"; };
-		73C3BB9FDED97E7B22BFC44A0E21A659 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ColorsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		79976D131362303B6F3E54BDA36B1F6B /* AKFMOscillatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFMOscillatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFMOscillatorAudioUnit.h; sourceTree = "<group>"; };
-		79A378ADF54A416CB7E4811D88E1E8AB /* UIImage+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Photo Editor/Photo Editor/UIImage+Size.swift"; sourceTree = "<group>"; };
-		7D4D7CCEDD052F4F2CD061B9191969E6 /* AKFrequencyTrackerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFrequencyTrackerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFrequencyTrackerAudioUnit.h; sourceTree = "<group>"; };
-		7F62231BD2BD6FD892C0C7CB9B7379E2 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = iOS/AudioKitUI.framework/Headers/EZAudioPlotGL.h; sourceTree = "<group>"; };
-		80646BE37ED19D40B63EE91E5F0781EB /* AKSamplerMetronome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSamplerMetronome.h; path = iOS/AudioKit.framework/Headers/AKSamplerMetronome.h; sourceTree = "<group>"; };
-		80B821B1BA31FDFA3713D62773E75640 /* AKOperationEffectAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOperationEffectAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOperationEffectAudioUnit.h; sourceTree = "<group>"; };
-		82F683BDB576703A3E54DE03A29DCD86 /* AKDCBlockAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDCBlockAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDCBlockAudioUnit.h; sourceTree = "<group>"; };
-		866E214057FECC53950B94D2F84775F8 /* AKTanhDistortionAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTanhDistortionAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKTanhDistortionAudioUnit.h; sourceTree = "<group>"; };
+		712EB2AFEA54B626C54218F2C959A893 /* PhotoEditor+StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+StickersViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+StickersViewController.swift"; sourceTree = "<group>"; };
+		74D7298EFA8FA0AEDB3A7EBFCE491F36 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.xib"; sourceTree = "<group>"; };
+		76695096D1CCDFA7FDD65DA7534B2AB1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80C83ADC6948DC7F873358025CB4308F /* PhotoEditor+Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Keyboard.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Keyboard.swift"; sourceTree = "<group>"; };
 		8AA803CF1A9B693F0E89AB063EE12E40 /* Pods-coWeave-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-coWeave-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8B42CB9F76BC9FE99DF4C41B070094FD /* AKAutoWahAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAutoWahAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAutoWahAudioUnit.h; sourceTree = "<group>"; };
-		8F7813A445B49248929ACEC95023F5F2 /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PhotoCropEditorBorder.png; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder.png"; sourceTree = "<group>"; };
-		90247CFE562246F4FAE32577FFDADB54 /* AK4AudioUnitBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AK4AudioUnitBase.h; path = iOS/AudioKit.framework/Headers/AK4AudioUnitBase.h; sourceTree = "<group>"; };
-		90595AE38A4FB99D1C9FF1DF0E91BCBD /* AKTremoloAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTremoloAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKTremoloAudioUnit.h; sourceTree = "<group>"; };
-		90A8C5D882D8B96EEF5901E364439B13 /* AKFormantFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFormantFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFormantFilterAudioUnit.h; sourceTree = "<group>"; };
+		8BC57D504A038998E3FD713A2BCCF803 /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PhotoCropEditorBorder.png; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder.png"; sourceTree = "<group>"; };
 		9120EF381372C09FECD6783659E47E47 /* Pods-coWeave-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-coWeave-frameworks.sh"; sourceTree = "<group>"; };
-		91B35657C6388638C2E7E219F94868FF /* AKResonantFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKResonantFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKResonantFilterAudioUnit.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		950599B77D9F934BB21EBBD4D6C37DF3 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoEditorViewController.swift; path = "Photo Editor/Photo Editor/PhotoEditorViewController.swift"; sourceTree = "<group>"; };
-		963B0BDB31AD4B068E54E46ECAAF0E56 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = "Photo Editor/Photo Editor/EmojiCollectionViewCell.swift"; sourceTree = "<group>"; };
-		97E9C58D4457FD1C7102110094724538 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Photo Editor/Photo Editor/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		9A20B0D60A7DB7017BBD0C5F89C3AB6B /* AKVocalTractAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKVocalTractAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKVocalTractAudioUnit.h; sourceTree = "<group>"; };
-		9C2CDE571E373F6D8728581A3123AFA1 /* AKAmplitudeTrackerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAmplitudeTrackerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAmplitudeTrackerAudioUnit.h; sourceTree = "<group>"; };
-		9D03E87ABC6AF76F235FF9DB1F4E00C9 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.xib"; sourceTree = "<group>"; };
-		9DE043F9556DF2A80FC2D6486810C195 /* AudioKitUI-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AudioKitUI-Swift.h"; path = "iOS/AudioKitUI.framework/Headers/AudioKitUI-Swift.h"; sourceTree = "<group>"; };
-		9E56975CE61A3895AA18C004E07E4069 /* AKConvolutionAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKConvolutionAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKConvolutionAudioUnit.h; sourceTree = "<group>"; };
-		9EE7B2EAF6BCBBF343FCD2324E15D444 /* AKPitchShifterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPitchShifterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPitchShifterAudioUnit.h; sourceTree = "<group>"; };
-		9FE864033EE472E6BAF0C8EC970C51F5 /* AKToneFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKToneFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKToneFilterAudioUnit.h; sourceTree = "<group>"; };
-		A19869C27662315E008DF067A322325B /* AKVariableDelayAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKVariableDelayAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKVariableDelayAudioUnit.h; sourceTree = "<group>"; };
-		A1FF96D25DDA57DFBDC88D0E341885C3 /* AKKorgLowPassFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKKorgLowPassFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKKorgLowPassFilterAudioUnit.h; sourceTree = "<group>"; };
-		A531BFDD5915842E242B5B8AFBC78836 /* AKPresetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPresetManager.h; path = iOS/AudioKit.framework/Headers/AKPresetManager.h; sourceTree = "<group>"; };
-		A54FB5463C20B77767C1C48CCA8715C3 /* AKWhiteNoiseAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKWhiteNoiseAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKWhiteNoiseAudioUnit.h; sourceTree = "<group>"; };
-		A738DBB254CC799FE7182E81D1B0BC77 /* AKDynaRageCompressorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDynaRageCompressorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDynaRageCompressorAudioUnit.h; sourceTree = "<group>"; };
-		A79AC8B86DC468ACA1C981EE0A71EFDF /* StickersViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickersViewController.xib; path = "Photo Editor/Photo Editor/StickersViewController.xib"; sourceTree = "<group>"; };
-		A987836B8ADD1E6873E246BB808CE74D /* AKRolandTB303FilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRolandTB303FilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKRolandTB303FilterAudioUnit.h; sourceTree = "<group>"; };
-		AA50C0FF1EFDBF4764DADBDDB193DCAA /* iOSPhotoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = iOSPhotoEditor.modulemap; sourceTree = "<group>"; };
-		AB694FC6B0324A05CB9DA73DC6F68BE8 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "Photo Editor/Photo Editor/GradientView.swift"; sourceTree = "<group>"; };
-		ACBB9E09EEDE26FB9F8BB4D924711BE3 /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = "Photo Editor/Photo Editor/Protocols.swift"; sourceTree = "<group>"; };
-		AFA18C523E8F39B83F4612519746C9F3 /* AKShakerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKShakerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKShakerAudioUnit.h; sourceTree = "<group>"; };
-		B23614AEE8CFCADE72F832890C0AEC80 /* GainAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GainAudioUnit.h; path = iOS/AudioKit.framework/Headers/GainAudioUnit.h; sourceTree = "<group>"; };
-		B275C62BC94DD4893ABD8736F1315E46 /* AKRenderTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRenderTap.h; path = iOS/AudioKit.framework/Headers/AKRenderTap.h; sourceTree = "<group>"; };
-		B29C9170276CABF9AA6F8EF1C992A85C /* AKRhodesPianoAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRhodesPianoAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKRhodesPianoAudioUnit.h; sourceTree = "<group>"; };
-		B2E339F3926D77DC15AFFA5EC03E0435 /* AKZitaReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKZitaReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKZitaReverbAudioUnit.h; sourceTree = "<group>"; };
-		B7342C77BEB6529371D80E754CF542A7 /* AKBoosterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBoosterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBoosterAudioUnit.h; sourceTree = "<group>"; };
-		B8AFD3943120614E2332ECB8B452B3A0 /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = iOS/AudioKit.framework/Headers/EZAudioFile.h; sourceTree = "<group>"; };
-		BA11C560B3AEE0CE354F60CAC7560B64 /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = "Photo Editor/Photo Editor/CropViewController.swift"; sourceTree = "<group>"; };
-		BC5994138B937E25FA5D9281149DDAA4 /* AudioKit-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AudioKit-Swift.h"; path = "iOS/AudioKit.framework/Headers/AudioKit-Swift.h"; sourceTree = "<group>"; };
-		BD320E4B408E53F25F4CAE614771BDEA /* AKBalancerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBalancerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBalancerAudioUnit.h; sourceTree = "<group>"; };
-		BD5B7A815E115CDDD555CD36E2FD7ECD /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = iOS/AudioKit.framework; sourceTree = "<group>"; };
-		BE6C7F77D112DE875AAF76546C444842 /* AKPeakingParametricEqualizerFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPeakingParametricEqualizerFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPeakingParametricEqualizerFilterAudioUnit.h; sourceTree = "<group>"; };
-		BFC89FD592581C9C9265AA9D376BFC06 /* PhotoCropEditorBorder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@2x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@2x.png"; sourceTree = "<group>"; };
-		C0608D04B6BA5986F6F011B371AD75C7 /* AKPWMOscillatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPWMOscillatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPWMOscillatorAudioUnit.h; sourceTree = "<group>"; };
-		C0670721C93B71FC3C8F0AA0E83D983F /* AKOscillatorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOscillatorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOscillatorAudioUnit.h; sourceTree = "<group>"; };
-		C0AC0263AAB8F063666D55DC2DE894BB /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = iOS/AudioKit.framework/Headers/EZAudioDevice.h; sourceTree = "<group>"; };
-		C19701A71766513582D5A8091C9DC017 /* AKStereoFieldLimiterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKStereoFieldLimiterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKStereoFieldLimiterAudioUnit.h; sourceTree = "<group>"; };
-		C26DDEBF8D54BD65F385AFFB037A8CCD /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = EmojiCollectionViewCell.xib; path = "Photo Editor/Photo Editor/EmojiCollectionViewCell.xib"; sourceTree = "<group>"; };
-		C36A97655E31D693FA7A3F404AD17EC6 /* AKTesterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTesterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKTesterAudioUnit.h; sourceTree = "<group>"; };
-		C4D1025BDD02E1C3E097846C2821E86D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C53FD95B5FF672B71199A8B8D293AEF7 /* AudioKitUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioKitUI.h; path = iOS/AudioKitUI.framework/Headers/AudioKitUI.h; sourceTree = "<group>"; };
-		C645DA6408421BA15912E921C28E179B /* ResizeControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResizeControl.swift; path = "Photo Editor/Photo Editor/ResizeControl.swift"; sourceTree = "<group>"; };
-		C6D4BB4972F474DC4947D3129DFA2F5F /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.swift"; sourceTree = "<group>"; };
-		CA58C7E5BC1915F6435AED6E6C5782C6 /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = iOS/AudioKit.framework/Headers/EZOutput.h; sourceTree = "<group>"; };
-		CB0005A1A8996E6D22728AF7EB8B2078 /* EZAudioFileMarker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFileMarker.h; path = iOS/AudioKit.framework/Headers/EZAudioFileMarker.h; sourceTree = "<group>"; };
-		CBDA14DEFC0491DB60E7D697F4953E2E /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = iOS/AudioKit.framework/Headers/EZMicrophone.h; sourceTree = "<group>"; };
-		CDA311A868585B3B75E68BAE689D85DE /* AKFluteAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFluteAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFluteAudioUnit.h; sourceTree = "<group>"; };
-		CFD0D9553A09FC3C71AD2E8E9AD90BD8 /* AKOfflineRenderAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOfflineRenderAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOfflineRenderAudioUnit.h; sourceTree = "<group>"; };
-		D096BDA124112A1C824E6661BE2047F9 /* AKPluckedStringAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPluckedStringAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPluckedStringAudioUnit.h; sourceTree = "<group>"; };
-		D0BD910B594763463034697D7C07FD8D /* CropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropView.swift; path = "Photo Editor/Photo Editor/CropView.swift"; sourceTree = "<group>"; };
-		D1E4A1B02D2B210F2BB6A14709B0A0DD /* AKMoogLadderAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMoogLadderAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMoogLadderAudioUnit.h; sourceTree = "<group>"; };
-		D2ABF86802DB9EE242863BA3BCE3C551 /* AKThreePoleLowpassFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKThreePoleLowpassFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKThreePoleLowpassFilterAudioUnit.h; sourceTree = "<group>"; };
-		D3037DDD5A8B8A4BAFA5395C1812F0EE /* UIImage+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Crop.swift"; path = "Photo Editor/Photo Editor/UIImage+Crop.swift"; sourceTree = "<group>"; };
+		94E0B486A1CE015F442D3F87D0435475 /* CropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropView.swift; path = "Photo Editor/Photo Editor/CropView.swift"; sourceTree = "<group>"; };
+		A8FB19297DB13EBE27E24879D62CDA58 /* UIImage+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Photo Editor/Photo Editor/UIImage+Size.swift"; sourceTree = "<group>"; };
+		AB96AFCB8E478F801D1F6D512115C476 /* PhotoCropEditorBorder@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@3x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@3x.png"; sourceTree = "<group>"; };
+		AEDBC55596ED1205DB753E812F02FFB2 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoEditorViewController.swift; path = "Photo Editor/Photo Editor/PhotoEditorViewController.swift"; sourceTree = "<group>"; };
+		B3657DC6EED2F06C75263A8D5E771568 /* UIImage+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Crop.swift"; path = "Photo Editor/Photo Editor/UIImage+Crop.swift"; sourceTree = "<group>"; };
+		B9AB801F7D9811134A7A28D61621A924 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "Photo Editor/Photo Editor/GradientView.swift"; sourceTree = "<group>"; };
+		BA57E7E4395568E38661D69658173C4F /* iOSPhotoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-umbrella.h"; sourceTree = "<group>"; };
+		BD1D53E2B0576397A8F28DA54828FD79 /* PhotoEditor+Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Font.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Font.swift"; sourceTree = "<group>"; };
+		BD695169BA9D7A92CA268CD91D922617 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ColorsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		C101A94248DC15F58C05F8DF56E17EC6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = "Photo Editor/Photo Editor/EmojiCollectionViewCell.swift"; sourceTree = "<group>"; };
 		D339A6D887CC5DA24146C9B642D8F2D9 /* Pods-coWeave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-coWeave-dummy.m"; sourceTree = "<group>"; };
-		D3CA79B29566E2D8ADFCD8CB09185A1B /* AKMandolinAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMandolinAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMandolinAudioUnit.h; sourceTree = "<group>"; };
-		D562FFF8BF24F3C6AF79897E5D931DC9 /* PhotoEditor+UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+UITextView.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+UITextView.swift"; sourceTree = "<group>"; };
-		D63A3265BF146390FFF302CA23906408 /* AKRhinoGuitarProcessorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRhinoGuitarProcessorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKRhinoGuitarProcessorAudioUnit.h; sourceTree = "<group>"; };
-		D7652A1EB9CC3417BA73656F3C2AB8D5 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.swift"; sourceTree = "<group>"; };
-		D9BF15F65F0EFFC710E39B9A7BC62EAD /* AKToneComplementFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKToneComplementFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKToneComplementFilterAudioUnit.h; sourceTree = "<group>"; };
-		D9DA0167E4B41CBA2B23A85EC1230BCE /* AKHighShelfParametricEqualizerFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKHighShelfParametricEqualizerFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKHighShelfParametricEqualizerFilterAudioUnit.h; sourceTree = "<group>"; };
-		DB1185C79FBFAF3E3CF40556CA551514 /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = iOS/AudioKit.framework/Headers/EZAudioUtilities.h; sourceTree = "<group>"; };
-		DCB635B5E8CE75C41B21C09834DCAEF7 /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = iOS/AudioKitUI.framework/Headers/EZPlot.h; sourceTree = "<group>"; };
-		DE3F1A01B8656847B9695CB5E7616F01 /* AKLowPassButterworthFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKLowPassButterworthFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKLowPassButterworthFilterAudioUnit.h; sourceTree = "<group>"; };
-		E0328FD6E68D86514933050FC3B80B21 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = iOS/AudioKitUI.framework; sourceTree = "<group>"; };
-		E034D0E05D915D5530E9EA6719F4F93D /* AKCostelloReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKCostelloReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKCostelloReverbAudioUnit.h; sourceTree = "<group>"; };
-		E122F417AC3D5FE72F2B0B62B0FE3C95 /* PhotoEditor+Controls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Controls.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Controls.swift"; sourceTree = "<group>"; };
-		E472394813E3F835932942AD689D4F5D /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = iOS/AudioKitUI.framework/Headers/EZAudioDisplayLink.h; sourceTree = "<group>"; };
-		E4F4F543606398626D856831309CA96A /* PhotoEditor+Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Keyboard.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Keyboard.swift"; sourceTree = "<group>"; };
-		E4F5E0B3EEC96E683071B981EA60ED81 /* AKHighPassButterworthFilterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKHighPassButterworthFilterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKHighPassButterworthFilterAudioUnit.h; sourceTree = "<group>"; };
+		D8657D2F4D46EB195A7FD84AF83ED5AD /* iOSPhotoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = iOSPhotoEditor.modulemap; sourceTree = "<group>"; };
+		DC7F6EB1EC1DF00E3D7186FFDFC2B2B9 /* StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickersViewController.swift; path = "Photo Editor/Photo Editor/StickersViewController.swift"; sourceTree = "<group>"; };
+		E36C8B5171D871BC18EC7BE74C7D87C0 /* PhotoEditor+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Crop.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Crop.swift"; sourceTree = "<group>"; };
 		E6051DE7A9006C0895BB878788336C6B /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSPhotoEditor.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6316B00D9B4A8F16498962FE4BA4573 /* PhotoEditor+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Crop.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Crop.swift"; sourceTree = "<group>"; };
-		E63F4036CBC2F140E3D4293929DD0134 /* AKAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAudioUnit.h; sourceTree = "<group>"; };
 		E85175EFE9704FF8CECED1BFB9DB474F /* Pods-coWeave-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-coWeave-acknowledgements.plist"; sourceTree = "<group>"; };
-		E88B69F592FC84702D380DB9C007C8AB /* AKCombFilterReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKCombFilterReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKCombFilterReverbAudioUnit.h; sourceTree = "<group>"; };
-		E91AD5A3D79E9F3254DA2F1C23A04AFA /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = iOS/AudioKit.framework/Headers/EZAudioFloatData.h; sourceTree = "<group>"; };
-		ED0D2D83948BA4E3D7F12B1DA0604628 /* AKChowningReverbAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKChowningReverbAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKChowningReverbAudioUnit.h; sourceTree = "<group>"; };
+		EC17C1C5C1FA738C2EBCF94FEE3B71F3 /* StickersViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickersViewController.xib; path = "Photo Editor/Photo Editor/StickersViewController.xib"; sourceTree = "<group>"; };
+		EC495C63B0226DCECA939F1574B7676B /* ResizeControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResizeControl.swift; path = "Photo Editor/Photo Editor/ResizeControl.swift"; sourceTree = "<group>"; };
 		EE9214D7EC83FEF1B91CC002FF0B8A8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFD84EA84F579B80EC750839A06080D4 /* AKBitCrusherAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBitCrusherAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBitCrusherAudioUnit.h; sourceTree = "<group>"; };
 		EFDCBE92C56C0485AC8BDA539CB2A1EE /* Pods-coWeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-coWeave.release.xcconfig"; sourceTree = "<group>"; };
-		EFFCC8857CC064830FA02EC00DA86FA2 /* PhotoEditor+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Drawing.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Drawing.swift"; sourceTree = "<group>"; };
-		F08D1ECBA2BA16A160E6C09F592FB690 /* AKTimeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTimeline.h; path = iOS/AudioKit.framework/Headers/AKTimeline.h; sourceTree = "<group>"; };
-		F1ECA631EE7A528970B4E5F5AB585737 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmojisCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/EmojisCollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		F5D6C15C78EAE1AF0CA6CAC24216CA3F /* AKSporthStack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSporthStack.h; path = iOS/AudioKit.framework/Headers/AKSporthStack.h; sourceTree = "<group>"; };
-		F82E26CA1E0DD4B48F8B6EADF709F2FF /* AKPWMOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPWMOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPWMOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
-		F94C546D8F7E5E310E9C5079DF2DB192 /* AKTimelineTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTimelineTap.h; path = iOS/AudioKit.framework/Headers/AKTimelineTap.h; sourceTree = "<group>"; };
-		FB501C44FC01BD96445F741CCCBA3A22 /* AKBrownianNoiseAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBrownianNoiseAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBrownianNoiseAudioUnit.h; sourceTree = "<group>"; };
-		FCCACECC2544F326669EB17A2D890BC9 /* AKClarinetAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKClarinetAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKClarinetAudioUnit.h; sourceTree = "<group>"; };
+		F538242F853C24BFDF8AAA38AA580572 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE0DA9D9BE5FE5EAC258685FFCE9DCD3 /* Pods-coWeave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-coWeave-umbrella.h"; sourceTree = "<group>"; };
-		FECB7308CF11D2BE86CB74ED76C36CDE /* StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickersViewController.swift; path = "Photo Editor/Photo Editor/StickersViewController.swift"; sourceTree = "<group>"; };
-		FFF40A5E8CAFA728F597D3AAE9F493D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,66 +149,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13C2D2C84E3164CB9D6D2FD9ED49F196 /* Frameworks */ = {
+		154E710B63205DC89A8B13D6BC16AB3B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0328FD6E68D86514933050FC3B80B21 /* AudioKitUI.framework */,
+				76695096D1CCDFA7FDD65DA7534B2AB1 /* Info.plist */,
+				D8657D2F4D46EB195A7FD84AF83ED5AD /* iOSPhotoEditor.modulemap */,
+				5633199933D95A619855E0585754A483 /* iOSPhotoEditor.xcconfig */,
+				46389999ED9249B8F133BE17D162B97E /* iOSPhotoEditor-dummy.m */,
+				36B2299E4C06B77641BA0069E13D02B1 /* iOSPhotoEditor-prefix.pch */,
+				BA57E7E4395568E38661D69658173C4F /* iOSPhotoEditor-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/iOSPhotoEditor";
 			sourceTree = "<group>";
 		};
-		2D1A61B3793AD7CE8B7910376CF0F16D /* UI */ = {
+		52C668F7F66A95BD42D3B56700FEBA35 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C53FD95B5FF672B71199A8B8D293AEF7 /* AudioKitUI.h */,
-				9DE043F9556DF2A80FC2D6486810C195 /* AudioKitUI-Swift.h */,
-				E472394813E3F835932942AD689D4F5D /* EZAudioDisplayLink.h */,
-				1228B57EF3F6D9C0A46E45A3C7A1186F /* EZAudioPlot.h */,
-				7F62231BD2BD6FD892C0C7CB9B7379E2 /* EZAudioPlotGL.h */,
-				DCB635B5E8CE75C41B21C09834DCAEF7 /* EZPlot.h */,
-				13C2D2C84E3164CB9D6D2FD9ED49F196 /* Frameworks */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		35A29C10B82509BD706EF1A3DB34DC37 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD5B7A815E115CDDD555CD36E2FD7ECD /* AudioKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4C84585ABC5E9FC6CC5EF92FFF3BC447 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				56AF95F09DD37BDB58C33ABE36D5F953 /* ColorCollectionViewCell.xib */,
-				C26DDEBF8D54BD65F385AFFB037A8CCD /* EmojiCollectionViewCell.xib */,
-				2811729999EBED95E8EFA60BF0246049 /* icomoon.ttf */,
-				579832CAF70F86C9CE9E9A42CF87E0EF /* LaunchScreen.storyboard */,
-				97E9C58D4457FD1C7102110094724538 /* LaunchScreen.storyboard */,
-				8F7813A445B49248929ACEC95023F5F2 /* PhotoCropEditorBorder.png */,
-				BFC89FD592581C9C9265AA9D376BFC06 /* PhotoCropEditorBorder@2x.png */,
-				60D268302BFFEE8C57747D4D1F3534D6 /* PhotoCropEditorBorder@3x.png */,
-				34A4C2B056B387606CF21F72DE8BD39E /* PhotoEditorViewController.xib */,
-				9D03E87ABC6AF76F235FF9DB1F4E00C9 /* StickerCollectionViewCell.xib */,
-				A79AC8B86DC468ACA1C981EE0A71EFDF /* StickersViewController.xib */,
+				31997A6868C9BE8852A583A7AEC2086D /* ColorCollectionViewCell.xib */,
+				0497AF688B919EB43F5F6B5970FFE3F8 /* EmojiCollectionViewCell.xib */,
+				59C9552BD5ABF658B2F3098D6A4BB8F9 /* icomoon.ttf */,
+				362BA405555F363710A5B8CE3469FD4C /* LaunchScreen.storyboard */,
+				4A330C8D516106FA113DCDC2F8CAB4E5 /* LaunchScreen.storyboard */,
+				8BC57D504A038998E3FD713A2BCCF803 /* PhotoCropEditorBorder.png */,
+				4A8E17349005052D6A2A6E5B07650EE1 /* PhotoCropEditorBorder@2x.png */,
+				AB96AFCB8E478F801D1F6D512115C476 /* PhotoCropEditorBorder@3x.png */,
+				056CFC0C0B0EE8CDD45ADC6A92061384 /* PhotoEditorViewController.xib */,
+				74D7298EFA8FA0AEDB3A7EBFCE491F36 /* StickerCollectionViewCell.xib */,
+				EC17C1C5C1FA738C2EBCF94FEE3B71F3 /* StickersViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		6A34570F0C27C7D1C66C992804F24578 /* Support Files */ = {
+		544917132D924F3ECE073EFFB21F8436 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C4D1025BDD02E1C3E097846C2821E86D /* Info.plist */,
-				AA50C0FF1EFDBF4764DADBDDB193DCAA /* iOSPhotoEditor.modulemap */,
-				1C985897B4A2F7C8997794883ADD0DE9 /* iOSPhotoEditor.xcconfig */,
-				092F4E5ACDD85B19CCDCEB9CA6D2D627 /* iOSPhotoEditor-dummy.m */,
-				4423B7B581C2B0E785332CD43208D388 /* iOSPhotoEditor-prefix.pch */,
-				020C139E45497A27A83676692DA02787 /* iOSPhotoEditor-umbrella.h */,
+				C137FF8C87A57C1235A23FB64130884B /* iOSPhotoEditor */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/iOSPhotoEditor";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -326,122 +194,10 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BAD306D52B1FEEFC47F05DEA536E2D5E /* Pods */,
+				544917132D924F3ECE073EFFB21F8436 /* Pods */,
 				03C647C9AE112101B259E3214ABEFD3A /* Products */,
 				C061EC41E613A37FD9A4CBD023B5840A /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		A59E5A1D50398BBF0B1419A5408BA057 /* AudioKit */ = {
-			isa = PBXGroup;
-			children = (
-				90247CFE562246F4FAE32577FFDADB54 /* AK4AudioUnitBase.h */,
-				140C6CC6CBFF3D138605B0B887D24728 /* AK4ChowningReverbAudioUnit.h */,
-				40AB2752DD201C999B66F77F22743753 /* AKAmplitudeEnvelopeAudioUnit.h */,
-				9C2CDE571E373F6D8728581A3123AFA1 /* AKAmplitudeTrackerAudioUnit.h */,
-				E63F4036CBC2F140E3D4293929DD0134 /* AKAudioUnit.h */,
-				8B42CB9F76BC9FE99DF4C41B070094FD /* AKAutoWahAudioUnit.h */,
-				BD320E4B408E53F25F4CAE614771BDEA /* AKBalancerAudioUnit.h */,
-				6D75CAA36661A99F35958C1969E8A4DE /* AKBandPassButterworthFilterAudioUnit.h */,
-				0AAF9F35E645A28BAB4F0A2B4C8BD91E /* AKBandRejectButterworthFilterAudioUnit.h */,
-				15A08F927B00C5D7908E7083E819102A /* AKBankAudioUnit.h */,
-				EFD84EA84F579B80EC750839A06080D4 /* AKBitCrusherAudioUnit.h */,
-				B7342C77BEB6529371D80E754CF542A7 /* AKBoosterAudioUnit.h */,
-				FB501C44FC01BD96445F741CCCBA3A22 /* AKBrownianNoiseAudioUnit.h */,
-				ED0D2D83948BA4E3D7F12B1DA0604628 /* AKChowningReverbAudioUnit.h */,
-				FCCACECC2544F326669EB17A2D890BC9 /* AKClarinetAudioUnit.h */,
-				25BF13368E0F0B2E8FCBC47D7B2A8975 /* AKClipperAudioUnit.h */,
-				E88B69F592FC84702D380DB9C007C8AB /* AKCombFilterReverbAudioUnit.h */,
-				9E56975CE61A3895AA18C004E07E4069 /* AKConvolutionAudioUnit.h */,
-				E034D0E05D915D5530E9EA6719F4F93D /* AKCostelloReverbAudioUnit.h */,
-				82F683BDB576703A3E54DE03A29DCD86 /* AKDCBlockAudioUnit.h */,
-				1AAF3BDE324CDE51598A7EB1D62E697F /* AKDripAudioUnit.h */,
-				5DC36808CBE2CD7712982E2923244F03 /* AKDynamicRangeCompressorAudioUnit.h */,
-				A738DBB254CC799FE7182E81D1B0BC77 /* AKDynaRageCompressorAudioUnit.h */,
-				5E5F79BA8A42307B9567BF752EB57756 /* AKEqualizerFilterAudioUnit.h */,
-				092425C127B2D7A8BFD75775ED1C5BE6 /* AKFlatFrequencyResponseReverbAudioUnit.h */,
-				CDA311A868585B3B75E68BAE689D85DE /* AKFluteAudioUnit.h */,
-				79976D131362303B6F3E54BDA36B1F6B /* AKFMOscillatorAudioUnit.h */,
-				03890ECB26DCE7572D84C4BE5F19FC46 /* AKFMOscillatorBankAudioUnit.h */,
-				90A8C5D882D8B96EEF5901E364439B13 /* AKFormantFilterAudioUnit.h */,
-				7D4D7CCEDD052F4F2CD061B9191969E6 /* AKFrequencyTrackerAudioUnit.h */,
-				E4F5E0B3EEC96E683071B981EA60ED81 /* AKHighPassButterworthFilterAudioUnit.h */,
-				D9DA0167E4B41CBA2B23A85EC1230BCE /* AKHighShelfParametricEqualizerFilterAudioUnit.h */,
-				A1FF96D25DDA57DFBDC88D0E341885C3 /* AKKorgLowPassFilterAudioUnit.h */,
-				19F5FD889C191FF9EEC3936E7B168EE3 /* AKLazyTap.h */,
-				DE3F1A01B8656847B9695CB5E7616F01 /* AKLowPassButterworthFilterAudioUnit.h */,
-				60FE6475C1E087C51F29B63F585DFB04 /* AKLowShelfParametricEqualizerFilterAudioUnit.h */,
-				D3CA79B29566E2D8ADFCD8CB09185A1B /* AKMandolinAudioUnit.h */,
-				36271C1D1C664D1347F4527F027E595F /* AKMetalBarAudioUnit.h */,
-				46B8E9AE1654CF765B3768B856819F18 /* AKMicrophoneTrackerEngine.h */,
-				0020D4C372C4A64D9A98ADD468AA9235 /* AKModalResonanceFilterAudioUnit.h */,
-				D1E4A1B02D2B210F2BB6A14709B0A0DD /* AKMoogLadderAudioUnit.h */,
-				3CBB8FDED7EC3D33002CEC1B3795D33C /* AKMorphingOscillatorAudioUnit.h */,
-				2FC8632074583382C286D97187B708B1 /* AKMorphingOscillatorBankAudioUnit.h */,
-				CFD0D9553A09FC3C71AD2E8E9AD90BD8 /* AKOfflineRenderAudioUnit.h */,
-				80B821B1BA31FDFA3713D62773E75640 /* AKOperationEffectAudioUnit.h */,
-				23A4121DE3DC0CA064B8E2AAFA0F8D40 /* AKOperationGeneratorAudioUnit.h */,
-				C0670721C93B71FC3C8F0AA0E83D983F /* AKOscillatorAudioUnit.h */,
-				5A2813472F4D6672DD12270B5231F3EF /* AKOscillatorBankAudioUnit.h */,
-				355B0B629CB32BFCF84C1DD475A976FD /* AKPannerAudioUnit.h */,
-				BE6C7F77D112DE875AAF76546C444842 /* AKPeakingParametricEqualizerFilterAudioUnit.h */,
-				119443AAF974311B88558E8FF2F4410A /* AKPhaseDistortionOscillatorAudioUnit.h */,
-				116C09E8D8E9FF7A8C96A8DB846896B6 /* AKPhaseDistortionOscillatorBankAudioUnit.h */,
-				1B36533A89DC7F99330E5DC3B7A49655 /* AKPhaseLockedVocoderAudioUnit.h */,
-				076C5A506A7159ED658E064DEA61AED7 /* AKPhaserAudioUnit.h */,
-				0889BB1E6331B3E5EFFCF429D1EFD5E3 /* AKPinkNoiseAudioUnit.h */,
-				9EE7B2EAF6BCBBF343FCD2324E15D444 /* AKPitchShifterAudioUnit.h */,
-				D096BDA124112A1C824E6661BE2047F9 /* AKPluckedStringAudioUnit.h */,
-				A531BFDD5915842E242B5B8AFBC78836 /* AKPresetManager.h */,
-				C0608D04B6BA5986F6F011B371AD75C7 /* AKPWMOscillatorAudioUnit.h */,
-				F82E26CA1E0DD4B48F8B6EADF709F2FF /* AKPWMOscillatorBankAudioUnit.h */,
-				B275C62BC94DD4893ABD8736F1315E46 /* AKRenderTap.h */,
-				91B35657C6388638C2E7E219F94868FF /* AKResonantFilterAudioUnit.h */,
-				D63A3265BF146390FFF302CA23906408 /* AKRhinoGuitarProcessorAudioUnit.h */,
-				B29C9170276CABF9AA6F8EF1C992A85C /* AKRhodesPianoAudioUnit.h */,
-				A987836B8ADD1E6873E246BB808CE74D /* AKRolandTB303FilterAudioUnit.h */,
-				2E8C14C51F06CA2E5B804ED04C7DCABE /* AKSamplePlayerAudioUnit.h */,
-				80646BE37ED19D40B63EE91E5F0781EB /* AKSamplerMetronome.h */,
-				AFA18C523E8F39B83F4612519746C9F3 /* AKShakerAudioUnit.h */,
-				F5D6C15C78EAE1AF0CA6CAC24216CA3F /* AKSporthStack.h */,
-				C19701A71766513582D5A8091C9DC017 /* AKStereoFieldLimiterAudioUnit.h */,
-				6BCE4C59FE386A3CE1F7F25E9AFD0DE7 /* AKStringResonatorAudioUnit.h */,
-				866E214057FECC53950B94D2F84775F8 /* AKTanhDistortionAudioUnit.h */,
-				C36A97655E31D693FA7A3F404AD17EC6 /* AKTesterAudioUnit.h */,
-				D2ABF86802DB9EE242863BA3BCE3C551 /* AKThreePoleLowpassFilterAudioUnit.h */,
-				F08D1ECBA2BA16A160E6C09F592FB690 /* AKTimeline.h */,
-				F94C546D8F7E5E310E9C5079DF2DB192 /* AKTimelineTap.h */,
-				D9BF15F65F0EFFC710E39B9A7BC62EAD /* AKToneComplementFilterAudioUnit.h */,
-				9FE864033EE472E6BAF0C8EC970C51F5 /* AKToneFilterAudioUnit.h */,
-				90595AE38A4FB99D1C9FF1DF0E91BCBD /* AKTremoloAudioUnit.h */,
-				160D8127C0C3205A5651AE2BB6CFFC94 /* AKTubularBellsAudioUnit.h */,
-				A19869C27662315E008DF067A322325B /* AKVariableDelayAudioUnit.h */,
-				9A20B0D60A7DB7017BBD0C5F89C3AB6B /* AKVocalTractAudioUnit.h */,
-				A54FB5463C20B77767C1C48CCA8715C3 /* AKWhiteNoiseAudioUnit.h */,
-				B2E339F3926D77DC15AFFA5EC03E0435 /* AKZitaReverbAudioUnit.h */,
-				5F653331A37A68879D2025BB140F94CD /* AudioKit.h */,
-				BC5994138B937E25FA5D9281149DDAA4 /* AudioKit-Swift.h */,
-				105A59DD4E233D8C99481F515F4F4C35 /* EZAudio.h */,
-				C0AC0263AAB8F063666D55DC2DE894BB /* EZAudioDevice.h */,
-				4BB508D2F1F4207FC0D3735DC8ED9054 /* EZAudioFFT.h */,
-				B8AFD3943120614E2332ECB8B452B3A0 /* EZAudioFile.h */,
-				CB0005A1A8996E6D22728AF7EB8B2078 /* EZAudioFileMarker.h */,
-				29205840C65E2E1291E0F038203845D4 /* EZAudioFloatConverter.h */,
-				E91AD5A3D79E9F3254DA2F1C23A04AFA /* EZAudioFloatData.h */,
-				135223D23CF76A031AB6EB3717C0C959 /* EZAudioPlayer.h */,
-				DB1185C79FBFAF3E3CF40556CA551514 /* EZAudioUtilities.h */,
-				CBDA14DEFC0491DB60E7D697F4953E2E /* EZMicrophone.h */,
-				CA58C7E5BC1915F6435AED6E6C5782C6 /* EZOutput.h */,
-				1996676A680762EBFFDD7C88EA836464 /* EZRecorder.h */,
-				B23614AEE8CFCADE72F832890C0AEC80 /* GainAudioUnit.h */,
-				1CED0D731694D0E4D665D2026E278DAA /* TPCircularBuffer.h */,
-				39486B51E6AD85A5C83CECCF3E27626D /* TPCircularBuffer+AudioBufferList.h */,
-				45014B6D6EACD946B62A02AA01FBFB7B /* TPCircularBuffer+Unit.h */,
-				35A29C10B82509BD706EF1A3DB34DC37 /* Frameworks */,
-				2D1A61B3793AD7CE8B7910376CF0F16D /* UI */,
-			);
-			name = AudioKit;
-			path = AudioKit;
 			sourceTree = "<group>";
 		};
 		A6773DC5FC009FE6D9C54445B8550421 /* Pods-coWeave */ = {
@@ -462,15 +218,6 @@
 			path = "Target Support Files/Pods-coWeave";
 			sourceTree = "<group>";
 		};
-		BAD306D52B1FEEFC47F05DEA536E2D5E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A59E5A1D50398BBF0B1419A5408BA057 /* AudioKit */,
-				DE1EC99B1D737627FBB10ADD8C1D6A7F /* iOSPhotoEditor */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,47 +234,47 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		C137FF8C87A57C1235A23FB64130884B /* iOSPhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				0F620374DEA45A0C334AC71E37769FE3 /* ColorCollectionViewCell.swift */,
+				BD695169BA9D7A92CA268CD91D922617 /* ColorsCollectionViewDelegate.swift */,
+				47315B4B46F24C41633769B46BAC9E86 /* CropRectView.swift */,
+				94E0B486A1CE015F442D3F87D0435475 /* CropView.swift */,
+				4AAE3D20ACB7DCB545C3B4B4C3CAC067 /* CropViewController.swift */,
+				C101A94248DC15F58C05F8DF56E17EC6 /* EmojiCollectionViewCell.swift */,
+				451D26290F65E36C44EE6E5C0DA31D65 /* EmojisCollectionViewDelegate.swift */,
+				B9AB801F7D9811134A7A28D61621A924 /* GradientView.swift */,
+				586749267E0AE18E0C3A896BF1FD85C5 /* PhotoEditor+Controls.swift */,
+				E36C8B5171D871BC18EC7BE74C7D87C0 /* PhotoEditor+Crop.swift */,
+				123AA06E4A97C6A3DFC5E771608306BB /* PhotoEditor+Drawing.swift */,
+				BD1D53E2B0576397A8F28DA54828FD79 /* PhotoEditor+Font.swift */,
+				47CF1B775E6C00E72C30A411B4EA2BF3 /* PhotoEditor+Gestures.swift */,
+				80C83ADC6948DC7F873358025CB4308F /* PhotoEditor+Keyboard.swift */,
+				712EB2AFEA54B626C54218F2C959A893 /* PhotoEditor+StickersViewController.swift */,
+				2EF905D3B76E0CFA150B5332216E9754 /* PhotoEditor+UITextView.swift */,
+				AEDBC55596ED1205DB753E812F02FFB2 /* PhotoEditorViewController.swift */,
+				140BC7C31E4E1040161BBF85D4DAB3A2 /* Protocols.swift */,
+				EC495C63B0226DCECA939F1574B7676B /* ResizeControl.swift */,
+				1C95BAC1B047D38D4768140ADADF6788 /* StickerCollectionViewCell.swift */,
+				DC7F6EB1EC1DF00E3D7186FFDFC2B2B9 /* StickersViewController.swift */,
+				B3657DC6EED2F06C75263A8D5E771568 /* UIImage+Crop.swift */,
+				A8FB19297DB13EBE27E24879D62CDA58 /* UIImage+Size.swift */,
+				2F1B6944F6C0CAB8C5D219A37836839A /* UIImageView+Alpha.swift */,
+				3B5B420B1DC00E8F7D940264184BD69B /* UIView+Image.swift */,
+				52C668F7F66A95BD42D3B56700FEBA35 /* Resources */,
+				154E710B63205DC89A8B13D6BC16AB3B /* Support Files */,
+			);
+			name = iOSPhotoEditor;
+			path = iOSPhotoEditor;
+			sourceTree = "<group>";
+		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		DE1EC99B1D737627FBB10ADD8C1D6A7F /* iOSPhotoEditor */ = {
-			isa = PBXGroup;
-			children = (
-				C6D4BB4972F474DC4947D3129DFA2F5F /* ColorCollectionViewCell.swift */,
-				73C3BB9FDED97E7B22BFC44A0E21A659 /* ColorsCollectionViewDelegate.swift */,
-				4F6F0F7299286DDFD4E759A00CC17936 /* CropRectView.swift */,
-				D0BD910B594763463034697D7C07FD8D /* CropView.swift */,
-				BA11C560B3AEE0CE354F60CAC7560B64 /* CropViewController.swift */,
-				963B0BDB31AD4B068E54E46ECAAF0E56 /* EmojiCollectionViewCell.swift */,
-				F1ECA631EE7A528970B4E5F5AB585737 /* EmojisCollectionViewDelegate.swift */,
-				AB694FC6B0324A05CB9DA73DC6F68BE8 /* GradientView.swift */,
-				E122F417AC3D5FE72F2B0B62B0FE3C95 /* PhotoEditor+Controls.swift */,
-				E6316B00D9B4A8F16498962FE4BA4573 /* PhotoEditor+Crop.swift */,
-				EFFCC8857CC064830FA02EC00DA86FA2 /* PhotoEditor+Drawing.swift */,
-				6BF1123A45EEE1288D08A13C19ED2A3D /* PhotoEditor+Font.swift */,
-				04977C2CF68025856F8AA477B1BA35B7 /* PhotoEditor+Gestures.swift */,
-				E4F4F543606398626D856831309CA96A /* PhotoEditor+Keyboard.swift */,
-				339C85F6C1C27FA777F8CE67D345F88B /* PhotoEditor+StickersViewController.swift */,
-				D562FFF8BF24F3C6AF79897E5D931DC9 /* PhotoEditor+UITextView.swift */,
-				950599B77D9F934BB21EBBD4D6C37DF3 /* PhotoEditorViewController.swift */,
-				ACBB9E09EEDE26FB9F8BB4D924711BE3 /* Protocols.swift */,
-				C645DA6408421BA15912E921C28E179B /* ResizeControl.swift */,
-				D7652A1EB9CC3417BA73656F3C2AB8D5 /* StickerCollectionViewCell.swift */,
-				FECB7308CF11D2BE86CB74ED76C36CDE /* StickersViewController.swift */,
-				D3037DDD5A8B8A4BAFA5395C1812F0EE /* UIImage+Crop.swift */,
-				79A378ADF54A416CB7E4811D88E1E8AB /* UIImage+Size.swift */,
-				098753DF26563E588317781764191243 /* UIImageView+Alpha.swift */,
-				55D33D61EC8B64F419DB069FF64D5CC0 /* UIView+Image.swift */,
-				4C84585ABC5E9FC6CC5EF92FFF3BC447 /* Resources */,
-				6A34570F0C27C7D1C66C992804F24578 /* Support Files */,
-			);
-			name = iOSPhotoEditor;
-			path = iOSPhotoEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,10 +437,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		579832CAF70F86C9CE9E9A42CF87E0EF /* LaunchScreen.storyboard */ = {
+		362BA405555F363710A5B8CE3469FD4C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FFF40A5E8CAFA728F597D3AAE9F493D1 /* LaunchScreen.storyboard */,
+				F538242F853C24BFDF8AAA38AA580572 /* LaunchScreen.storyboard */,
 			);
 			name = LaunchScreen.storyboard;
 			path = "Photo Editor/Photo Editor";
@@ -853,7 +600,7 @@
 		};
 		6F0E4336EED226F0E3E0750C676CF7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C985897B4A2F7C8997794883ADD0DE9 /* iOSPhotoEditor.xcconfig */;
+			baseConfigurationReference = 5633199933D95A619855E0585754A483 /* iOSPhotoEditor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -885,7 +632,7 @@
 		};
 		86115BDFCECBA3E41BB7111A29A356CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C985897B4A2F7C8997794883ADD0DE9 /* iOSPhotoEditor.xcconfig */;
+			baseConfigurationReference = 5633199933D95A619855E0585754A483 /* iOSPhotoEditor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

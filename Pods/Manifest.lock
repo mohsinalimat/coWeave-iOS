@@ -1,17 +1,12 @@
 PODS:
-  - AudioKit (4.0.3):
-    - AudioKit/UI (= 4.0.3)
-  - AudioKit/UI (4.0.3)
   - iOSPhotoEditor (0.5)
 
 DEPENDENCIES:
-  - AudioKit (~> 4.0)
   - iOSPhotoEditor
 
 SPEC CHECKSUMS:
-  AudioKit: 914e5e8fcbf35099ff2398775342446a2d81476d
   iOSPhotoEditor: 0ddc84bcef9fe73fe8cc45ac999b89e0aa207aea
 
-PODFILE CHECKSUM: 8f97e0037ab89e6ae9b2092c56b8f3e93f59b128
+PODFILE CHECKSUM: 5da951735477038e68c4bfb58f17f2c4034b13b5
 
 COCOAPODS: 1.3.1
