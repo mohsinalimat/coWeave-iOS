@@ -17,6 +17,11 @@
 		056253041FBFA832005B92D9 /* PreviewNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */; };
 		056253071FC0491B005B92D9 /* PagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253061FC0491B005B92D9 /* PagesTableViewCell.swift */; };
 		0562530A1FC053A1005B92D9 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253091FC053A1005B92D9 /* DocumentsTableViewCell.swift */; };
+		0562530D1FC08EEE005B92D9 /* UserNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0562530C1FC08EEE005B92D9 /* UserNavigationViewController.swift */; };
+		0562530F1FC08F00005B92D9 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0562530E1FC08F00005B92D9 /* GroupTableViewController.swift */; };
+		056253131FC08F0D005B92D9 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253121FC08F0D005B92D9 /* UserTableViewController.swift */; };
+		056253181FC0910D005B92D9 /* KeyboardHider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253171FC0910D005B92D9 /* KeyboardHider.swift */; };
+		0562531A1FC09484005B92D9 /* OpenUserDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253191FC09484005B92D9 /* OpenUserDocTableViewController.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -76,6 +81,11 @@
 		056253061FC0491B005B92D9 /* PagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewCell.swift; sourceTree = "<group>"; };
 		056253091FC053A1005B92D9 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 4.xcdatamodel"; sourceTree = "<group>"; };
+		0562530C1FC08EEE005B92D9 /* UserNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNavigationViewController.swift; sourceTree = "<group>"; };
+		0562530E1FC08F00005B92D9 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		056253121FC08F0D005B92D9 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		056253171FC0910D005B92D9 /* KeyboardHider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHider.swift; sourceTree = "<group>"; };
+		056253191FC09484005B92D9 /* OpenUserDocTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUserDocTableViewController.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */,
+				056253171FC0910D005B92D9 /* KeyboardHider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -161,6 +172,17 @@
 				056253091FC053A1005B92D9 /* DocumentsTableViewCell.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		056253161FC08F19005B92D9 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				0562530C1FC08EEE005B92D9 /* UserNavigationViewController.swift */,
+				0562530E1FC08F00005B92D9 /* GroupTableViewController.swift */,
+				056253121FC08F0D005B92D9 /* UserTableViewController.swift */,
+				056253191FC09484005B92D9 /* OpenUserDocTableViewController.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		056C70D81FBB496D00E79CA1 = {
@@ -226,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
+				056253161FC08F19005B92D9 /* Users */,
 				056253051FBFA855005B92D9 /* Preview */,
 				056C71211FBBB42C00E79CA1 /* Document Detail View */,
 				056C711C1FBBB3E900E79CA1 /* Documents */,
@@ -541,18 +564,23 @@
 				056C71181FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift in Sources */,
 				056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */,
 				056C71161FBBB37A00E79CA1 /* DocumentsViewController.swift in Sources */,
+				056253131FC08F0D005B92D9 /* UserTableViewController.swift in Sources */,
 				056253041FBFA832005B92D9 /* PreviewNavigationViewController.swift in Sources */,
+				0562530F1FC08F00005B92D9 /* GroupTableViewController.swift in Sources */,
 				05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */,
 				056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */,
 				05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */,
 				05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */,
+				056253181FC0910D005B92D9 /* KeyboardHider.swift in Sources */,
 				0527AEEC1FBE51C7009838FC /* PagesTableViewController.swift in Sources */,
 				0562530A1FC053A1005B92D9 /* DocumentsTableViewCell.swift in Sources */,
 				0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */,
 				05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */,
 				056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */,
 				056253071FC0491B005B92D9 /* PagesTableViewCell.swift in Sources */,
+				0562531A1FC09484005B92D9 /* OpenUserDocTableViewController.swift in Sources */,
 				056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */,
+				0562530D1FC08EEE005B92D9 /* UserNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

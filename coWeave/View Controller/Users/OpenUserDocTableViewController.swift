@@ -1,28 +1,28 @@
 //
-//  TemplateTableViewController.swift
+//  OpenUserDocTableViewController.swift
 //  coWeave
 //
-//  Created by Benoît Frisch on 17/11/2017.
+//  Created by Benoît Frisch on 18/11/2017.
 //  Copyright © 2017 Benoît Frisch. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class TemplateTableViewController: UITableViewController {
+class OpenUserDocTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
-    var document: Document!
+    var user : User!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Document> = {
         // Initialize Fetch Request
         let fetchRequest: NSFetchRequest<Document> = Document.fetchRequest()
         
         // Add Sort Descriptors
-        let date = NSSortDescriptor(key: "addedDate", ascending: false)
+        let date = NSSortDescriptor(key: "modifyDate", ascending: false)
         let name = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [date, name]
         
-        fetchRequest.predicate = NSPredicate(format: "template == YES")
+        fetchRequest.predicate = NSPredicate(format: "user == %@", self.user)
         
         // Initialize Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -33,7 +33,7 @@ class TemplateTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Templates"
+        self.navigationItem.title = "\(user!.name!) Documents"
         self.tableView.rowHeight = 175.0
         
         do {
@@ -70,6 +70,14 @@ class TemplateTableViewController: UITableViewController {
         return fetchedResultsController.fetchedObjects!.count
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (fetchedResultsController.fetchedObjects!.count==0) {
+            return "Pas de documents disponibles!"
+        } else {
+            return ""
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath) as? DocumentsTableViewCell else {
             fatalError("The dequeued cell is not an instance of PageTableViewCell.")
@@ -94,6 +102,41 @@ class TemplateTableViewController: UITableViewController {
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print ("select")
+        let document = self.fetchedResultsController.object(at: indexPath)
+        
+        let alertController = UIAlertController(title: "Modifier le nom du document", message: "", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Modifier", style: .default) { (_) in
+            if let field = alertController.textFields![0] as? UITextField {
+                // store your data
+                document.name = field.text
+                do {
+                    // Save Record
+                    try document.managedObjectContext?.save()
+                } catch {
+                    let saveError = error as NSError
+                    print("\(saveError), \(saveError.userInfo)")
+                }
+                tableView.reloadData()
+            } else {
+                // user did not fill field
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Nom"
+            textField.text = document.name
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -101,14 +144,6 @@ class TemplateTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.0000001
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if (fetchedResultsController.fetchedObjects!.count==0) {
-            return "Pas de documents disponibles!"
-        } else {
-            return ""
-        }
     }
     
     // Override to support editing the table view.
@@ -159,66 +194,7 @@ class TemplateTableViewController: UITableViewController {
             let classVc = segue.destination as! DocumentDetailNavigationViewController
             classVc.managedObjectContext = self.managedObjectContext
             let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
-            self.document.removeFromPages(self.document.firstPage!)
-            self.document.firstPage = nil
-            self.document.lastPage = nil
-            
-            var previous : Page? = nil
-            var i = 0;
-            for p in doc.pages! {
-                let page = p as! Page
-                print("\(page.number)")
-                
-                // Create Entity
-                let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
-                
-                // Initialize Record
-                let pageAdd = Page(entity: entity!, insertInto: self.managedObjectContext)
-                
-                pageAdd.addedDate = NSDate()
-                pageAdd.number = page.number
-                pageAdd.document = self.document
-                pageAdd.previous = previous
-                
-                if (page.image != nil) {
-                    // Create Entity
-                    let imageEntity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
-                
-                    // Initialize Record
-                    let image = Image(entity: imageEntity!, insertInto: self.managedObjectContext)
-                
-                    image.addedDate = page.image?.addedDate
-                    image.image = page.image?.image
-                    image.previous = nil
-                    image.page = pageAdd
-                
-                
-                    pageAdd.image = image
-                }
-                
-                doc.lastPage = pageAdd
-                
-                if (previous != nil) {
-                    previous!.next = pageAdd
-                }
-                
-                if (i == 0) {
-                    self.document.firstPage = pageAdd
-                } else if (i == ((doc.pages?.count)! - 1)) {
-                    self.document.lastPage = pageAdd
-                }
-                
-                do {
-                    // Save Record
-                    try pageAdd.managedObjectContext?.save()
-                } catch {
-                    let saveError = error as NSError
-                    print("\(saveError), \(saveError.userInfo)")
-                }
-                previous = pageAdd
-                i = i+1
-            }
-            classVc.document = self.document
+            classVc.document = doc
         }
     }
 }

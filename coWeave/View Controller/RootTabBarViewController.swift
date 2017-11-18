@@ -19,6 +19,10 @@ class RootTabBarViewController: UITabBarController {
         let documentsController = self.viewControllers![0] as! DocumentsNavigationViewController
         documentsController.managedObjectContext = managedObjectContext
         
+        // pass managedObjectcontext to viewcontrollers
+        let userController = self.viewControllers![1] as! UserNavigationViewController
+        userController.managedObjectContext = managedObjectContext
+        
     }
     
     override func didReceiveMemoryWarning() {
