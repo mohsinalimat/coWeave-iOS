@@ -35,6 +35,9 @@
 		056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */; };
 		056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */; };
 		056C71231FBBB83D00E79CA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 056C71221FBBB83D00E79CA1 /* Podfile */; };
+		05C87EFA1FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EF81FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift */; };
+		05C87EFB1FC0EDBA0009E7E4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EF91FC0EDBA0009E7E4 /* SettingsTableViewController.swift */; };
+		05C87EFE1FC0F0840009E7E4 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EFD1FC0F0840009E7E4 /* Bundle.swift */; };
 		05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */; };
 		05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */; };
 		05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */; };
@@ -46,7 +49,7 @@
 		05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */; };
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
-		1DB6FA5F3BF0D9CD8867CECB /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC351FBCC39200432850 /* Pods_coWeave.framework */; };
+		402554FD8592C13CE4F0A871 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC351FBCC39200432850 /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
 		056C711F1FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailNavigationViewController.swift; sourceTree = "<group>"; };
 		056C71221FBBB83D00E79CA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		05C87EF81FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
+		05C87EF91FC0EDBA0009E7E4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		05C87EFD1FC0F0840009E7E4 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coWeave1.xcdatamodel; sourceTree = "<group>"; };
 		05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -128,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
-				1DB6FA5F3BF0D9CD8867CECB /* Pods_coWeave.framework in Frameworks */,
+				402554FD8592C13CE4F0A871 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +158,7 @@
 		052982CA1FBDE9D6002C0ACA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				05C87EFD1FC0F0840009E7E4 /* Bundle.swift */,
 				052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */,
 				056253171FC0910D005B92D9 /* KeyboardHider.swift */,
 			);
@@ -250,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
+				05C87EFC1FC0EDC20009E7E4 /* Settings */,
 				056253161FC08F19005B92D9 /* Users */,
 				056253051FBFA855005B92D9 /* Preview */,
 				056C71211FBBB42C00E79CA1 /* Document Detail View */,
@@ -278,6 +286,15 @@
 				0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */,
 			);
 			path = "Document Detail View";
+			sourceTree = "<group>";
+		};
+		05C87EFC1FC0EDC20009E7E4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05C87EF81FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift */,
+				05C87EF91FC0EDBA0009E7E4 /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		05D6593A1FBCDBC1009019A9 /* Model */ = {
@@ -557,7 +574,9 @@
 				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
 				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,
+				05C87EFB1FC0EDBA0009E7E4 /* SettingsTableViewController.swift in Sources */,
 				05F70E491FBCF1FB007FD9E4 /* Group+CoreDataClass.swift in Sources */,
+				05C87EFE1FC0F0840009E7E4 /* Bundle.swift in Sources */,
 				056C711E1FBBB40100E79CA1 /* DocumentDetailViewController.swift in Sources */,
 				05F70E481FBCF1FB007FD9E4 /* Page+CoreDataProperties.swift in Sources */,
 				05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */,
@@ -583,6 +602,7 @@
 				0562531A1FC09484005B92D9 /* OpenUserDocTableViewController.swift in Sources */,
 				056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */,
 				0562530D1FC08EEE005B92D9 /* UserNavigationViewController.swift in Sources */,
+				05C87EFA1FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

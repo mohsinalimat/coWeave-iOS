@@ -65,27 +65,6 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func export(_ sender: Any) {
-        /*if let audioURL1 = Bundle.main.url(forResource: "audio1", withExtension: "mp3"), let audioURL2 = Bundle.main.url(forResource: "audio2", withExtension: "mp3"), let audioURL3 =  Bundle.main.url(forResource: "audio3", withExtension: "mp3") {
-            if let _image1 = UIImage(named: "image1"), let _image2 = UIImage(named: "image2"), let _image3 = UIImage(named: "image3") {
-                
-                VideoGenerator.current.fileName = "multipleVideo"
-                VideoGenerator.current.videoBackgroundColor = .red
-                VideoGenerator.current.scaleWidth = 700
-                
-                VideoGenerator.current.generate(withImages: [_image1, _image2, _image3], andAudios: [audioURL1, audioURL2, audioURL3], andType: .multiple, { (progress) in
-                    print(progress)
-                }, success: { (url) in
-                    print(url)
-                    self.createAlertView(message: "Finished single type video generation")
-                }, failure: { (error) in
-                    print(error)
-                    self.createAlertView(message: error.localizedDescription)
-                })
-            }
-        }*/
-    }
-    
     @IBAction func audioAction(_ sender: Any) {
         print("audio")
         if audio && !playing { // if sound recorded, play it.
