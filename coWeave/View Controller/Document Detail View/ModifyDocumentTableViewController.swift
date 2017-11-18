@@ -14,6 +14,7 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
     var document: Document!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var templateSwitch: UISwitch!
+    @IBOutlet var userLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
         nameField.delegate = self
         templateSwitch.setOn(document.template, animated: true)
         self.hideKeyboardWhenTappedAround()
+        userLabel.text = (document.user != nil) ? ("Assigned to: " + self.document.user!.name! + " ("+self.document.user!.group!.name!+")") : "Assign to User"
     }
     
 

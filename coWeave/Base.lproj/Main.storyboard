@@ -472,6 +472,7 @@
                     <connections>
                         <outlet property="nameField" destination="vFj-4v-UqV" id="YVR-7g-ruI"/>
                         <outlet property="templateSwitch" destination="XEY-Au-EEf" id="A2k-Ls-iu7"/>
+                        <outlet property="userLabel" destination="OrR-i4-rYk" id="7t2-dB-Rre"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymp-Vd-odb" userLabel="First Responder" sceneMemberID="firstResponder"/>

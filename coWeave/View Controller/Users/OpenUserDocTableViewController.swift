@@ -93,7 +93,7 @@ class OpenUserDocTableViewController: UITableViewController {
         
         cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
         cell.author.isHidden = (document.user == nil) ? true : false
-        cell.author.text = (document.user != nil) ? document.user?.name : ""
+        cell.author.text = (document.user != nil) ? (document.user!.name! + " ("+document.user!.group!.name!+")") :""
         if (document.modifyDate != nil) {
             cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
         } else {
