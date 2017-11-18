@@ -11,6 +11,7 @@ import CoreData
 
 class GroupTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
+    var document : Document? = nil
     
     lazy var fetchedResultsController: NSFetchedResultsController<Group> = {
         // Initialize Fetch Request
@@ -227,6 +228,7 @@ class GroupTableViewController: UITableViewController {
             classVc.managedObjectContext = self.managedObjectContext
             let group = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
             classVc.group = group
+            classVc.document = document
         }
     }
 }

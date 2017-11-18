@@ -12,6 +12,7 @@ import CoreData
 class UserTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var group: Group!
+    var document : Document? = nil
     
     lazy var fetchedResultsController: NSFetchedResultsController<User> = {
         // Initialize Fetch Request
@@ -80,9 +81,10 @@ class UserTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath)
         
-        let group = self.fetchedResultsController.object(at: indexPath) as User
+        let user = self.fetchedResultsController.object(at: indexPath) as User
         
-        cell.textLabel?.text = group.name
+        cell.textLabel?.text = user.name
+        cell.detailTextLabel?.text = "\(user.documents!.count)"
         
         return cell
     }
@@ -235,6 +237,22 @@ class UserTableViewController: UITableViewController {
             classVc.managedObjectContext = self.managedObjectContext
             let group = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
             classVc.user = group
+        }
+        if (segue.identifier == "updateDocument") {
+            let classVc = segue.destination as! DocumentDetailNavigationViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            
+            let user = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+            
+            self.document?.user = user
+            do {
+                // Save Record
+                try self.managedObjectContext?.save()
+            } catch {
+                let saveError = error as NSError
+                print("\(saveError), \(saveError.userInfo)")
+            }
+            classVc.document = self.document
         }
     }
 }

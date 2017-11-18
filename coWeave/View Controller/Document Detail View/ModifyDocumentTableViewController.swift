@@ -64,6 +64,11 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
             classVc.managedObjectContext = self.managedObjectContext
             classVc.document = self.document
         }
+        if (segue.identifier == "userAssign") {
+            let classVc = segue.destination as! GroupTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            classVc.document = self.document
+        }
     }
     
 }
