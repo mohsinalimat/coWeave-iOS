@@ -90,7 +90,7 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
     func updatePageControls(page: Page) {
         self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
         self.nextPageButton.isEnabled = (page.next != nil) ? true : false;
-        self.pageNameButton.title = "Page \(page.number)"
+        self.pageNameButton.title = (page.title == nil) ? "Page \(page.number)" : page.title
         self.audioButton.isEnabled = (page.audio == nil) ? false : true
     }
     

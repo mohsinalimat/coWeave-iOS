@@ -33,7 +33,7 @@ class OpenDocumentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Documents"
-        self.tableView.rowHeight = 55.0
+        self.tableView.rowHeight = 150.0
     
         do {
             try self.fetchedResultsController.performFetch()
@@ -78,18 +78,59 @@ class OpenDocumentsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath) as? DocumentsTableViewCell else {
+            fatalError("The dequeued cell is not an instance of PageTableViewCell.")
+        }
         
         let document = self.fetchedResultsController.object(at: indexPath) as Document
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
         
-        cell.textLabel?.text = document.name
-        cell.detailTextLabel?.text = formatter.string(from: document.addedDate! as Date)
+        cell.pageTitle.text = document.name
+        
+        cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
+        
+        cell.author.text = (document.user != nil) ? document.user?.name : ""
+        cell.pageDate.text = "\(formatter.string(from: document.addedDate! as Date))\n"
         
         return cell
+    }
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print ("select")
+        let document = self.fetchedResultsController.object(at: indexPath)
+        
+        let alertController = UIAlertController(title: "Modify document name:", message: "", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Modify", style: .default) { (_) in
+            if let field = alertController.textFields![0] as? UITextField {
+                // store your data
+                document.name = field.text
+                do {
+                    // Save Record
+                    try document.managedObjectContext?.save()
+                } catch {
+                    let saveError = error as NSError
+                    print("\(saveError), \(saveError.userInfo)")
+                }
+                tableView.reloadData()
+            } else {
+                // user did not fill field
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name"
+            textField.text = document.name
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
