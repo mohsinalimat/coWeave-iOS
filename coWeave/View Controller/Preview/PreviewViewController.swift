@@ -101,6 +101,11 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             self.pageImage = page.image!
         }
         loadAudio(page: page)
+        if (page.audio != nil) {
+            play()
+            self.audioButton.image = UIImage(named: "stop")
+            playing = true
+        }
     }
     
     func loadAudio(page: Page) {
@@ -153,12 +158,6 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         print("next")
         page = page.next
         resetPage()
-        self.recorder = nil
-        self.player = nil
-        self.meterTimer = nil
-        self.soundFileURL = nil
-        self.audio = false
-        self.playing = false
         updatePage(page: page)
         updatePageControls(page: page)
     }
