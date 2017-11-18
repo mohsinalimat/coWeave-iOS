@@ -184,39 +184,54 @@ class GroupTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Fetch Record
             let record = self.fetchedResultsController.object(at: indexPath) as Group
-            // Create the alert controller
-            let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
-                UIAlertAction in
-                NSLog("Supprimer Pressed")
-                
-                // Delete Record
-                self.managedObjectContext.delete(record)
-                do {
-                    try self.fetchedResultsController.performFetch()
-                } catch {
-                    let fetchError = error as NSError
-                    print("\(fetchError), \(fetchError.userInfo)")
+            
+            if (record.users!.count > 0) {
+                // Create the alert controller
+                let alertController = UIAlertController(title: "Supprimer", message: "Veuillez d'abord supprimer les utilisateurs dans ce groupe", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Fermer", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                    NSLog("Cancel Pressed")
                 }
-                do {
-                    // Save Record
-                    try self.managedObjectContext?.save()
+                alertController.addAction(cancelAction)
+                
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else {
+                // Create the alert controller
+                let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
+                let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
+                    UIAlertAction in
+                    NSLog("Supprimer Pressed")
+                
+                    // Delete Record
+                    self.managedObjectContext.delete(record)
+                    do {
+                        try self.fetchedResultsController.performFetch()
+                    } catch {
+                        let fetchError = error as NSError
+                        print("\(fetchError), \(fetchError.userInfo)")
+                    }
+                    do {
+                        // Save Record
+                        try self.managedObjectContext?.save()
                 } catch {
                     let saveError = error as NSError
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
-            let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
+                }
+                let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                    NSLog("Cancel Pressed")
+                }
             
-            alertController.addAction(deleteAction)
-            alertController.addAction(cancelAction)
+                alertController.addAction(deleteAction)
+                alertController.addAction(cancelAction)
             
-            // Present the controller
-            self.present(alertController, animated: true, completion: nil)
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
