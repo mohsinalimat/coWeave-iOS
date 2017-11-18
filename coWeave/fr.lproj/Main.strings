@@ -1,0 +1,177 @@
+
+/* Class = "UITabBarItem"; title = "Réglages"; ObjectID = "0Di-7y-b5x"; */
+"0Di-7y-b5x.title" = "Réglages";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "3mn-YA-KUW"; */
+"3mn-YA-KUW.text" = "Date";
+
+/* Class = "UILabel"; text = "Benoît FRISCH"; ObjectID = "5Nk-Dl-IKx"; */
+"5Nk-Dl-IKx.text" = "Benoît FRISCH";
+
+/* Class = "UINavigationItem"; title = "coWeave"; ObjectID = "6CE-jC-cCz"; */
+"6CE-jC-cCz.title" = "coWeave";
+
+/* Class = "UINavigationItem"; title = "Documents"; ObjectID = "6lY-7F-V0H"; */
+"6lY-7F-V0H.title" = "Documents";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "Bxc-r8-4ke"; */
+"Bxc-r8-4ke.text" = "Author";
+
+/* Class = "UINavigationItem"; title = "Utilisateurs"; ObjectID = "Cek-QQ-ST6"; */
+"Cek-QQ-ST6.title" = "Utilisateurs";
+
+/* Class = "UITableViewSection"; headerTitle = "Réglages du document"; ObjectID = "Cgp-DS-6jr"; */
+"Cgp-DS-6jr.headerTitle" = "Réglages du document";
+
+/* Class = "UIBarButtonItem"; title = "Page"; ObjectID = "EPO-eq-MOz"; */
+"EPO-eq-MOz.title" = "Page";
+
+/* Class = "UILabel"; text = "99"; ObjectID = "ETG-Pz-kaS"; */
+"ETG-Pz-kaS.text" = "99";
+
+/* Class = "UITableViewSection"; footerTitle = "© 2017 Benoît FRISCH\n\n\nIcons from icons8.com"; ObjectID = "ETg-6Q-FsH"; */
+"ETg-6Q-FsH.footerTitle" = "© 2017 Benoît FRISCH\n\n\nIcons from icons8.com";
+
+/* Class = "UITableViewSection"; headerTitle = "Développement"; ObjectID = "ETg-6Q-FsH"; */
+"ETg-6Q-FsH.headerTitle" = "Développement";
+
+/* Class = "UITableViewSection"; headerTitle = "Langue"; ObjectID = "FXH-Ak-h6B"; */
+"FXH-Ak-h6B.headerTitle" = "Langue";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Ffb-g8-HQc"; */
+"Ffb-g8-HQc.text" = "Title";
+
+/* Class = "UILabel"; text = "        "; ObjectID = "HlF-i4-e2f"; */
+"HlF-i4-e2f.text" = "        ";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "IPa-eo-B7F"; */
+"IPa-eo-B7F.text" = "Title";
+
+/* Class = "UILabel"; text = "Gabarit/Template"; ObjectID = "Jhj-Re-e3y"; */
+"Jhj-Re-e3y.text" = "Gabarit/Template";
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "Lil-4J-AGt"; */
+"Lil-4J-AGt.title" = "Close";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "N4G-nH-tVb"; */
+"N4G-nH-tVb.title" = "Item";
+
+/* Class = "UILabel"; text = "Attribuer à un utilisateur"; ObjectID = "OrR-i4-rYk"; */
+"OrR-i4-rYk.text" = "Attribuer à un utilisateur";
+
+/* Class = "UILabel"; text = "        "; ObjectID = "PoS-Y1-cmX"; */
+"PoS-Y1-cmX.text" = "        ";
+
+/* Class = "UILabel"; text = "info@coweave.lu"; ObjectID = "QCn-MD-2jW"; */
+"QCn-MD-2jW.text" = "info@coweave.lu";
+
+/* Class = "UILabel"; text = "Version 2.0.0 (2)"; ObjectID = "QQ6-mW-D7m"; */
+"QQ6-mW-D7m.text" = "Version 2.0.0 (2)";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "Qhe-F8-EcJ"; */
+"Qhe-F8-EcJ.text" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Document"; ObjectID = "RAc-wZ-JJU"; */
+"RAc-wZ-JJU.title" = "Document";
+
+/* Class = "UILabel"; text = "1\n2"; ObjectID = "UgR-qt-BGt"; */
+"UgR-qt-BGt.text" = "1\n2";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "V12-55-cjk"; */
+"V12-55-cjk.text" = "Detail";
+
+/* Class = "UILabel"; text = "fresh.lu"; ObjectID = "Wox-cT-boM"; */
+"Wox-cT-boM.text" = "fresh.lu";
+
+/* Class = "UILabel"; text = "1\n2"; ObjectID = "X32-Vk-SBh"; */
+"X32-Vk-SBh.text" = "1\n2";
+
+/* Class = "UILabel"; text = "Aide:"; ObjectID = "XPV-OY-3rZ"; */
+"XPV-OY-3rZ.text" = "Aide:";
+
+/* Class = "UIButton"; normalTitle = "Choisir la langue"; ObjectID = "YU5-7B-II5"; */
+"YU5-7B-II5.normalTitle" = "Choisir la langue";
+
+/* Class = "UITabBarItem"; title = "Documents"; ObjectID = "Yr9-Bh-V5W"; */
+"Yr9-Bh-V5W.title" = "Documents";
+
+/* Class = "UILabel"; text = "Importer d'un gabarit"; ObjectID = "a5n-6N-QBS"; */
+"a5n-6N-QBS.text" = "Importer d'un gabarit";
+
+/* Class = "UILabel"; text = "1\n2\n3\n4"; ObjectID = "aYU-TU-3xt"; */
+"aYU-TU-3xt.text" = "1\n2\n3\n4";
+
+/* Class = "UILabel"; text = "1\n2"; ObjectID = "cFM-Eh-X8a"; */
+"cFM-Eh-X8a.text" = "1\n2";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "dQ5-Xd-dBE"; */
+"dQ5-Xd-dBE.text" = "Detail";
+
+/* Class = "UITableViewSection"; footerTitle = "Toutes les pages seront effacées dans ce document."; ObjectID = "dqz-k0-MOa"; */
+"dqz-k0-MOa.footerTitle" = "Toutes les pages seront effacées dans ce document.";
+
+/* Class = "UITableViewSection"; headerTitle = "Utiliser un gabarit?"; ObjectID = "dqz-k0-MOa"; */
+"dqz-k0-MOa.headerTitle" = "Utiliser un gabarit?";
+
+/* Class = "UINavigationItem"; title = "Réglages"; ObjectID = "dyz-cS-29X"; */
+"dyz-cS-29X.title" = "Réglages";
+
+/* Class = "UINavigationItem"; title = "Utilisateurs"; ObjectID = "gWL-e0-2h9"; */
+"gWL-e0-2h9.title" = "Utilisateurs";
+
+/* Class = "UILabel"; text = "1\n2\n3\n4"; ObjectID = "gxi-Wj-jh1"; */
+"gxi-Wj-jh1.text" = "1\n2\n3\n4";
+
+/* Class = "UINavigationItem"; title = "Groupes"; ObjectID = "gzz-Lk-lvN"; */
+"gzz-Lk-lvN.title" = "Groupes";
+
+/* Class = "UILabel"; text = "1\n2\n3\n4"; ObjectID = "iio-5e-cdy"; */
+"iio-5e-cdy.text" = "1\n2\n3\n4";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "imU-26-X9F"; */
+"imU-26-X9F.text" = "Detail";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "irB-dV-PWo"; */
+"irB-dV-PWo.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Documents"; ObjectID = "kmo-Uo-jI1"; */
+"kmo-Uo-jI1.title" = "Documents";
+
+/* Class = "UITabBarItem"; title = "Utilisateurs"; ObjectID = "kuf-7b-kVg"; */
+"kuf-7b-kVg.title" = "Utilisateurs";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "ncb-bx-eAu"; */
+"ncb-bx-eAu.text" = "Author";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "pKG-Rr-ESF"; */
+"pKG-Rr-ESF.text" = "Author";
+
+/* Class = "UITableViewSection"; headerTitle = "A PROPOS"; ObjectID = "rUo-me-BXt"; */
+"rUo-me-BXt.headerTitle" = "A PROPOS";
+
+/* Class = "UILabel"; text = "1\n2\n3\n4"; ObjectID = "rYq-kU-7e9"; */
+"rYq-kU-7e9.text" = "1\n2\n3\n4";
+
+/* Class = "UIButton"; normalTitle = "   Ouvrir"; ObjectID = "sMw-Yq-UwW"; */
+"sMw-Yq-UwW.normalTitle" = "   Ouvrir";
+
+/* Class = "UINavigationItem"; title = "Document"; ObjectID = "sc6-tb-3Mf"; */
+"sc6-tb-3Mf.title" = "Document";
+
+/* Class = "UIBarButtonItem"; title = "Page"; ObjectID = "u8W-LJ-6iX"; */
+"u8W-LJ-6iX.title" = "Page";
+
+/* Class = "UITextField"; placeholder = "Nom"; ObjectID = "vFj-4v-UqV"; */
+"vFj-4v-UqV.placeholder" = "Nom";
+
+/* Class = "UINavigationItem"; title = "Groupes"; ObjectID = "vkx-XR-H48"; */
+"vkx-XR-H48.title" = "Groupes";
+
+/* Class = "UILabel"; text = "Nom"; ObjectID = "xBC-9v-OYS"; */
+"xBC-9v-OYS.text" = "Nom";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "yQN-8r-C7u"; */
+"yQN-8r-C7u.title" = "Item";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "zSR-Mi-Ivf"; */
+"zSR-Mi-Ivf.text" = "Title";

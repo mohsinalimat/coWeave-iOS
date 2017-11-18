@@ -9,9 +9,12 @@
 import UIKit
 import CoreData
 import Firebase
+import Localize_Swift
 
 class SettingsTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
+    var actionSheet: UIAlertController!
+    let availableLanguages = Localize.availableLanguages()
     @IBOutlet var versionLabel: UILabel!
     
     override func viewDidLoad() {
@@ -27,6 +30,22 @@ class SettingsTableViewController: UITableViewController {
         versionLabel.text = "Version \(Bundle.main.releaseVersionNumber!) (\(Bundle.main.buildVersionNumber!))"
     }
 
+    @IBAction func selectLanguage(_ sender: Any) {
+        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
+        for language in availableLanguages {
+            let displayName = Localize.displayNameForLanguage(language)
+            let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                Localize.setCurrentLanguage(language)
+            })
+            actionSheet.addAction(languageAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

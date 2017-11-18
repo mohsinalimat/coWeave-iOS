@@ -39,6 +39,10 @@
 		05C87EFE1FC0F0840009E7E4 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EFD1FC0F0840009E7E4 /* Bundle.swift */; };
 		05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */; };
 		05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */; };
+		05F10D3A1FC0FAB80010F718 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */; };
+		05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */; };
+		05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3F1FC0FAB80010F718 /* nanopb.framework */; };
+		05F10D461FC0FBA80010F718 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05F10D481FC0FBA80010F718 /* Localizable.strings */; };
 		05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */; };
 		05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */; };
 		05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E3B1FBCF1FB007FD9E4 /* Image+CoreDataClass.swift */; };
@@ -49,7 +53,6 @@
 		05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */; };
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
-		402554FD8592C13CE4F0A871 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC351FBCC39200432850 /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,16 @@
 		05C87EFD1FC0F0840009E7E4 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coWeave1.xcdatamodel; sourceTree = "<group>"; };
+		05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F10D3F1FC0FAB80010F718 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F10D401FC0FB7F0010F718 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		05F10D411FC0FB7F0010F718 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05F10D421FC0FB840010F718 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		05F10D431FC0FB840010F718 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05F10D471FC0FBA80010F718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05F10D491FC0FBA90010F718 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05F10D4A1FC0FBA90010F718 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		05F70E3B1FBCF1FB007FD9E4 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -133,8 +146,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F10D3A1FC0FAB80010F718 /* GoogleToolboxForMac.framework in Frameworks */,
+				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
+				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
-				402554FD8592C13CE4F0A871 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +245,7 @@
 				056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */,
 				05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */,
 				056C70F31FBB496D00E79CA1 /* Info.plist */,
+				05F10D481FC0FBA80010F718 /* Localizable.strings */,
 				05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */,
 			);
 			path = coWeave;
@@ -367,6 +383,9 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */,
+				05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */,
+				05F10D3F1FC0FAB80010F718 /* nanopb.framework */,
 				0547AC391FBCC39900432850 /* Fusuma.framework */,
 				0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */,
 				0547AC351FBCC39200432850 /* Pods_coWeave.framework */,
@@ -468,6 +487,8 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				de,
 			);
 			mainGroup = 056C70D81FBB496D00E79CA1;
 			productRefGroup = 056C70E21FBB496D00E79CA1 /* Products */;
@@ -487,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */,
+				05F10D461FC0FBA80010F718 /* Localizable.strings in Resources */,
 				056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */,
 				05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */,
 				056C71231FBBB83D00E79CA1 /* Podfile in Resources */,
@@ -534,12 +556,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -646,6 +670,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				056C70E91FBB496D00E79CA1 /* Base */,
+				05F10D401FC0FB7F0010F718 /* fr */,
+				05F10D421FC0FB840010F718 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -654,8 +680,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				056C70F11FBB496D00E79CA1 /* Base */,
+				05F10D411FC0FB7F0010F718 /* fr */,
+				05F10D431FC0FB840010F718 /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		05F10D481FC0FBA80010F718 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F10D471FC0FBA80010F718 /* en */,
+				05F10D491FC0FBA90010F718 /* fr */,
+				05F10D4A1FC0FBA90010F718 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -665,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -722,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
