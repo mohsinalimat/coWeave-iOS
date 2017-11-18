@@ -195,6 +195,10 @@ class OpenDocumentsTableViewController: UITableViewController {
             let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
             classVc.document = doc
         }
+        if (segue.identifier == "users") {
+            let classVc = segue.destination as! GroupTableViewController
+            classVc.managedObjectContext = self.managedObjectContext
+        }
     }
 }
 

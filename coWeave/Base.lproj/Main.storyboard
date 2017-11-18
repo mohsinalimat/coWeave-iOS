@@ -603,7 +603,7 @@
             <objects>
                 <tableViewController id="cEw-ne-lsN" customClass="GroupTableViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="loo-SU-s9n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -813,7 +813,13 @@
                             <outlet property="delegate" destination="HdL-jE-nDp" id="D3X-8a-Nm0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Documents" id="kmo-Uo-jI1"/>
+                    <navigationItem key="navigationItem" title="Documents" id="kmo-Uo-jI1">
+                        <barButtonItem key="rightBarButtonItem" image="users" id="Lff-Z6-AVD">
+                            <connections>
+                                <segue destination="cEw-ne-lsN" kind="show" identifier="users" id="XpD-MD-kjc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzu-Md-qe4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1293,7 +1299,7 @@
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="foS-vk-sas"/>
-        <segue reference="Bod-cj-xrf"/>
+        <segue reference="XpD-MD-kjc"/>
+        <segue reference="GML-Qg-vpG"/>
     </inferredMetricsTieBreakers>
 </document>
