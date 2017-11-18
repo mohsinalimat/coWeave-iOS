@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'coWeave' do
     pod 'iOSPhotoEditor'
+   
 end
