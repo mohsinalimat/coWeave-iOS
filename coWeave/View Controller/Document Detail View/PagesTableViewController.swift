@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class PagesTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -49,6 +50,12 @@ class PagesTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "PagesList" as NSObject,
+            AnalyticsParameterItemName: "PagesList" as NSObject,
+            AnalyticsParameterContentType: "document-pages" as NSObject
+            ])
         
         self.tableView.reloadData()
     }
@@ -115,6 +122,11 @@ class PagesTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 tableView.reloadData()
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "ModifyPageTitle" as NSObject,
+                    AnalyticsParameterItemName: "ModifyPageTitle" as NSObject,
+                    AnalyticsParameterContentType: "document-pages" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }

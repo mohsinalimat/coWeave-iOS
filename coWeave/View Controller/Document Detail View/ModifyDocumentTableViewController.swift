@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class ModifyDocumentTableViewController: UITableViewController, UITextFieldDelegate {
     var managedObjectContext: NSManagedObjectContext!
@@ -24,6 +25,13 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
         templateSwitch.setOn(document.template, animated: true)
         self.hideKeyboardWhenTappedAround()
         userLabel.text = (document.user != nil) ? ("Assigned to: " + self.document.user!.name! + " ("+self.document.user!.group!.name!+")") : "Assign to User"
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "ModifyPage" as NSObject,
+            AnalyticsParameterItemName: "ModifyPage" as NSObject,
+            AnalyticsParameterContentType: "document-settings" as NSObject
+            ])
+        
     }
     
 
@@ -41,6 +49,12 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
             let saveError = error as NSError
             print("\(saveError), \(saveError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "UpdateName" as NSObject,
+            AnalyticsParameterItemName: "UpdateName" as NSObject,
+            AnalyticsParameterContentType: "document-settings" as NSObject
+            ])
     }
     
     @IBAction func setTemplate(_ sender: Any) {
@@ -52,6 +66,12 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
             let saveError = error as NSError
             print("\(saveError), \(saveError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "SetTemplate\(templateSwitch.isOn)" as NSObject,
+            AnalyticsParameterItemName: "SetTemplate\(templateSwitch.isOn)" as NSObject,
+            AnalyticsParameterContentType: "document-settings" as NSObject
+            ])
     }
     
     func textFieldShouldReturn(_ nameField: UITextField) -> Bool {

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class TemplateTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -51,6 +52,12 @@ class TemplateTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "TemplateList" as NSObject,
+            AnalyticsParameterItemName: "TemplateList" as NSObject,
+            AnalyticsParameterContentType: "template" as NSObject
+            ])
         
         self.tableView.reloadData()
     }
@@ -156,6 +163,12 @@ class TemplateTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "open") {
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                AnalyticsParameterItemID: "LoadedFromTemplate" as NSObject,
+                AnalyticsParameterItemName: "LoadedFromTemplate" as NSObject,
+                AnalyticsParameterContentType: "template" as NSObject
+                ])
+            
             let classVc = segue.destination as! DocumentDetailNavigationViewController
             classVc.managedObjectContext = self.managedObjectContext
             let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)

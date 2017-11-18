@@ -10,6 +10,7 @@ import UIKit
 import MobileCoreServices
 import CoreData
 import AVFoundation
+import Firebase
 
 class PreviewViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var image : UIImage!
@@ -47,6 +48,12 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "Preview" as NSObject,
+            AnalyticsParameterItemName: "Preview" as NSObject,
+            AnalyticsParameterContentType: "document-preview" as NSObject
+            ])
         
         self.pageNumber = Int16(document!.pages!.count)
         self.page = document?.firstPage
@@ -151,6 +158,12 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         }
         updatePage(page: page)
         updatePageControls(page: page)
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "PreviousPage" as NSObject,
+            AnalyticsParameterItemName: "PreviousPage" as NSObject,
+            AnalyticsParameterContentType: "document-preview" as NSObject
+            ])
     }
     
     @IBAction func nextPage(_ sender: Any) {
@@ -159,6 +172,12 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         resetPage()
         updatePage(page: page)
         updatePageControls(page: page)
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "NextPage" as NSObject,
+            AnalyticsParameterItemName: "NextPage" as NSObject,
+            AnalyticsParameterContentType: "document-preview" as NSObject
+            ])
     }
     
     /**
@@ -169,6 +188,12 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         play()
         self.audioButton.image = UIImage(named: "stop")
         playing = true
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "PlayAudio" as NSObject,
+            AnalyticsParameterItemName: "PlayAudio" as NSObject,
+            AnalyticsParameterContentType: "document-preview" as NSObject
+            ])
     }
     
     func stopPlay() {

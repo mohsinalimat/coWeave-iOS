@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class GroupTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -50,6 +51,16 @@ class GroupTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.setUserProperty(String(fetchedResultsController.fetchedObjects!.count), forName: "groups")
+        
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "GroupList" as NSObject,
+            AnalyticsParameterItemName: "GroupList" as NSObject,
+            AnalyticsParameterContentType: "users" as NSObject
+            ])
+        
         
         self.tableView.reloadData()
     }
@@ -117,6 +128,12 @@ class GroupTableViewController: UITableViewController {
                     print("\(fetchError), \(fetchError.userInfo)")
                 }
                 self.tableView.reloadData()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "AddGroup" as NSObject,
+                    AnalyticsParameterItemName: "AddGroup" as NSObject,
+                    AnalyticsParameterContentType: "users" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }
@@ -152,6 +169,12 @@ class GroupTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 tableView.reloadData()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "ModifyGroup" as NSObject,
+                    AnalyticsParameterItemName: "ModifyGroup" as NSObject,
+                    AnalyticsParameterContentType: "users" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }
@@ -220,6 +243,12 @@ class GroupTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    
+                    Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                        AnalyticsParameterItemID: "DeleteGroup" as NSObject,
+                        AnalyticsParameterItemName: "DeleteGroup" as NSObject,
+                        AnalyticsParameterContentType: "users" as NSObject
+                        ])
                 }
                 let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
                     UIAlertAction in

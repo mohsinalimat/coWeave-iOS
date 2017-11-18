@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class OpenUserDocTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -51,6 +52,12 @@ class OpenUserDocTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "OpenDocument" as NSObject,
+            AnalyticsParameterItemName: "OpenDocument" as NSObject,
+            AnalyticsParameterContentType: "users" as NSObject
+            ])
         
         self.tableView.reloadData()
     }

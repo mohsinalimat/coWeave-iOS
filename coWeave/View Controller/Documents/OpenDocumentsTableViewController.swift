@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class OpenDocumentsTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -50,6 +51,14 @@ class OpenDocumentsTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "OpenDocument" as NSObject,
+            AnalyticsParameterItemName: "OpenDocument" as NSObject,
+            AnalyticsParameterContentType: "open-document" as NSObject
+            ])
+        
+        Analytics.setUserProperty(String(fetchedResultsController.fetchedObjects!.count), forName: "documents")
         
         self.tableView.reloadData()
     }
@@ -119,6 +128,12 @@ class OpenDocumentsTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 tableView.reloadData()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "ModifyDocumentName" as NSObject,
+                    AnalyticsParameterItemName: "ModifyDocumentName" as NSObject,
+                    AnalyticsParameterContentType: "open-document" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }
@@ -172,6 +187,11 @@ class OpenDocumentsTableViewController: UITableViewController {
                         print("\(saveError), \(saveError.userInfo)")
                     }
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                        AnalyticsParameterItemID: "DeleteDocument" as NSObject,
+                        AnalyticsParameterItemName: "DeleteDocument" as NSObject,
+                        AnalyticsParameterContentType: "open-document" as NSObject
+                        ])
                 }
                 let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
                     UIAlertAction in

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class UserTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -51,6 +52,14 @@ class UserTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
+        
+        Analytics.setUserProperty(String(fetchedResultsController.fetchedObjects!.count), forName: "users")
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "UserList" as NSObject,
+            AnalyticsParameterItemName: "UserList" as NSObject,
+            AnalyticsParameterContentType: "users" as NSObject
+            ])
         
         self.tableView.reloadData()
     }
@@ -120,6 +129,12 @@ class UserTableViewController: UITableViewController {
                     print("\(fetchError), \(fetchError.userInfo)")
                 }
                 self.tableView.reloadData()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "AddUser" as NSObject,
+                    AnalyticsParameterItemName: "AddUser" as NSObject,
+                    AnalyticsParameterContentType: "users" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }
@@ -155,6 +170,12 @@ class UserTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 tableView.reloadData()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "ModifyUser" as NSObject,
+                    AnalyticsParameterItemName: "ModifyUser" as NSObject,
+                    AnalyticsParameterContentType: "users" as NSObject
+                    ])
             } else {
                 // user did not fill field
             }
@@ -222,6 +243,12 @@ class UserTableViewController: UITableViewController {
                         print("\(saveError), \(saveError.userInfo)")
                     }
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    
+                    Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                        AnalyticsParameterItemID: "DeleteUser" as NSObject,
+                        AnalyticsParameterItemName: "DeleteUser" as NSObject,
+                        AnalyticsParameterContentType: "users" as NSObject
+                        ])
                 }
                 let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
                     UIAlertAction in

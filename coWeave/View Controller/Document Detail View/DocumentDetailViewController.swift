@@ -11,6 +11,7 @@ import iOSPhotoEditor
 import MobileCoreServices
 import CoreData
 import AVFoundation
+import Firebase
 
 class DocumentDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PhotoEditorDelegate {
     var image : UIImage!
@@ -60,6 +61,12 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "DocumentOpen" as NSObject,
+            AnalyticsParameterItemName: "DocumentOpen" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
+        
         //create new doc
         if (document == nil) {
             document = createDocument()
@@ -103,6 +110,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "CameraAction" as NSObject,
+            AnalyticsParameterItemName: "CameraAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
     }
     
     @IBAction func galleryAction(_ sender: Any) {
@@ -110,12 +122,25 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "GalleryAction" as NSObject,
+            AnalyticsParameterItemName: "GalleryAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
     }
     
     @IBAction func audioAction(_ sender: Any) {
         print("audio")
         if audio && !playing { // if sound recorded, play it.
             startPlay()
+            
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                AnalyticsParameterItemID: "AudioActionPlay" as NSObject,
+                AnalyticsParameterItemName: "AudioActionPlay" as NSObject,
+                AnalyticsParameterContentType: "document" as NSObject
+                ])
+            
             return
         }
         if playing {
@@ -129,6 +154,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
                 self.audioButton.setImage(UIImage(named: "stop"), for: .normal)
         
                 recordWithPermission(true)
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "AudioActionRecord" as NSObject,
+                    AnalyticsParameterItemName: "AudioActionRecord" as NSObject,
+                    AnalyticsParameterContentType: "document" as NSObject
+                    ])
+                
                 return
             }
         }
@@ -153,10 +185,20 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     @IBAction func drawAction(_ sender: Any) {
        self.drawText()
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "DrawAction" as NSObject,
+            AnalyticsParameterItemName: "DrawAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
     }
     
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "TextAction" as NSObject,
+            AnalyticsParameterItemName: "TextAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
     }
     
     func createDocument() -> Document {
@@ -213,6 +255,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             let saveError = error as NSError
             print("\(saveError), \(saveError.userInfo)")
         }
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "AddPage" as NSObject,
+            AnalyticsParameterItemName: "AddPage" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
+        
         return page
     }
     

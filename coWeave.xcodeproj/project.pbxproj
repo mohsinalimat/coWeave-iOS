@@ -23,7 +23,6 @@
 		056253181FC0910D005B92D9 /* KeyboardHider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253171FC0910D005B92D9 /* KeyboardHider.swift */; };
 		0562531A1FC09484005B92D9 /* OpenUserDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253191FC09484005B92D9 /* OpenUserDocTableViewController.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
-		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
 		056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056C70EE1FBB496D00E79CA1 /* Assets.xcassets */; };
 		056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */; };
@@ -38,6 +37,7 @@
 		05C87EFA1FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EF81FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift */; };
 		05C87EFB1FC0EDBA0009E7E4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EF91FC0EDBA0009E7E4 /* SettingsTableViewController.swift */; };
 		05C87EFE1FC0F0840009E7E4 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EFD1FC0F0840009E7E4 /* Bundle.swift */; };
+		05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */; };
 		05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */; };
 		05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */; };
 		05F70E441FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */; };
@@ -92,7 +92,6 @@
 		056253191FC09484005B92D9 /* OpenUserDocTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUserDocTableViewController.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		056C70E91FBB496D00E79CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		056C70EE1FBB496D00E79CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		056C70F11FBB496D00E79CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		05C87EF81FC0EDBA0009E7E4 /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
 		05C87EF91FC0EDBA0009E7E4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		05C87EFD1FC0F0840009E7E4 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coWeave1.xcdatamodel; sourceTree = "<group>"; };
 		05F70E391FBCF1FB007FD9E4 /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F70E3A1FBCF1FB007FD9E4 /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				056C70E41FBB496D00E79CA1 /* AppDelegate.swift */,
-				056C70E61FBB496D00E79CA1 /* ViewController.swift */,
 				052982CA1FBDE9D6002C0ACA /* Helper */,
 				05D6593A1FBCDBC1009019A9 /* Model */,
 				056C711B1FBBB3D400E79CA1 /* View Controller */,
@@ -229,6 +228,7 @@
 				056C70E81FBB496D00E79CA1 /* Main.storyboard */,
 				056C70EE1FBB496D00E79CA1 /* Assets.xcassets */,
 				056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */,
+				05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */,
 				056C70F31FBB496D00E79CA1 /* Info.plist */,
 				05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */,
 			);
@@ -488,6 +488,7 @@
 			files = (
 				056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */,
 				056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */,
+				05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */,
 				056C71231FBBB83D00E79CA1 /* Podfile in Resources */,
 				056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */,
 			);
@@ -532,11 +533,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -571,7 +576,6 @@
 				05F70E471FBCF1FB007FD9E4 /* Page+CoreDataClass.swift in Sources */,
 				056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */,
 				056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */,
-				056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
 				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,
 				05C87EFB1FC0EDBA0009E7E4 /* SettingsTableViewController.swift in Sources */,

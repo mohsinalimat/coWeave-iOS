@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class DocumentsViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext!
@@ -19,6 +20,12 @@ class DocumentsViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "AddOpenView" as NSObject,
+            AnalyticsParameterItemName: "AddOpenView" as NSObject,
+            AnalyticsParameterContentType: "document-start" as NSObject
+            ])
 
         // Do any additional setup after loading the view.
     }
