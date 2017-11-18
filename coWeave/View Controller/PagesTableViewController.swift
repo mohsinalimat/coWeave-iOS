@@ -33,8 +33,7 @@ class PagesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Pages"
-        self.tableView.rowHeight = 55.0
-        
+        self.tableView.rowHeight = 150.0
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -70,16 +69,22 @@ class PagesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Page", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Page", for: indexPath) as? PagesTableViewCell else {
+            fatalError("The dequeued cell is not an instance of PageTableViewCell.")
+        }
         
         let page = self.fetchedResultsController.object(at: indexPath) as Page
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
         
-        cell.textLabel?.text = "Page \(page.number)"
-        //cell.detailTextLabel?.text = formatter.string(from: document.addedDate! as Date)
+        cell.title.text = (page.title == nil) ? "Page \(page.number)" : page.title
+        if (page.image != nil) {
+            cell.pageImage.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
+        }
+        cell.number.text = "\(page.number)"
+        cell.date.text = formatter.string(from: page.addedDate! as Date)
         
         return cell
     }
@@ -92,56 +97,40 @@ class PagesTableViewController: UITableViewController {
         return 0.0000001
     }
     
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Fetch Record
-            let record = self.fetchedResultsController.object(at: indexPath) as Page
-            // Create the alert controller
-            let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer Page \(record.number)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
-                UIAlertAction in
-                NSLog("Supprimer Pressed")
-                
-                // Delete Record
-                self.managedObjectContext.delete(record)
-                do {
-                    try self.fetchedResultsController.performFetch()
-                } catch {
-                    let fetchError = error as NSError
-                    print("\(fetchError), \(fetchError.userInfo)")
-                }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print ("select")
+        let page = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+        
+        let alertController = UIAlertController(title: "Modify title of page \(page.number):", message: "", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            if let field = alertController.textFields![0] as? UITextField {
+                // store your data
+                page.title = field.text
                 do {
                     // Save Record
-                    try self.managedObjectContext?.save()
+                    try page.managedObjectContext?.save()
                 } catch {
                     let saveError = error as NSError
                     print("\(saveError), \(saveError.userInfo)")
                 }
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
+            } else {
+                // user did not fill field
             }
-            let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
-            
-            alertController.addAction(deleteAction)
-            alertController.addAction(cancelAction)
-            
-            // Present the controller
-            self.present(alertController, animated: true, completion: nil)
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Title"
+            textField.text = page.title
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
-    
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "open") {
-            let classVc = segue.destination as! DocumentDetailNavigationViewController
-            classVc.managedObjectContext = self.managedObjectContext
-            let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
-            classVc.document = doc
-        }
-    }*/
 }
 

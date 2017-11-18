@@ -69,6 +69,14 @@ class OpenDocumentsTableViewController: UITableViewController {
         return fetchedResultsController.fetchedObjects!.count
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (fetchedResultsController.fetchedObjects!.count==0) {
+            return "Pas de documents disponibles!"
+        } else {
+            return ""
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath)
         

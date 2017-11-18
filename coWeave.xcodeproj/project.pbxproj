@@ -15,6 +15,7 @@
 		056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */; };
 		056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253011FBFA81C005B92D9 /* PreviewViewController.swift */; };
 		056253041FBFA832005B92D9 /* PreviewNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */; };
+		056253071FC0491B005B92D9 /* PagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253061FC0491B005B92D9 /* PagesTableViewCell.swift */; };
 		056C70E51FBB496D00E79CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E41FBB496D00E79CA1 /* AppDelegate.swift */; };
 		056C70E71FBB496D00E79CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C70E61FBB496D00E79CA1 /* ViewController.swift */; };
 		056C70EA1FBB496D00E79CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056C70E81FBB496D00E79CA1 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
 		056253011FBFA81C005B92D9 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNavigationViewController.swift; sourceTree = "<group>"; };
+		056253061FC0491B005B92D9 /* PagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewCell.swift; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				052982CA1FBDE9D6002C0ACA /* Helper */,
 				05D6593A1FBCDBC1009019A9 /* Model */,
 				056C711B1FBBB3D400E79CA1 /* View Controller */,
+				056253061FC0491B005B92D9 /* PagesTableViewCell.swift */,
 				056C70E81FBB496D00E79CA1 /* Main.storyboard */,
 				056C70EE1FBB496D00E79CA1 /* Assets.xcassets */,
 				056C70F01FBB496D00E79CA1 /* LaunchScreen.storyboard */,
@@ -535,6 +538,7 @@
 				0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */,
 				05F70E431FBCF1FB007FD9E4 /* Document+CoreDataClass.swift in Sources */,
 				056C711A1FBBB3C700E79CA1 /* RootTabBarViewController.swift in Sources */,
+				056253071FC0491B005B92D9 /* PagesTableViewCell.swift in Sources */,
 				056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
