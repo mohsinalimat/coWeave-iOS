@@ -709,15 +709,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-DP-BGp">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="8Du-y7-Rkn"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWo-nc-VON">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nwh-dq-p7n"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="kat-Ef-ecR"/>
                                     <barButtonItem enabled="NO" image="left" id="peg-4A-FdC">
                                         <connections>
                                             <action selector="previousPage:" destination="7O5-uL-SN0" id="aSZ-iE-cfK"/>
@@ -733,18 +732,18 @@
                                             <action selector="nextPage:" destination="7O5-uL-SN0" id="msc-x8-Af5"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="Tfm-eV-hbl"/>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="centerY" secondItem="l44-HX-Zij" secondAttribute="centerY" id="IE0-wR-z1m"/>
-                            <constraint firstItem="BWo-nc-VON" firstAttribute="bottom" secondItem="Gd5-DP-BGp" secondAttribute="bottom" id="Qua-qU-cO7"/>
-                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="top" secondItem="l44-HX-Zij" secondAttribute="top" id="RxE-Lg-kXd"/>
-                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="centerX" secondItem="l44-HX-Zij" secondAttribute="centerX" id="htF-at-RtG"/>
-                            <constraint firstItem="BWo-nc-VON" firstAttribute="centerX" secondItem="Gd5-DP-BGp" secondAttribute="centerX" id="lt5-Ak-tyH"/>
-                            <constraint firstItem="BWo-nc-VON" firstAttribute="width" secondItem="Gd5-DP-BGp" secondAttribute="width" id="pKe-HH-yZi"/>
+                            <constraint firstItem="BWo-nc-VON" firstAttribute="bottom" secondItem="l44-HX-Zij" secondAttribute="bottom" id="A8l-PL-60h"/>
+                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="leading" secondItem="aVV-G3-9TX" secondAttribute="leading" id="DUR-C1-YOc"/>
+                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="leading" secondItem="BWo-nc-VON" secondAttribute="leading" id="G1S-6D-CHy"/>
+                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="trailing" secondItem="BWo-nc-VON" secondAttribute="trailing" id="Nii-SU-Bww"/>
+                            <constraint firstItem="BWo-nc-VON" firstAttribute="top" secondItem="Gd5-DP-BGp" secondAttribute="bottom" id="gXL-0Z-xUw"/>
+                            <constraint firstItem="Gd5-DP-BGp" firstAttribute="top" secondItem="l44-HX-Zij" secondAttribute="top" id="tCr-lH-8i3"/>
+                            <constraint firstAttribute="trailing" secondItem="Gd5-DP-BGp" secondAttribute="trailing" id="tMx-0e-NG5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l44-HX-Zij"/>
                     </view>
@@ -771,7 +770,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiD-fY-pPO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="-765"/>
+            <point key="canvasLocation" x="2598.5507246376815" y="-765.48913043478262"/>
         </scene>
         <!--Preview Navigation View Controller-->
         <scene sceneID="Vyi-R0-rTz">
