@@ -103,6 +103,14 @@ class TemplateTableViewController: UITableViewController {
         return 0.0000001
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (fetchedResultsController.fetchedObjects!.count==0) {
+            return "Pas de documents disponibles!"
+        } else {
+            return ""
+        }
+    }
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -157,8 +165,9 @@ class TemplateTableViewController: UITableViewController {
             
             print("\(doc.pages?.count)")
             var previous : Page? = nil
-            for i in 0...((doc.pages?.count)! - 1) {
-                let page = doc.pages?.allObjects[i] as! Page
+            var i = 0;
+            for p in doc.pages! {
+                let page = p as! Page
                 print("\(page.number)")
                 
                 // Create Entity
@@ -208,6 +217,7 @@ class TemplateTableViewController: UITableViewController {
                     print("\(saveError), \(saveError.userInfo)")
                 }
                 previous = pageAdd
+                i = i+1
             }
             classVc.document = self.document
         }

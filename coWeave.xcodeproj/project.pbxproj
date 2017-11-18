@@ -75,6 +75,7 @@
 		056253031FBFA832005B92D9 /* PreviewNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNavigationViewController.swift; sourceTree = "<group>"; };
 		056253061FC0491B005B92D9 /* PagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewCell.swift; sourceTree = "<group>"; };
 		056253091FC053A1005B92D9 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
+		0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 4.xcdatamodel"; sourceTree = "<group>"; };
 		056C70E11FBB496D00E79CA1 /* coWeave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coWeave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C70E41FBB496D00E79CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056C70E61FBB496D00E79CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -862,11 +863,12 @@
 		05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */,
 				056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */,
 				052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */,
 				05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */,
 			);
-			currentVersion = 056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */;
+			currentVersion = 0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */;
 			path = coWeave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
