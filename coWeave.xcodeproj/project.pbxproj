@@ -225,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				056C71191FBBB3C700E79CA1 /* RootTabBarViewController.swift */,
-				0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */,
-				0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */,
 				056253051FBFA855005B92D9 /* Preview */,
 				056C71211FBBB42C00E79CA1 /* Document Detail View */,
 				056C711C1FBBB3E900E79CA1 /* Documents */,
@@ -239,6 +237,7 @@
 			children = (
 				056C71171FBBB3B500E79CA1 /* DocumentsNavigationViewController.swift */,
 				056C71151FBBB37A00E79CA1 /* DocumentsViewController.swift */,
+				0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -250,6 +249,7 @@
 				056C711D1FBBB40100E79CA1 /* DocumentDetailViewController.swift */,
 				056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */,
 				056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */,
+				0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */,
 			);
 			path = "Document Detail View";
 			sourceTree = "<group>";

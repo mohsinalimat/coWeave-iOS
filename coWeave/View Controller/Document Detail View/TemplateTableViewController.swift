@@ -34,7 +34,7 @@ class TemplateTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Templates"
-        self.tableView.rowHeight = 55.0
+        self.tableView.rowHeight = 175.0
         
         do {
             try self.fetchedResultsController.performFetch()
@@ -71,16 +71,26 @@ class TemplateTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath) as? DocumentsTableViewCell else {
+            fatalError("The dequeued cell is not an instance of PageTableViewCell.")
+        }
         
         let document = self.fetchedResultsController.object(at: indexPath) as Document
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
         
-        cell.textLabel?.text = document.name
-        cell.detailTextLabel?.text = formatter.string(from: document.addedDate! as Date)
+        cell.pageTitle.text = document.name
+        
+        cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
+        cell.author.isHidden = (document.user == nil) ? true : false
+        cell.author.text = (document.user != nil) ? document.user?.name : ""
+        if (document.modifyDate != nil) {
+            cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+        } else {
+            cell.pageDate.text = "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+        }
         
         return cell
     }
@@ -161,7 +171,22 @@ class TemplateTableViewController: UITableViewController {
                 pageAdd.number = page.number
                 pageAdd.document = self.document
                 pageAdd.previous = previous
-                pageAdd.image = page.image
+                
+                if (page.image != nil) {
+                    // Create Entity
+                    let imageEntity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
+                
+                    // Initialize Record
+                    let image = Image(entity: imageEntity!, insertInto: self.managedObjectContext)
+                
+                    image.addedDate = page.image?.addedDate
+                    image.image = page.image?.image
+                    image.previous = nil
+                    image.page = pageAdd
+                
+                
+                    pageAdd.image = image
+                }
                 
                 doc.lastPage = pageAdd
                 
