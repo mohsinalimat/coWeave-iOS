@@ -93,7 +93,11 @@ class OpenDocumentsTableViewController: UITableViewController {
         cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
         cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? document.user?.name : ""
-        cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+        if (document.modifyDate != nil) {
+            cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+        } else {
+            cell.pageDate.text = "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+        }
         
         return cell
     }
