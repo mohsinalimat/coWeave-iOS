@@ -17,7 +17,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Document> = Document.fetchRequest()
         
         // Add Sort Descriptors
-        let date = NSSortDescriptor(key: "addedDate", ascending: false)
+        let date = NSSortDescriptor(key: "modifyDate", ascending: false)
         let name = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [date, name]
         
@@ -33,7 +33,7 @@ class OpenDocumentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Documents"
-        self.tableView.rowHeight = 150.0
+        self.tableView.rowHeight = 175.0
     
         do {
             try self.fetchedResultsController.performFetch()
@@ -91,9 +91,9 @@ class OpenDocumentsTableViewController: UITableViewController {
         cell.pageTitle.text = document.name
         
         cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
-        
+        cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? document.user?.name : ""
-        cell.pageDate.text = "\(formatter.string(from: document.addedDate! as Date))\n"
+        cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
         
         return cell
     }
@@ -101,9 +101,9 @@ class OpenDocumentsTableViewController: UITableViewController {
         print ("select")
         let document = self.fetchedResultsController.object(at: indexPath)
         
-        let alertController = UIAlertController(title: "Modify document name:", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Modifier le nom du document", message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Modify", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: "Modifier", style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // store your data
                 document.name = field.text
@@ -120,10 +120,10 @@ class OpenDocumentsTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Name"
+            textField.placeholder = "Nom"
             textField.text = document.name
         }
         

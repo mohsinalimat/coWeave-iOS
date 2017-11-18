@@ -66,6 +66,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         } else {
             self.pageNumber = Int16(document!.pages!.count)
             self.page = document?.firstPage
+            document?.modifyDate = NSDate()
+            do {
+                try document?.managedObjectContext?.save()
+            } catch {
+                let saveError = error as NSError
+                print("\(saveError), \(saveError.userInfo)")
+            }
             updatePage(page: self.page)
         }
         
@@ -164,6 +171,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         formatter.dateFormat = "dd.MM.yyyy"
         
         document.addedDate = NSDate()
+        document.modifyDate = NSDate()
         document.name = "Document \(formatter.string(from: NSDate() as Date))"
         page = createPage(number: 1, doc: document)
         document.firstPage = page
