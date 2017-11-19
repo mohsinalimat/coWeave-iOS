@@ -1401,6 +1401,7 @@ Icons from icons8.com</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TableView" destination="a5l-Og-iCr" id="H0N-Ti-Zn8"/>
+                        <outlet property="languageButton" destination="dI7-FT-LOZ" id="ukO-00-vNE"/>
                         <outlet property="versionLabel" destination="QQ6-mW-D7m" id="mOG-bo-kfj"/>
                     </connections>
                 </tableViewController>

@@ -16,10 +16,12 @@ class SettingsTableViewController: UITableViewController {
     var actionSheet: UIAlertController!
     let availableLanguages = Localize.availableLanguages()
     @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var languageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 55.0
+        
         
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "Settings" as NSObject,
@@ -31,16 +33,22 @@ class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func selectLanguage(_ sender: Any) {
-        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
+        actionSheet = UIAlertController(title: nil, message: NSLocalizedString("language-switcher", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
+                print(language)
+                UserDefaults.standard.set([language], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
                 Localize.setCurrentLanguage(language)
             })
-            actionSheet.addAction(languageAction)
+            if displayName.count > 0 {
+                actionSheet.addAction(languageAction)
+            }
+            
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
             (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)

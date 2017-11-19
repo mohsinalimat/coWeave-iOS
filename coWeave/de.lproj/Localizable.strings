@@ -40,3 +40,4 @@
 "title" = "Titel";
 "audio-title" = "Spiele Aufnahme ab...";
 "audio-question" = "Wollen Sie diese speichern oder löschen?";
+"language-switcher" = "Sprache wechseln\n App neu starten um die gewählte Sprache zu benutzen.";

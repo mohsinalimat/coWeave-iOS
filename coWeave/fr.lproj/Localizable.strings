@@ -40,3 +40,4 @@
 "title" = "Titre";
 "audio-title" = "Lecture de l'audio...";
 "audio-question" = "Voulez-vous l'enregistrer ou supprimer?";
+"language-switcher" = "Changer la langue\n Re-ouvrir l'appli afin d'utiliser la langue choisie.";

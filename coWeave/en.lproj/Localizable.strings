@@ -40,3 +40,5 @@
 "title" = "Title";
 "audio-title" = "Playing recorded audio...";
 "audio-question" = "Would you like to save or delete it?";
+"language-switcher" = "Switch language\n Restart app after selection to apply the change.";
+
