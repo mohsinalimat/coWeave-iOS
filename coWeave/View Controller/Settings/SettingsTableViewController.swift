@@ -52,6 +52,10 @@ class SettingsTableViewController: UITableViewController {
             (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = languageButton
+            popoverController.sourceRect = languageButton.bounds
+        }
         self.present(actionSheet, animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
