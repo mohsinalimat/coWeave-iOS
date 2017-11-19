@@ -17,7 +17,7 @@
 "name" = "Nom";
 "delete" = "Supprimer";
 "delete-error-users" = "Veuillez supprimer tous les utilisateurs du groupe.";
-"delete-warning-1" = "Voulez-vous vraiment supprimerWould you really like to delete";
+"delete-warning-1" = "Voulez-vous vraiment supprimer";
 "delete-warning-2" = "Vous ne pourrez plus récupérer ces données";
 "no-users" = "Pas d'utilisateurs disponibles!";
 "add-user" = "Ajouter utilisateur";
