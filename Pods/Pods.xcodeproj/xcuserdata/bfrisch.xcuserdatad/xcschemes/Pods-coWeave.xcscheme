@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F835FAB8FC7D9F9118E0E7A8BC04E38A"
+               BlueprintIdentifier = "4A4FDCE0C136842968C22C8DC26B8327"
                BuildableName = "Pods_coWeave.framework"
                BlueprintName = "Pods-coWeave"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F835FAB8FC7D9F9118E0E7A8BC04E38A"
+            BlueprintIdentifier = "4A4FDCE0C136842968C22C8DC26B8327"
             BuildableName = "Pods_coWeave.framework"
             BlueprintName = "Pods-coWeave"
             ReferencedContainer = "container:Pods.xcodeproj">
