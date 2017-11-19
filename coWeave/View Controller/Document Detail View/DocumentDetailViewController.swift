@@ -106,8 +106,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
         } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert  = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("no-camera", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("close", comment: ""), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
@@ -276,7 +276,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
         self.nextPageButton.isEnabled = true // always enabled, because we can add as many pages as we want
         self.nextPageButton.image = (page.next == nil) ? UIImage(named: "right-add") : UIImage(named: "right")
-        self.pageNameButton.title = "Page \(page.number)"
+        self.pageNameButton.title = "\(NSLocalizedString("page", comment: "")) \(page.number)"
         
         self.audioButton.imageView?.image = (page.audio == nil) ? UIImage(named: "micro") : UIImage(named: "play")
     }
@@ -791,10 +791,10 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
         //recordButton.setTitle("Record", for:UIControlState())
         
         // iOS8 and later
-        let alert = UIAlertController(title: "Playing recorded audio...",
-                                      message: "Would you like to save or delete it?",
+        let alert = UIAlertController(title: NSLocalizedString("audio-title", comment: ""),
+                                      message: NSLocalizedString("audio-question", comment: ""),
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {action in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("save", comment: ""), style: .default, handler: {action in
             print("keep was tapped")
             self.recorder = nil
             self.audio = true
@@ -814,7 +814,7 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
             } catch {}
             self.player.stop()
         }))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("delete", comment: ""), style: .destructive, handler: {action in
             print("delete was tapped")
             self.recorder.deleteRecording()
             self.audio = false

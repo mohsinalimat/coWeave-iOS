@@ -19,12 +19,12 @@ class ModifyDocumentTableViewController: UITableViewController, UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Document Settings"
+        self.navigationItem.title = NSLocalizedString("document-settings", comment: "")
         nameField.text = document.name
         nameField.delegate = self
         templateSwitch.setOn(document.template, animated: true)
         self.hideKeyboardWhenTappedAround()
-        userLabel.text = (document.user != nil) ? ("Assigned to: " + self.document.user!.name! + " ("+self.document.user!.group!.name!+")") : "Assign to User"
+        userLabel.text = (document.user != nil) ? ("\(NSLocalizedString("assigned-to", comment: "")): " + self.document.user!.name! + " ("+self.document.user!.group!.name!+")") : NSLocalizedString("assign-to", comment: "")
         
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "ModifyPage" as NSObject,

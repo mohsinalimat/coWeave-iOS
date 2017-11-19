@@ -81,7 +81,7 @@ class UserTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count==0) {
-            return "Pas d'utilisateurs disponibles!"
+            return NSLocalizedString("no-users", comment: "")
         } else {
             return ""
         }
@@ -101,9 +101,9 @@ class UserTableViewController: UITableViewController {
     @IBAction func addUser(_ sender: Any) {
         print ("select")
         
-        let alertController = UIAlertController(title: "Ajouter un utilisateur", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("add-user", comment: ""), message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Ajouter", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("add", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // Create Entity
                 let entity = NSEntityDescription.entity(forEntityName: "User", in: self.managedObjectContext)
@@ -140,10 +140,10 @@ class UserTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Nom"
+            textField.placeholder = NSLocalizedString("name", comment: "")
         }
         
         alertController.addAction(confirmAction)
@@ -156,9 +156,9 @@ class UserTableViewController: UITableViewController {
         print ("select")
         let user = self.fetchedResultsController.object(at: indexPath)
         
-        let alertController = UIAlertController(title: "Modify user \(user.name!):", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "\(NSLocalizedString("modify", comment: "")) \(user.name!):", message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Modify", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("modify", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // store your data
                 user.name = field.text
@@ -181,10 +181,10 @@ class UserTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Name"
+            textField.placeholder = NSLocalizedString("name", comment: "")
             textField.text = user.name
             
         }
@@ -210,8 +210,8 @@ class UserTableViewController: UITableViewController {
             let record = self.fetchedResultsController.object(at: indexPath) as User
             if (record.documents!.count > 0) {
                 // Create the alert controller
-                let alertController = UIAlertController(title: "Supprimer", message: "Veuillez d'abord supprimer les documents de cet utilisateur", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "Fermer", style: UIAlertActionStyle.cancel) {
+                let alertController = UIAlertController(title: NSLocalizedString("delete", comment: ""), message: NSLocalizedString("delete-error-docs", comment: ""), preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: NSLocalizedString("close", comment: ""), style: UIAlertActionStyle.cancel) {
                     UIAlertAction in
                     NSLog("Cancel Pressed")
                 }
@@ -222,8 +222,8 @@ class UserTableViewController: UITableViewController {
                 
             } else {
                 // Create the alert controller
-                let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-                let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
+                let alertController = UIAlertController(title: NSLocalizedString("delete", comment: ""), message: "\(NSLocalizedString("delete-warning-1", comment: "")) \(record.name!)? \n\n \(NSLocalizedString("delete-warning-2", comment: ""))", preferredStyle: .alert)
+                let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: ""), style: UIAlertActionStyle.destructive) {
                     UIAlertAction in
                     NSLog("Supprimer Pressed")
                     
@@ -250,7 +250,7 @@ class UserTableViewController: UITableViewController {
                         AnalyticsParameterContentType: "users" as NSObject
                         ])
                 }
-                let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
+                let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel) {
                     UIAlertAction in
                     NSLog("Cancel Pressed")
                 }

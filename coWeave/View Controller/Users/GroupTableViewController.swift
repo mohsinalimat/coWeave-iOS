@@ -33,7 +33,7 @@ class GroupTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Groupes"
+        self.navigationItem.title = NSLocalizedString("groups", comment: "")
         self.tableView.rowHeight = 55.0
         
         do {
@@ -82,7 +82,7 @@ class GroupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count==0) {
-            return "Pas de groupes disponibles!"
+            return NSLocalizedString("no-groups", comment: "")
         } else {
             return ""
         }
@@ -101,9 +101,9 @@ class GroupTableViewController: UITableViewController {
     
     @IBAction func addGroup(_ sender: Any) {
         print ("select")
-        let alertController = UIAlertController(title: "Ajouter un groupe", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("add-group", comment: ""), message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Ajouter", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("add", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // Create Entity
                 let entity = NSEntityDescription.entity(forEntityName: "Group", in: self.managedObjectContext)
@@ -139,10 +139,10 @@ class GroupTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Nom"
+            textField.placeholder = NSLocalizedString("name", comment: "")
         }
         
         alertController.addAction(confirmAction)
@@ -155,9 +155,9 @@ class GroupTableViewController: UITableViewController {
         print ("select")
         let group = self.fetchedResultsController.object(at: indexPath)
         
-        let alertController = UIAlertController(title: "Modify name of group \(group.name!):", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "\(NSLocalizedString("modify-group", comment: "")) \(group.name!):", message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Modify", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("modify", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // store your data
                 group.name = field.text
@@ -180,10 +180,10 @@ class GroupTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Name"
+            textField.placeholder = NSLocalizedString("name", comment: "")
             textField.text = group.name
             
         }
@@ -210,8 +210,8 @@ class GroupTableViewController: UITableViewController {
             
             if (record.users!.count > 0) {
                 // Create the alert controller
-                let alertController = UIAlertController(title: "Supprimer", message: "Veuillez d'abord supprimer les utilisateurs dans ce groupe", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "Fermer", style: UIAlertActionStyle.cancel) {
+                let alertController = UIAlertController(title: NSLocalizedString("delete", comment: ""), message: NSLocalizedString("delete-error-users", comment: ""), preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: NSLocalizedString("close", comment: ""), style: UIAlertActionStyle.cancel) {
                     UIAlertAction in
                     NSLog("Cancel Pressed")
                 }
@@ -222,8 +222,8 @@ class GroupTableViewController: UITableViewController {
                 
             } else {
                 // Create the alert controller
-                let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-                let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
+                let alertController = UIAlertController(title: NSLocalizedString("delete", comment: ""), message: "\(NSLocalizedString("delete-warning-1", comment: "")) \(record.name!)? \n\n \(NSLocalizedString("delete-warning-2", comment: ""))", preferredStyle: .alert)
+                let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: ""), style: UIAlertActionStyle.destructive) {
                     UIAlertAction in
                     NSLog("Supprimer Pressed")
                 
@@ -250,7 +250,7 @@ class GroupTableViewController: UITableViewController {
                         AnalyticsParameterContentType: "users" as NSObject
                         ])
                 }
-                let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
+                let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel) {
                     UIAlertAction in
                     NSLog("Cancel Pressed")
                 }

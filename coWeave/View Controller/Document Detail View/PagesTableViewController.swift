@@ -33,7 +33,7 @@ class PagesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Pages"
+        self.navigationItem.title = NSLocalizedString("pages", comment: "")
         self.tableView.rowHeight = 150.0
         do {
             try self.fetchedResultsController.performFetch()
@@ -108,9 +108,9 @@ class PagesTableViewController: UITableViewController {
         print ("select")
         let page = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
         
-        let alertController = UIAlertController(title: "Modify title of page \(page.number):", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "\(NSLocalizedString("modify-page-title", comment: "")) \(page.number):", message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("save", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // store your data
                 page.title = field.text
@@ -132,10 +132,10 @@ class PagesTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Title"
+            textField.placeholder = NSLocalizedString("title", comment: "")
             textField.text = page.title
         }
         

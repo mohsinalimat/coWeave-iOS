@@ -34,7 +34,7 @@ class OpenUserDocTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "\(user!.name!) Documents"
+        self.navigationItem.title = "\(user!.name!) \(NSLocalizedString("documents", comment: ""))"
         self.tableView.rowHeight = 175.0
         
         do {
@@ -79,7 +79,7 @@ class OpenUserDocTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count==0) {
-            return "Pas de documents disponibles!"
+            return NSLocalizedString("no-documents", comment: "")
         } else {
             return ""
         }
@@ -102,20 +102,21 @@ class OpenUserDocTableViewController: UITableViewController {
         cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? (document.user!.name! + " ("+document.user!.group!.name!+")") :""
         if (document.modifyDate != nil) {
-            cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+            cell.pageDate.text = "\(NSLocalizedString("last-opened", comment: "")):\n\(formatter.string(from: document.modifyDate! as Date))\n" + "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
         } else {
-            cell.pageDate.text = "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+            cell.pageDate.text = "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
         }
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         print ("select")
         let document = self.fetchedResultsController.object(at: indexPath)
         
-        let alertController = UIAlertController(title: "Modifier le nom du document", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("modify-title", comment: ""), message: "", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Modifier", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("modify", comment: ""), style: .default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
                 // store your data
                 document.name = field.text
@@ -132,10 +133,10 @@ class OpenUserDocTableViewController: UITableViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Nom"
+            textField.placeholder = NSLocalizedString("name", comment: "")
             textField.text = document.name
         }
         
@@ -159,8 +160,8 @@ class OpenUserDocTableViewController: UITableViewController {
             // Fetch Record
             let record = self.fetchedResultsController.object(at: indexPath) as Document
             // Create the alert controller
-            let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
+            let alertController = UIAlertController(title: NSLocalizedString("delete", comment: ""), message: "\(NSLocalizedString("delete-warning-1", comment: "")) \(record.name!)? \n\n \(NSLocalizedString("delete-warning-2", comment: ""))", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: ""), style: UIAlertActionStyle.destructive) {
                 UIAlertAction in
                 NSLog("Supprimer Pressed")
                 
@@ -181,7 +182,7 @@ class OpenUserDocTableViewController: UITableViewController {
                 }
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
-            let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
+            let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel) {
                 UIAlertAction in
                 NSLog("Cancel Pressed")
             }

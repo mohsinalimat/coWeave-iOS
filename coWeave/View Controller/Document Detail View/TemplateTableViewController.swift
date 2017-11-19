@@ -34,7 +34,7 @@ class TemplateTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Templates"
+        self.navigationItem.title = NSLocalizedString("templates", comment: "")
         self.tableView.rowHeight = 175.0
         
         do {
@@ -94,10 +94,11 @@ class TemplateTableViewController: UITableViewController {
         cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? document.user?.name : ""
         if (document.modifyDate != nil) {
-            cell.pageDate.text = "Dernière ouverture:\n\(formatter.string(from: document.modifyDate! as Date))\n" + "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+            cell.pageDate.text = "\(NSLocalizedString("last-opened", comment: "")):\n\(formatter.string(from: document.modifyDate! as Date))\n" + "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
         } else {
-            cell.pageDate.text = "Création:\n\(formatter.string(from: document.addedDate! as Date))"
+            cell.pageDate.text = "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
         }
+        
         
         return cell
     }
@@ -112,54 +113,12 @@ class TemplateTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count==0) {
-            return "Pas de documents disponibles!"
+            return NSLocalizedString("no-documents", comment: "")
         } else {
             return ""
         }
     }
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Fetch Record
-            let record = self.fetchedResultsController.object(at: indexPath) as Document
-            // Create the alert controller
-            let alertController = UIAlertController(title: "Supprimer", message: "Voulez-vous vraiment supprimer \(record.name!)? \n\n Vous ne pourrez plus rétablir ces données!", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "Supprimer", style: UIAlertActionStyle.destructive) {
-                UIAlertAction in
-                NSLog("Supprimer Pressed")
-                
-                // Delete Record
-                self.managedObjectContext.delete(record)
-                do {
-                    try self.fetchedResultsController.performFetch()
-                } catch {
-                    let fetchError = error as NSError
-                    print("\(fetchError), \(fetchError.userInfo)")
-                }
-                do {
-                    // Save Record
-                    try self.managedObjectContext?.save()
-                } catch {
-                    let saveError = error as NSError
-                    print("\(saveError), \(saveError.userInfo)")
-                }
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
-            let cancelAction = UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
-            
-            alertController.addAction(deleteAction)
-            alertController.addAction(cancelAction)
-            
-            // Present the controller
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "open") {

@@ -175,3 +175,7 @@
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "zSR-Mi-Ivf"; */
 "zSR-Mi-Ivf.text" = "Title";
+
+/*Language title*/
+"DP5-aH-30T.text" = "Zum Ändern der Sprache: Gerät Einstellungen>Spracheinstellungen";
+
