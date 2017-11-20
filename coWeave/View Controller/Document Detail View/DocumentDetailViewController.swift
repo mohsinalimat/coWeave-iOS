@@ -314,7 +314,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             let currentFileName = "audio-page\(page.number)-\(format.string(from: Date())).m4a"
             print(currentFileName)
         
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             self.soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
             do {
                 try page.audio?.write(to: self.soundFileURL, options: .atomic)

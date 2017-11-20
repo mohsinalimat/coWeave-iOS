@@ -92,7 +92,7 @@ class FileImport: NSObject {
             
             pageAdd.addedDate = addedDate
             pageAdd.number = number
-            pageAdd.title = title
+            pageAdd.title = (title == "none") ? nil : title
             pageAdd.document = document
             pageAdd.previous = previous
             pageAdd.audio = audio
