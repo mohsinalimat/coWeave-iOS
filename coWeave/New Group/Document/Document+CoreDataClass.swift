@@ -10,8 +10,9 @@
 import Foundation
 import CoreData
 
-
 public class Document: NSManagedObject {
+    
+    
     // MARK: Keys
     fileprivate enum Keys: String {
         case addedDate = "addedDate"
@@ -72,36 +73,5 @@ public class Document: NSManagedObject {
         let saveFileURL = path.appendingPathComponent("/\(self.name!).coweave")
         contents.write(to: saveFileURL, atomically: true)
         return saveFileURL
-    }
-    
-    static func importData(from url: URL) {
-        // 1
-        guard let dictionary = NSDictionary(contentsOf: url),
-            let doc = dictionary as? [String: AnyObject],
-            let name = doc["name"] as? String
-            else {
-                return
-        }
-        /*
-        // 2
-        let beer = Beer(name: name, note: beerInfo[Keys.Note.rawValue] as? String, rating: rating.intValue)
-        
-        // 3
-        if let base64 = beerInfo[Keys.ImagePath.rawValue] as? String,
-            let imageData = Data(base64Encoded: base64, options: .ignoreUnknownCharacters),
-            let image = UIImage(data: imageData) {
-            beer.saveImage(image)
-        }
-        
-        // 4
-        BeerManager.sharedInstance.beers.append(beer)
-        BeerManager.sharedInstance.saveBeers()
-        */
-        // 5
-        do {
-            try FileManager.default.removeItem(at: url)
-        } catch {
-            print("Failed to remove item from Inbox")
-        }
     }
 }

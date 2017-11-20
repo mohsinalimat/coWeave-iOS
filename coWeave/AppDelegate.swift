@@ -50,8 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 1
         guard url.pathExtension == "coweave" else { return false }
         
-        // 2
-        Document.importData(from: url)
+        let importer : FileImport = FileImport()
+        importer.managedObjectContext = self.persistentContainer.viewContext
+        importer.importData(from: url)
         
         print("imported")
         return true
