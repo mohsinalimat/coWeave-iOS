@@ -54,7 +54,7 @@ public class Document: NSManagedObject {
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
-        formatter.dateFormat = "dd-MM-yyyy_HH-mm-ss"
+        formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
         
         var userString: String! = "none"
         var groupString: String! = "none"
