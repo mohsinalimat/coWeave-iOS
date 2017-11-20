@@ -52,16 +52,31 @@ public class Document: NSManagedObject {
             pages.append(pageDic)
         }
         
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date
+        formatter.dateFormat = "dd-MM-yyyy_HH-mm-ss"
+        
+        var userString: String! = "none"
+        var groupString: String! = "none"
+        var fileName: String! = "\(self.name!)_\(formatter.string(from: NSDate() as Date))"
+       
+        if (user != nil) {
+            userString = user!.name
+            groupString = user!.group!.name
+            fileName = "\(groupString!)_\(userString!)_\(self.name!)_\(formatter.string(from: NSDate() as Date))"
+        }
+        
         let contents: NSDictionary = [
             Keys.name.rawValue: name ?? "none",
             Keys.addedDate.rawValue: addedDate ?? "none",
             Keys.modifyDate.rawValue: modifyDate ?? "none",
             Keys.template.rawValue: template,
-            Keys.user.rawValue: user?.name ?? "none",
-            Keys.group.rawValue: user?.group ?? "none",
+            Keys.user.rawValue: userString,
+            Keys.group.rawValue: groupString,
             Keys.pages.rawValue: pages
         ]
         
+        //print(contents)
       
         // 4
         guard let path = FileManager.default
@@ -70,7 +85,7 @@ public class Document: NSManagedObject {
         }
         
         // 5
-        let saveFileURL = path.appendingPathComponent("/\(self.name!).coweave")
+        let saveFileURL = path.appendingPathComponent("/\(fileName.trimmingCharacters(in: .whitespaces)).coweave")
         contents.write(to: saveFileURL, atomically: true)
         return saveFileURL
     }
