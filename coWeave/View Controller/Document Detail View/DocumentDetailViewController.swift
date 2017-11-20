@@ -201,6 +201,22 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             ])
     }
     
+    
+    @IBAction func shareDocument(_ sender: Any) {
+        guard let doc = self.document,
+            let url = doc.exportToFileURL() else {
+                return
+        }
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: nil)
+        if let popoverPresentationController = activityViewController.popoverPresentationController {
+            popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+        }
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
     func createDocument() -> Document {
         // Create Entity
         let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
