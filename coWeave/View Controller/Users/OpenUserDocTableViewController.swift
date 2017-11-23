@@ -34,7 +34,7 @@ class OpenUserDocTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "\(user!.name!) \(NSLocalizedString("documents", comment: ""))"
+        self.navigationItem.title = "\(user!.name!)"
         self.tableView.rowHeight = 175.0
         
         do {
@@ -98,7 +98,10 @@ class OpenUserDocTableViewController: UITableViewController {
         
         cell.pageTitle.text = document.name
         
-        cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
+        DispatchQueue.main.async(execute: { () -> Void in
+            cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 0.01) : nil
+        })
+
         cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? (document.user!.name! + " ("+document.user!.group!.name!+")") :""
         if (document.modifyDate != nil) {

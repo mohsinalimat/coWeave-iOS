@@ -22,7 +22,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         let name = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [date, name]
         
-        //fetchRequest.predicate = NSPredicate(format: "setupFinished == YES")
+        fetchRequest.predicate = NSPredicate(format: "user == nil")
         
         // Initialize Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -33,7 +33,7 @@ class OpenDocumentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("documents", comment: "")
+        self.navigationItem.title = NSLocalizedString("unassigned-doc", comment: "")
         self.tableView.rowHeight = 175.0
     
         do {
@@ -82,7 +82,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         if (fetchedResultsController.fetchedObjects!.count==0) {
             return NSLocalizedString("no-documents", comment: "")
         } else {
-            return ""
+            return NSLocalizedString("documents-info", comment: "")
         }
     }
     
@@ -99,7 +99,10 @@ class OpenDocumentsTableViewController: UITableViewController {
         
         cell.pageTitle.text = document.name
         
-        cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 1.0) : nil
+        DispatchQueue.main.async(execute: { () -> Void in
+            cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 0.01) : nil
+        })
+        
         cell.author.isHidden = (document.user == nil) ? true : false
         cell.author.text = (document.user != nil) ? (document.user!.name! + " ("+document.user!.group!.name!+")") :""
         if (document.modifyDate != nil) {

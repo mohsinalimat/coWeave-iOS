@@ -90,6 +90,10 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         self.image = nil
         self.backgroundImageView.image = nil
         self.pageImage = nil
+        if playing {
+            print("stopping")
+            stopPlay()
+        }
         removeAudioFile(url: self.soundFileURL)
     }
     
@@ -185,6 +189,11 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
      */
     
     func startPlay() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch {
+        }
         play()
         self.audioButton.image = UIImage(named: "stop")
         playing = true
@@ -430,6 +439,14 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             }
         } else {
             print("checking headphones requires a connection to a device")
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if playing {
+            print("stopping")
+            stopPlay()
+            return
         }
     }
     

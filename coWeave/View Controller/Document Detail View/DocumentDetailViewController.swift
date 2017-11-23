@@ -286,6 +286,10 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         self.backgroundImageView.image = nil
         self.pageImage = nil
         removeAudioFile(url: self.soundFileURL)
+        if playing {
+            print("stopping")
+            stopPlay()
+        }
     }
     
     func updatePageControls(page: Page) {
@@ -298,13 +302,15 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     func updatePage(page: Page) {
-        if (page.image != nil) {
-            self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
-            self.backgroundImageView.image = self.image
-            self.pageImage = page.image!
-        }
-        updateImageControls(image: pageImage)
-        loadAudio(page: page)
+        DispatchQueue.main.async(execute: { () -> Void in
+            if (page.image != nil) {
+                self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
+                self.backgroundImageView.image = self.image
+                self.pageImage = page.image!
+            }
+            self.updateImageControls(image: self.pageImage)
+            self.loadAudio(page: page)
+        })
     }
     
     func loadAudio(page: Page) {
@@ -509,6 +515,11 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     
     func startPlay() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch {
+        }
         play()
         self.audioButton.setImage(UIImage(named: "stop"), for: .normal)
         playing = true
@@ -749,6 +760,15 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             }
         } else {
             print("checking headphones requires a connection to a device")
+        }
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if playing {
+            print("stopping")
+            stopPlay()
+            return
         }
     }
     

@@ -43,3 +43,5 @@
 "language-switcher" = "Changer la langue\n Re-ouvrir l'appli afin d'utiliser la langue choisie.";
 "successfully-imported" = "Le document a été importé!";
 "imported" = "Importé";
+"documents-info" = "Les documents attribués à un utilisateur sont affichés sous la section \"utilisateurs\".";
+"unassigned-doc" = "Documents non attribués";

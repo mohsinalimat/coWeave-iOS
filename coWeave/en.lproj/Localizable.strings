@@ -43,4 +43,6 @@
 "language-switcher" = "Switch language\n Restart app after selection to apply the change.";
 "successfully-imported" = "Successfully imported the file!";
 "imported" = "Imported";
+"documents-info" = "Documents assigned to users are shown in \"users\" section";
+"unassigned-doc" = "Unassigned documents";
 

@@ -88,7 +88,9 @@ class PagesTableViewController: UITableViewController {
         
         cell.title.text = (page.title == nil) ? "Page \(page.number)" : page.title
         if (page.image != nil) {
-            cell.pageImage.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
+            DispatchQueue.main.async(execute: { () -> Void in
+                cell.pageImage.image = UIImage(data: page.image!.image! as Data, scale: 0.01)
+            })
         }
         cell.number.text = "\(page.number)"
         cell.date.text = formatter.string(from: page.addedDate! as Date)
