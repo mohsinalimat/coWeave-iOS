@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  coWeave
+
+  Created by Benoît Frisch on 27/11/2017.
+  Copyright © 2017 Benoît Frisch. All rights reserved.
+*/
+
+"Camera" = "The app needs to access the camera in order to take pictures.";
+"Micro" = "The app needs to access the microphone in order to record audio.";
+"Library" = "The app needs to access the photo library in order to use the images.";

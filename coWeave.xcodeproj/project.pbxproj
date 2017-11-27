@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05062A961FC25F55004A1393 /* FileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05062A951FC25F55004A1393 /* FileImport.swift */; };
+		052772C71FCCC766003F4042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 052772C91FCCC766003F4042 /* InfoPlist.strings */; };
 		0527AEEC1FBE51C7009838FC /* PagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */; };
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
@@ -55,6 +56,7 @@
 		05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */; };
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
+		CCBDEAA30CE3607DD05641F5 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC351FBCC39200432850 /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,9 @@
 
 /* Begin PBXFileReference section */
 		05062A951FC25F55004A1393 /* FileImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileImport.swift; sourceTree = "<group>"; };
+		052772C81FCCC766003F4042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		052772CA1FCCC768003F4042 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		052772CB1FCCC769003F4042 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -154,6 +159,7 @@
 				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
 				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
+				CCBDEAA30CE3607DD05641F5 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +257,7 @@
 				05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */,
 				056C70F31FBB496D00E79CA1 /* Info.plist */,
 				05F10D4D1FC113770010F718 /* Settings.bundle */,
+				052772C91FCCC766003F4042 /* InfoPlist.strings */,
 				05F10D481FC0FBA80010F718 /* Localizable.strings */,
 				05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */,
 			);
@@ -413,6 +420,7 @@
 				056C70DF1FBB496D00E79CA1 /* Resources */,
 				416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */,
 				2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */,
+				052772C41FCCBC37003F4042 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -514,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				056C70F21FBB496D00E79CA1 /* LaunchScreen.storyboard in Resources */,
+				052772C71FCCC766003F4042 /* InfoPlist.strings in Resources */,
 				05F10D461FC0FBA80010F718 /* Localizable.strings in Resources */,
 				056C70EF1FBB496D00E79CA1 /* Assets.xcassets in Resources */,
 				05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */,
@@ -540,6 +549,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		052772C41FCCBC37003F4042 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
 		2788FD2B2090267E690DD522 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -562,15 +584,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -674,6 +700,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		052772C91FCCC766003F4042 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				052772C81FCCC766003F4042 /* en */,
+				052772CA1FCCC768003F4042 /* fr */,
+				052772CB1FCCC769003F4042 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		056C70E81FBB496D00E79CA1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -822,6 +858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82T63N97ZX;
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
