@@ -213,16 +213,71 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         let deletePhoto = UIAlertAction(title: NSLocalizedString("delete-photo", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "camera")!, handler: {
             (alert: UIAlertAction) -> Void in
+                self.image = nil
+                self.pageImage = nil
+                self.page.image = nil
+                self.backgroundImageView.image = self.image;
+                self.updateImageControls(image: self.pageImage)
         })
         let deleteAudio = UIAlertAction(title: NSLocalizedString("delete-audio", comment: ""), style: UIAlertActionStyle.default,  image: UIImage(named: "micro")!,handler: {
             (alert: UIAlertAction) -> Void in
+                self.recorder = nil
+                self.audio = false
+                self.playing = false
+                self.audioButton.setImage(UIImage(named: "micro"), for: .normal)
+                self.audioButton.setTitle("", for: .normal)
+                self.page.audio = nil
         })
         let deletePage = UIAlertAction(title: NSLocalizedString("delete-page", comment: ""), style: UIAlertActionStyle.destructive, image: UIImage(named: "page")!, handler: {
             (alert: UIAlertAction) -> Void in
+            let pageToDelete : Page = self.page
+            
+            if (self.page == self.document!.firstPage) {
+                self.document!.firstPage = self.page.next
+                self.page = self.page.next
+            } else if (self.page == self.document!.lastPage) {
+                self.document!.lastPage = self.page.previous
+                self.page = self.page.previous
+            } else {
+                if (self.page.next != nil) {
+                    self.page = self.page.next
+                } else if (self.page.previous != nil) {
+                    self.page = self.page.previous
+                }
+            }
+            
+            self.pageNumber = self.pageNumber - 1
+            self.managedObjectContext.delete(pageToDelete)
+            
+            do {
+                try self.managedObjectContext?.save()
+                self.updatePageNumbers()
+            } catch {
+                let saveError = error as NSError
+                print("\(saveError), \(saveError.userInfo)")
+            }
+            
+            self.resetPage()
+            
+            self.recorder = nil
+            self.player = nil
+            self.meterTimer = nil
+            self.soundFileURL = nil
+            self.audio = false
+            self.playing = false
+            
+            self.updatePage(page: self.page)
+            self.updatePageControls(page: self.page)
+            
         })
         let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
             (alert: UIAlertAction) -> Void in
         })
+        
+        
+        deletePhoto.isEnabled = (pageImage != nil)
+        deleteAudio.isEnabled = audio
+        deletePage.isEnabled = !(page == document?.firstPage && document?.firstPage == document?.lastPage)
         
         actionSheet.addAction(deletePhoto)
         actionSheet.addAction(deleteAudio)
@@ -233,7 +288,14 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             popoverController.sourceView = deleteButton
             popoverController.sourceRect = deleteButton.bounds
         }
-        self.present(actionSheet, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: {
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+                let saveError = error as NSError
+                print("\(saveError), \(saveError.userInfo)")
+            }
+        })
     }
     
     @IBAction func shareDocument(_ sender: Any) {
@@ -249,6 +311,28 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
         }
         present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func updatePageNumbers() {
+        var i = 1;
+        var previous : Page? = nil
+        for p in document!.pages! {
+            let page = p as! Page
+            page.number = Int16(i)
+            if (page.previous == nil && i != 1) {
+                page.previous = previous
+            }
+            print("\(page.number)")
+            
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+                let saveError = error as NSError
+                print("\(saveError), \(saveError.userInfo)")
+            }
+            i = i+1
+            previous = page
+        }
     }
     
     func createDocument() -> Document {
