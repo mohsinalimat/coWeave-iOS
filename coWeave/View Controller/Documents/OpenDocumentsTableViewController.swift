@@ -80,7 +80,7 @@ class OpenDocumentsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count==0) {
-            return NSLocalizedString("no-documents", comment: "")
+            return "\(NSLocalizedString("no-documents", comment: ""))\n\n\(NSLocalizedString("documents-info", comment: ""))"
         } else {
             return NSLocalizedString("documents-info", comment: "")
         }

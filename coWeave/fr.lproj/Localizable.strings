@@ -23,7 +23,7 @@
 "add-user" = "Ajouter utilisateur";
 "delete-error-docs" = "Veuillez supprimer tous les documents de l'utilisateur.";
 "documents" = "Documents";
-"no-documents" = "Pas de documents disponibles!";
+"no-documents" = "Pas de documents non attribués disponibles!";
 "last-opened" = "Dernière ouverture";
 "created" = "Créé le";
 "modify-title" = "Modifier le titre";

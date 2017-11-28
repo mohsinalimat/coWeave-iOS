@@ -10,6 +10,8 @@
 		05062A961FC25F55004A1393 /* FileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05062A951FC25F55004A1393 /* FileImport.swift */; };
 		052772C71FCCC766003F4042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 052772C91FCCC766003F4042 /* InfoPlist.strings */; };
 		052772CD1FCD9FE8003F4042 /* UIAlertAction+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */; };
+		052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */; };
+		052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052772D31FCDBF33003F4042 /* Protobuf.framework */; };
 		0527AEEC1FBE51C7009838FC /* PagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */; };
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
@@ -57,7 +59,6 @@
 		05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */; };
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
-		CCBDEAA30CE3607DD05641F5 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC351FBCC39200432850 /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		052772CA1FCCC768003F4042 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		052772CB1FCCC769003F4042 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Image.swift"; sourceTree = "<group>"; };
+		052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		052772D31FCDBF33003F4042 /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -157,11 +160,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */,
+				052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */,
 				05F10D3A1FC0FAB80010F718 /* GoogleToolboxForMac.framework in Frameworks */,
 				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
 				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
-				CCBDEAA30CE3607DD05641F5 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +403,8 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */,
+				052772D31FCDBF33003F4042 /* Protobuf.framework */,
 				05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */,
 				05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */,
 				05F10D3F1FC0FAB80010F718 /* nanopb.framework */,
