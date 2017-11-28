@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05062A961FC25F55004A1393 /* FileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05062A951FC25F55004A1393 /* FileImport.swift */; };
 		052772C71FCCC766003F4042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 052772C91FCCC766003F4042 /* InfoPlist.strings */; };
+		052772CD1FCD9FE8003F4042 /* UIAlertAction+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */; };
 		0527AEEC1FBE51C7009838FC /* PagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */; };
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
@@ -81,6 +82,7 @@
 		052772C81FCCC766003F4042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		052772CA1FCCC768003F4042 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		052772CB1FCCC769003F4042 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Image.swift"; sourceTree = "<group>"; };
 		0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */,
 				05062A951FC25F55004A1393 /* FileImport.swift */,
 				056253171FC0910D005B92D9 /* KeyboardHider.swift */,
+				052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 			files = (
 				05F70E471FBCF1FB007FD9E4 /* Page+CoreDataClass.swift in Sources */,
 				056C71201FBBB42700E79CA1 /* DocumentDetailNavigationViewController.swift in Sources */,
+				052772CD1FCD9FE8003F4042 /* UIAlertAction+Image.swift in Sources */,
 				056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */,
 				05F70E451FBCF1FB007FD9E4 /* Image+CoreDataClass.swift in Sources */,
 				052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */,

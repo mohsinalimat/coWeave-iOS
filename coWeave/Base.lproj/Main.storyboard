@@ -217,14 +217,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yWn-kX-i1e">
                                         <rect key="frame" x="0.0" y="110" width="320" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlF-i4-e2f">
-                                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HV-Eb-zD2">
-                                                <rect key="frame" x="51.666666666666671" y="0.0" width="100.00000000000001" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="1xy-Yk-70e"/>
                                                     <constraint firstAttribute="height" constant="100" id="tll-T7-deC"/>
@@ -242,7 +236,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOZ-EV-ybp">
-                                                <rect key="frame" x="168.33333333333334" y="0.0" width="100.00000000000003" height="100"/>
+                                                <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="7w6-uk-ds6"/>
                                                     <constraint firstAttribute="height" constant="100" id="Lig-6h-ksm"/>
@@ -257,12 +251,24 @@
                                                     <action selector="textAction:" destination="bgG-Ip-yWe" eventType="touchUpInside" id="mjO-iz-rWJ"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoS-Y1-cmX">
-                                                <rect key="frame" x="284.66666666666669" y="0.0" width="35.333333333333314" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJb-Ha-2Qr">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="1Q2-n0-xAX"/>
+                                                    <constraint firstAttribute="height" constant="100" id="9hW-6p-pph"/>
+                                                </constraints>
+                                                <state key="normal" image="trash" backgroundImage="brownCircle">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteAction:" destination="bgG-Ip-yWe" eventType="touchUpInside" id="Qby-iv-iTG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -349,6 +355,7 @@
                     <connections>
                         <outlet property="audioButton" destination="zhJ-ga-TFf" id="4yh-K0-Pen"/>
                         <outlet property="backgroundImageView" destination="Ch3-2p-PwA" id="KJx-v6-pbC"/>
+                        <outlet property="deleteButton" destination="DJb-Ha-2Qr" id="gX6-7B-atF"/>
                         <outlet property="drawButton" destination="3HV-Eb-zD2" id="qIy-4r-Evb"/>
                         <outlet property="galleryButton" destination="nff-Ji-2aN" id="0si-j0-yuq"/>
                         <outlet property="nextPageButton" destination="gl7-fm-rXK" id="cNA-84-vSv"/>
@@ -1438,6 +1445,7 @@ Icons from icons8.com</string>
         <image name="add_document" width="50" height="50"/>
         <image name="blueCircle" width="995" height="995"/>
         <image name="blueRectangle" width="976" height="187"/>
+        <image name="brownCircle" width="995" height="995"/>
         <image name="camera" width="33" height="33"/>
         <image name="cameraroll" width="33" height="33"/>
         <image name="document" width="25" height="25"/>
@@ -1458,12 +1466,14 @@ Icons from icons8.com</string>
         <image name="save" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="text" width="33" height="33"/>
+        <image name="trash" width="33" height="33"/>
         <image name="tree" width="2181" height="2258"/>
         <image name="undo" width="25" height="25"/>
         <image name="users" width="25" height="25"/>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aXj-4z-tcd"/>
         <segue reference="enL-8U-OJm"/>
         <segue reference="Bod-cj-xrf"/>
     </inferredMetricsTieBreakers>

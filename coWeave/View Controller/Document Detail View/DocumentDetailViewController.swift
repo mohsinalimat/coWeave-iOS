@@ -38,6 +38,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     @IBOutlet var audioButton: UIButton!
     @IBOutlet var drawButton: UIButton!
     @IBOutlet var textButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
     /**
      *  Toolbar Buttons
      */
@@ -194,13 +195,46 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     @IBAction func textAction(_ sender: Any) {
        self.drawText()
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+       Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "TextAction" as NSObject,
             AnalyticsParameterItemName: "TextAction" as NSObject,
             AnalyticsParameterContentType: "document" as NSObject
             ])
     }
     
+    @IBAction func deleteAction(_ sender: Any) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "DeleteAction" as NSObject,
+            AnalyticsParameterItemName: "DeleteAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
+        
+        let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("delete-action", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let deletePhoto = UIAlertAction(title: NSLocalizedString("delete-photo", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "camera")!, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        let deleteAudio = UIAlertAction(title: NSLocalizedString("delete-audio", comment: ""), style: UIAlertActionStyle.default,  image: UIImage(named: "micro")!,handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        let deletePage = UIAlertAction(title: NSLocalizedString("delete-page", comment: ""), style: UIAlertActionStyle.destructive, image: UIImage(named: "page")!, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        
+        actionSheet.addAction(deletePhoto)
+        actionSheet.addAction(deleteAudio)
+        actionSheet.addAction(deletePage)
+        actionSheet.addAction(cancelAction)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = deleteButton
+            popoverController.sourceRect = deleteButton.bounds
+        }
+        self.present(actionSheet, animated: true, completion: nil)
+    }
     
     @IBAction func shareDocument(_ sender: Any) {
         guard let doc = self.document,

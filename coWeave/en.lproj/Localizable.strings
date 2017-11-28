@@ -45,4 +45,8 @@
 "imported" = "Imported";
 "documents-info" = "Documents assigned to users are shown in \"users\" section";
 "unassigned-doc" = "Unassigned documents";
+"delete-action" = "Delete actions";
+"delete-photo" = "Remove photo";
+"delete-audio" = "Remove audio";
+"delete-page" = "Delete page";
 
