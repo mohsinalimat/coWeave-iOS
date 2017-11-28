@@ -303,18 +303,69 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func shareDocument(_ sender: Any) {
-        guard let doc = self.document,
-            let url = doc.exportToFileURL() else {
-                return
-        }
+        let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("export-format", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        let activityViewController = UIActivityViewController(
-            activityItems: [url],
-            applicationActivities: nil)
-        if let popoverPresentationController = activityViewController.popoverPresentationController {
-            popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+        let coWeaveAction = UIAlertAction(title: "coWeave", style: UIAlertActionStyle.default, image: UIImage(named: "AppIcon")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            
+            guard let doc = self.document,
+                let url = doc.exportToFileURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let zipAction = UIAlertAction(title: "Zip", style: UIAlertActionStyle.default, image: UIImage(named: "zip")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            guard let doc = self.document,
+                let url = doc.exportZipURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        
+        
+        actionSheet.addAction(coWeaveAction)
+        actionSheet.addAction(zipAction)
+        actionSheet.addAction(cancelAction)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            let buttonItemView : UIView! = self.nextPageButton.value(forKey: "view") as? UIView
+            
+            popoverController.sourceView = buttonItemView
+            popoverController.sourceRect = buttonItemView.bounds
         }
-        present(activityViewController, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: {
+            self.resetPage()
+            self.recorder = nil
+            self.player = nil
+            self.meterTimer = nil
+            self.soundFileURL = nil
+            self.audio = false
+            self.playing = false
+            self.updatePage(page: self.page)
+            self.updatePageControls(page: self.page)
+        })
     }
     
     func updatePageNumbers() {
@@ -646,7 +697,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     
     func drawText() {
         if (self.image == nil) {
-            self.image = UIImage(color: .white, size: CGSize(width: 1536, height: 2048))
+            self.image = UIImage(color: .white, size: CGSize(width: 2480, height: 3508))
             pageImage = createImage(imageValue: self.image, page: self.page)
         }
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
@@ -1003,8 +1054,6 @@ extension DocumentDetailViewController : AVAudioRecorderDelegate {
         
         print("finished recording \(flag)")
         self.play()
-        
-        //recordButton.setTitle("Record", for:UIControlState())
         
         // iOS8 and later
         let alert = UIAlertController(title: NSLocalizedString("audio-title", comment: ""),

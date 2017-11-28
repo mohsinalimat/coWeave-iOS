@@ -12,6 +12,7 @@
 		052772CD1FCD9FE8003F4042 /* UIAlertAction+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */; };
 		052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */; };
 		052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052772D31FCDBF33003F4042 /* Protobuf.framework */; };
+		052772D51FCDE266003F4042 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052772D61FCDE266003F4042 /* Zip.framework */; };
 		0527AEEC1FBE51C7009838FC /* PagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */; };
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
@@ -87,6 +88,7 @@
 		052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		052772D31FCDBF33003F4042 /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		052772D41FCDCA36003F4042 /* coWeave 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 5.xcdatamodel"; sourceTree = "<group>"; };
+		052772D61FCDE266003F4042 /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052772D51FCDE266003F4042 /* Zip.framework in Frameworks */,
 				052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */,
 				052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */,
 				05F10D3A1FC0FAB80010F718 /* GoogleToolboxForMac.framework in Frameworks */,
@@ -404,6 +407,7 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				052772D61FCDE266003F4042 /* Zip.framework */,
 				052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */,
 				052772D31FCDBF33003F4042 /* Protobuf.framework */,
 				05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */,
@@ -598,6 +602,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -607,6 +612,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

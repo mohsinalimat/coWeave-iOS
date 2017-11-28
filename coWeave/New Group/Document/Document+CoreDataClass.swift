@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import Zip
 
 public class Document: NSManagedObject {
     
@@ -80,7 +81,7 @@ public class Document: NSManagedObject {
       
         // 4
         guard let path = FileManager.default
-            .urls(for: .documentDirectory, in: .userDomainMask).first else {
+            .urls(for: .cachesDirectory, in: .userDomainMask).first else {
                 return nil
         }
         
@@ -88,5 +89,74 @@ public class Document: NSManagedObject {
         let saveFileURL = path.appendingPathComponent("/\(fileName.trimmingCharacters(in: .whitespaces)).coweave")
         contents.write(to: saveFileURL, atomically: true)
         return saveFileURL
+    }
+    
+    func exportZipURL() -> URL? {
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date
+        formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
+        
+        var userString: String! = "none"
+        var groupString: String! = "none"
+        var fileName: String! = "\(self.name!)_\(formatter.string(from: NSDate() as Date))"
+        
+        if (user != nil) {
+            userString = user!.name
+            groupString = user!.group!.name
+            fileName = "\(groupString!)_\(userString!)_\(self.name!)_\(formatter.string(from: NSDate() as Date))"
+        }
+        
+        for p in self.pages! {
+            let page = p as! Page
+            
+            let formatter = DateFormatter()
+            // initially set the format based on your datepicker date
+            formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
+            
+            let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+            let folderName = "export/\(fileName.trimmingCharacters(in: .whitespaces))/page\(page.number)";
+            let exportPath = documentsDirectory.appendingPathComponent(folderName)
+            
+            do {
+                try FileManager.default.createDirectory(atPath: exportPath.path, withIntermediateDirectories: true, attributes: nil)
+            } catch let error as NSError {
+                NSLog("Unable to create directory \(error.debugDescription)")
+            }
+            
+            if (page.audio != nil) {
+                let audioName = "\(folderName)/audio-page\(page.number).m4a"
+                do {
+                    try page.audio?.write(to: documentsDirectory.appendingPathComponent(audioName), options: .atomic)
+                } catch {}
+            }
+            if (page.image != nil) {
+                let imageName = "\(folderName)/photo-page\(page.number).png"
+                do {
+                    try page.image?.image!.write(to: documentsDirectory.appendingPathComponent(imageName), options: .atomic)
+                } catch {}
+            }
+        }
+        
+        let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let folderName = "export/\(fileName.trimmingCharacters(in: .whitespaces))";
+        let exportPath = documentsDirectory.appendingPathComponent(folderName)
+        
+        do {
+            
+            let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: fileName.trimmingCharacters(in: .whitespaces)) // Zip
+            
+            let fileManager = FileManager.default
+            do {
+                try fileManager.removeItem(atPath: folderName)
+            }
+            catch let error as NSError {
+                print("Ooops! Something went wrong: \(error)")
+            }
+            return zipFilePath
+            
+        } catch {
+            print("Something went wrong")
+        }
+        return exportPath
     }
 }

@@ -51,3 +51,4 @@
 "delete-page" = "Seite löschen";
 "add-page-between" = "Wollen sie eine neue Seite zwischen zwei andere Seiten einfügen?";
 "add-page" = "Seite einfügen";
+"export-format" = "Wählen Sie das Format:";
