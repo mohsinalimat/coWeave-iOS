@@ -45,7 +45,7 @@
 "imported" = "Importiert";
 "documents-info" = "Die Dokumente die einem Benutzer zugeordnet wurden, sind unter \"Benutzer\" zu finden.";
 "unassigned-doc" = "Nicht zugeordnete Dokumente";
-"delete-action" = "LöSchen";
+"delete-action" = "Löschen";
 "delete-photo" = "Foto entfernen";
 "delete-audio" = "Audio entfernen";
 "delete-page" = "Seite löschen";

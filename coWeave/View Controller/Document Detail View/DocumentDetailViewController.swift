@@ -53,6 +53,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
      */
     @IBOutlet var previewButton: UIBarButtonItem!
     @IBOutlet var settingsButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
     /**
      * Background
      */
@@ -350,7 +351,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         actionSheet.addAction(cancelAction)
         
         if let popoverController = actionSheet.popoverPresentationController {
-            let buttonItemView : UIView! = self.nextPageButton.value(forKey: "view") as? UIView
+            let buttonItemView : UIView! = self.shareButton.value(forKey: "view") as? UIView
             
             popoverController.sourceView = buttonItemView
             popoverController.sourceRect = buttonItemView.bounds

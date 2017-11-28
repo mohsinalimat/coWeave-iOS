@@ -365,6 +365,7 @@
                         <outlet property="previousPageButton" destination="n4Q-Nu-aEt" id="kEg-Gu-52c"/>
                         <outlet property="redoButton" destination="N4G-nH-tVb" id="Lgz-H1-cHp"/>
                         <outlet property="settingsButton" destination="xzz-9A-2Os" id="Rn0-2b-V7J"/>
+                        <outlet property="shareButton" destination="FsM-dR-cDT" id="ftK-yq-mPt"/>
                         <outlet property="textButton" destination="wOZ-EV-ybp" id="5na-0f-tsB"/>
                         <outlet property="undoButton" destination="yQN-8r-C7u" id="yiz-Mb-LDb"/>
                     </connections>
@@ -1482,6 +1483,7 @@ Icons from icons8.com</string>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qO6-Z5-cN9"/>
         <segue reference="enL-8U-OJm"/>
         <segue reference="ttn-0Z-kbs"/>
     </inferredMetricsTieBreakers>

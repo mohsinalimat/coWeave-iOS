@@ -47,8 +47,8 @@
 "unassigned-doc" = "Documents non attribués";
 "delete-action" = "Supprimer";
 "delete-photo" = "Supprimer la photo";
-"delete-audio" = "Supprimer l'enregistrement audio";
-"delete-page" = "Supprimer cette pages";
+"delete-audio" = "Supprimer l'audio";
+"delete-page" = "Supprimer cette page";
 "add-page-between" = "Ajouter une page entre deux pages?";
 "add-page" = "Ajouter page";
 "export-format" = "Choisissez le format:";
