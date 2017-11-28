@@ -18,6 +18,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
     var imagePicker = UIImagePickerController()
     var document : Document? = nil
     var page : Page!
+    var openPage : Page? = nil
     var pageImage : Image! = nil
     var pageNumber: Int16 = 1
     var managedObjectContext: NSManagedObjectContext!
@@ -73,7 +74,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             document = createDocument()
         } else {
             self.pageNumber = Int16(document!.pages!.count)
-            self.page = document?.firstPage
+            self.page = (openPage != nil) ? openPage : document?.firstPage
             document?.modifyDate = NSDate()
             do {
                 try document?.managedObjectContext?.save()

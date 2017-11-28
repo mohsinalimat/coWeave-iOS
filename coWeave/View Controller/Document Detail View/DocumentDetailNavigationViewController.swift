@@ -12,6 +12,7 @@ import CoreData
 class DocumentDetailNavigationViewController: UINavigationController {
     var managedObjectContext: NSManagedObjectContext!
     var document: Document? = nil
+    var page: Page? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class DocumentDetailNavigationViewController: UINavigationController {
         let controller = self.viewControllers[0] as! DocumentDetailViewController
         controller.managedObjectContext = managedObjectContext
         controller.document = document
+        controller.openPage = page
     }
 }
 

@@ -106,9 +106,9 @@ class PagesTableViewController: UITableViewController {
         return 0.0000001
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         print ("select")
-        let page = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+        let page = self.fetchedResultsController.object(at: indexPath)
         
         let alertController = UIAlertController(title: "\(NSLocalizedString("modify-page-title", comment: "")) \(page.number):", message: "", preferredStyle: .alert)
         
@@ -145,6 +145,17 @@ class PagesTableViewController: UITableViewController {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "openPage") {
+            let classVc = segue.destination as! DocumentDetailNavigationViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            classVc.document = self.document
+            let page = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+            classVc.page = page
+        }
     }
 }
 
