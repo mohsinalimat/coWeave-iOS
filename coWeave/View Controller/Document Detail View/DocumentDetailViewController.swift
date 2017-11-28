@@ -950,26 +950,6 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             stopPlay()
             return
         }
-        
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date
-        formatter.dateFormat = "dd.MM.yyyy"
-        let name : String = "Document \(formatter.string(from: NSDate() as Date))"
-        
-        //if nothing was added we delete it.
-        if (document!.pages?.count==1) {
-            //only if moving back to open view
-            if (self.isMovingFromParentViewController && page.audio == nil && page.image == nil && document!.template == false && document!.name == name && document!.user == nil) {
-                self.managedObjectContext.delete(self.document!)
-                
-                do {
-                    try self.managedObjectContext?.save()
-                } catch {
-                    let saveError = error as NSError
-                    print("\(saveError), \(saveError.userInfo)")
-                }
-            }
-        }
     }
     
     
