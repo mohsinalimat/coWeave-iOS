@@ -355,17 +355,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             popoverController.sourceView = buttonItemView
             popoverController.sourceRect = buttonItemView.bounds
         }
-        self.present(actionSheet, animated: true, completion: {
-            self.resetPage()
-            self.recorder = nil
-            self.player = nil
-            self.meterTimer = nil
-            self.soundFileURL = nil
-            self.audio = false
-            self.playing = false
-            self.updatePage(page: self.page)
-            self.updatePageControls(page: self.page)
-        })
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func updatePageNumbers() {

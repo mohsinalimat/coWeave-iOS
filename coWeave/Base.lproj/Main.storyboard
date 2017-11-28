@@ -1056,6 +1056,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="Cek-QQ-ST6">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="action" id="7Sf-aB-1XH">
+                            <connections>
+                                <action selector="shareAction:" destination="wdG-Fv-ORn" id="hal-wr-6BA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EIY-aw-iHV">
                             <connections>
                                 <action selector="addUser:" destination="wdG-Fv-ORn" id="yge-JX-wJI"/>
@@ -1063,6 +1068,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="shareButton" destination="7Sf-aB-1XH" id="N6J-CR-huc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH9-rf-i49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

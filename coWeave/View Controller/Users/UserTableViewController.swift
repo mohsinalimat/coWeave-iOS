@@ -14,6 +14,7 @@ class UserTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var group: Group!
     var document : Document? = nil
+    @IBOutlet var shareButton: UIBarButtonItem!
     
     lazy var fetchedResultsController: NSFetchedResultsController<User> = {
         // Initialize Fetch Request
@@ -96,6 +97,62 @@ class UserTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(user.documents!.count)"
         
         return cell
+    }
+    
+    @IBAction func shareAction(_ sender: Any) {
+        let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("export-format", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let coWeaveAction = UIAlertAction(title: "coWeave", style: UIAlertActionStyle.default, image: UIImage(named: "AppIcon")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            
+            guard let group = self.group,
+                let url = group.exportCoweaveURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let zipAction = UIAlertAction(title: "Zip", style: UIAlertActionStyle.default, image: UIImage(named: "zip")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            guard let group = self.group,
+                let url = group.exportZipURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        
+        
+        actionSheet.addAction(coWeaveAction)
+        actionSheet.addAction(zipAction)
+        actionSheet.addAction(cancelAction)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            let buttonItemView : UIView! = self.shareButton.value(forKey: "view") as? UIView
+            
+            popoverController.sourceView = buttonItemView
+            popoverController.sourceRect = buttonItemView.bounds
+        }
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func addUser(_ sender: Any) {

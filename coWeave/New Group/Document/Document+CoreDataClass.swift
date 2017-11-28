@@ -37,7 +37,7 @@ public class Document: NSManagedObject {
     }
 
 
-    func exportToFileURL() -> URL? {
+    func exportToFileURL(folder : String? = "coweaveExport") -> URL? {
         var pages : [NSDictionary] = []
         for p in self.pages! {
             let page = p as! Page
@@ -77,21 +77,22 @@ public class Document: NSManagedObject {
             Keys.pages.rawValue: pages
         ]
         
-        //print(contents)
-      
-        // 4
-        guard let path = FileManager.default
-            .urls(for: .cachesDirectory, in: .userDomainMask).first else {
-                return nil
+        let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let exportPath = documentsDirectory.appendingPathComponent(folder!)
+        
+        do {
+            try FileManager.default.createDirectory(atPath: exportPath.path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            NSLog("Unable to create directory \(error.debugDescription)")
         }
         
         // 5
-        let saveFileURL = path.appendingPathComponent("/\(fileName.trimmingCharacters(in: .whitespaces)).coweave")
+        let saveFileURL = exportPath.appendingPathComponent("/\(fileName.trimmingCharacters(in: .whitespaces)).coweave")
         contents.write(to: saveFileURL, atomically: true)
         return saveFileURL
     }
     
-    func exportZipURL() -> URL? {
+    func exportZipURL(folder : String? = "zipExport", zip : Bool? = true) -> URL? {
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
         formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
@@ -114,7 +115,7 @@ public class Document: NSManagedObject {
             formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
             
             let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-            let folderName = "export/\(fileName.trimmingCharacters(in: .whitespaces))/page\(page.number)";
+            let folderName = "\(folder!)/\(fileName.trimmingCharacters(in: .whitespaces))/page\(page.number)";
             let exportPath = documentsDirectory.appendingPathComponent(folderName)
             
             do {
@@ -136,13 +137,12 @@ public class Document: NSManagedObject {
                 } catch {}
             }
         }
-        
         let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let folderName = "export/\(fileName.trimmingCharacters(in: .whitespaces))";
+        let folderName = "\(folder!)/\(fileName.trimmingCharacters(in: .whitespaces))";
         let exportPath = documentsDirectory.appendingPathComponent(folderName)
         
+        if (zip)! {
         do {
-            
             let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: fileName.trimmingCharacters(in: .whitespaces)) // Zip
             
             let fileManager = FileManager.default
@@ -156,6 +156,7 @@ public class Document: NSManagedObject {
             
         } catch {
             print("Something went wrong")
+        }
         }
         return exportPath
     }
