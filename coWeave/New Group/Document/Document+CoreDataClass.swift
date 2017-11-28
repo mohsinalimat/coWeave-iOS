@@ -147,7 +147,7 @@ public class Document: NSManagedObject {
             
             let fileManager = FileManager.default
             do {
-                try fileManager.removeItem(atPath: folderName)
+                try fileManager.removeItem(atPath: exportPath.path)
             }
             catch let error as NSError {
                 print("Ooops! Something went wrong: \(error)")
