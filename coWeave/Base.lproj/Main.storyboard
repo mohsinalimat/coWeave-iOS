@@ -301,7 +301,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IQV-N8-iVx"/>
                                     <barButtonItem image="right-add" id="gl7-fm-rXK">
                                         <connections>
-                                            <action selector="nextPage:" destination="bgG-Ip-yWe" id="Cf9-A8-BVK"/>
+                                            <action selector="nextPage:forEvent:" destination="bgG-Ip-yWe" id="LkD-NZ-VSX"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

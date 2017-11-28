@@ -86,6 +86,7 @@
 		052772CC1FCD9FE8003F4042 /* UIAlertAction+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Image.swift"; sourceTree = "<group>"; };
 		052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		052772D31FCDBF33003F4042 /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		052772D41FCDCA36003F4042 /* coWeave 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 5.xcdatamodel"; sourceTree = "<group>"; };
 		0527AEEB1FBE51C7009838FC /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coWeaveStack.swift; sourceTree = "<group>"; };
 		052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -1012,12 +1013,13 @@
 		05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				052772D41FCDCA36003F4042 /* coWeave 5.xcdatamodel */,
 				0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */,
 				056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */,
 				052982CB1FBE0F2A002C0ACA /* coWeave 2.xcdatamodel */,
 				05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */,
 			);
-			currentVersion = 0562530B1FC08AAC005B92D9 /* coWeave 4.xcdatamodel */;
+			currentVersion = 052772D41FCDCA36003F4042 /* coWeave 5.xcdatamodel */;
 			path = coWeave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

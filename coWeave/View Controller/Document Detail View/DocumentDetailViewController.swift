@@ -243,6 +243,9 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
                     self.page = self.page.next
                 } else if (self.page.previous != nil) {
                     self.page = self.page.previous
+                } else if (self.page.next == nil) {
+                    self.document!.lastPage = self.page.next
+                    self.page = self.page.next
                 }
             }
             
@@ -322,7 +325,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             if (page.previous == nil && i != 1) {
                 page.previous = previous
             }
-            print("\(page.number)")
+            //print("\(page.number)")
             
             do {
                 try self.managedObjectContext?.save()
@@ -364,7 +367,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         return document
     }
     
-    func createPage(number: Int16, previous: Page? = nil, doc: Document) -> Page {
+    func createPage(number: Int16, previous: Page? = nil, next: Page? = nil, doc: Document) -> Page {
         // Create Entity
         let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
         
@@ -373,18 +376,25 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         page.addedDate = NSDate()
         page.number = number
-        page.document = doc
         page.previous = previous
-        
-        doc.lastPage = page
+        page.next = next
         
         if (previous != nil) {
             previous!.next = page
         }
         
+        if (next != nil) {
+            next!.previous = page
+        } else {
+            doc.lastPage = page
+        }
+        
+        let index : Int = Int(number) - 1
+        doc.insertIntoPages(page, at: index)
+        
         do {
             // Save Record
-            try page.managedObjectContext?.save()
+            try self.managedObjectContext?.save()
         } catch {
             let saveError = error as NSError
             print("\(saveError), \(saveError.userInfo)")
@@ -477,14 +487,26 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         updatePageControls(page: page)
     }
     
-    @IBAction func nextPage(_ sender: Any) {
-        resetPage()
-        if (page.next == nil) {
-            self.pageNumber = pageNumber + 1
-            page = createPage(number: pageNumber, previous: page, doc: self.document!)
-        } else {
-            page = page.next
+    @IBAction func nextPage(_ sender: Any, forEvent event: UIEvent) {
+        guard let touch = event.allTouches?.first else {
+            return
         }
+        if touch.tapCount == 1 {
+            if (page.next == nil) {
+                self.pageNumber = pageNumber + 1
+                page = createPage(number: pageNumber, previous: page, doc: self.document!)
+            } else {
+                page = page.next
+            }
+        } else if touch.tapCount == 0 {
+            // Handle long press
+            let nextNumber : Int16  = self.page.number + 1
+            
+            print("next \(nextNumber)")
+            page = createPage(number: nextNumber, previous: self.page, next: self.page.next, doc: self.document!)
+            self.updatePageNumbers()
+        }
+        resetPage()
         self.recorder = nil
         self.player = nil
         self.meterTimer = nil
