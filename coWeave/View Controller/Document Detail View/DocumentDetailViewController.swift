@@ -958,7 +958,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         
         //if nothing was added we delete it.
         if (document!.pages?.count==1) {
-            if (page.audio == nil && page.image == nil && document!.template == false && document!.name == name && document!.user == nil) {
+            //only if moving back to open view
+            if (self.isMovingFromParentViewController && page.audio == nil && page.image == nil && document!.template == false && document!.name == name && document!.user == nil) {
                 self.managedObjectContext.delete(self.document!)
                 
                 do {
