@@ -491,6 +491,8 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         guard let touch = event.allTouches?.first else {
             return
         }
+        
+        
         if touch.tapCount == 1 {
             if (page.next == nil) {
                 self.pageNumber = pageNumber + 1
@@ -498,13 +500,50 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             } else {
                 page = page.next
             }
-        } else if touch.tapCount == 0 {
-            // Handle long press
-            let nextNumber : Int16  = self.page.number + 1
+        } else if (touch.tapCount == 0) {
+            if (page.next == nil) {
+                self.pageNumber = pageNumber + 1
+                page = createPage(number: pageNumber, previous: page, doc: self.document!)
+            } else {
+                let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("add-page-between", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
             
-            print("next \(nextNumber)")
-            page = createPage(number: nextNumber, previous: self.page, next: self.page.next, doc: self.document!)
-            self.updatePageNumbers()
+                let addAction = UIAlertAction(title: NSLocalizedString("add-page", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "add_between")!, handler: {
+                (   alert: UIAlertAction) -> Void in
+                
+                    // Handle long press
+                    let nextNumber : Int16  = self.page.number + 1
+                
+                    print("next \(nextNumber)")
+                    self.page = self.createPage(number: nextNumber, previous: self.page, next: self.page.next, doc: self.document!)
+                    self.updatePageNumbers()
+                
+                })
+                let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+                    (alert: UIAlertAction) -> Void in
+                })
+            
+            
+                actionSheet.addAction(addAction)
+                actionSheet.addAction(cancelAction)
+            
+                if let popoverController = actionSheet.popoverPresentationController {
+                    let buttonItemView : UIView! = self.nextPageButton.value(forKey: "view") as? UIView
+                
+                    popoverController.sourceView = buttonItemView
+                    popoverController.sourceRect = buttonItemView.bounds
+                }
+                self.present(actionSheet, animated: true, completion: {
+                    self.resetPage()
+                    self.recorder = nil
+                    self.player = nil
+                    self.meterTimer = nil
+                    self.soundFileURL = nil
+                    self.audio = false
+                    self.playing = false
+                    self.updatePage(page: self.page)
+                    self.updatePageControls(page: self.page)
+                })
+            }
         }
         resetPage()
         self.recorder = nil

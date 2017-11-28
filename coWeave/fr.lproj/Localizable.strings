@@ -49,3 +49,5 @@
 "delete-photo" = "Supprimer la photo";
 "delete-audio" = "Supprimer l'enregistrement audio";
 "delete-page" = "Supprimer cette pages";
+"add-page-between" = "Ajouter une page entre deux pages?";
+"add-page" = "Ajouter page";
