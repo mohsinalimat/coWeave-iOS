@@ -638,7 +638,7 @@
             <objects>
                 <tableViewController id="cEw-ne-lsN" customClass="GroupTableViewController" customModule="coWeave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="loo-SU-s9n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -745,7 +745,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Document" rowHeight="175" id="beu-d3-6fJ" customClass="DocumentsTableViewCell" customModule="coWeave" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beu-d3-6fJ" id="lc5-je-vUU">
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beu-d3-6fJ" id="lc5-je-vUU">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="174.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -1057,16 +1057,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="Cek-QQ-ST6">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="action" id="7Sf-aB-1XH">
-                            <connections>
-                                <action selector="shareAction:" destination="wdG-Fv-ORn" id="hal-wr-6BA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EIY-aw-iHV">
-                            <connections>
-                                <action selector="addUser:" destination="wdG-Fv-ORn" id="yge-JX-wJI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="EIY-aw-iHV">
+                                <connections>
+                                    <action selector="addUser:" destination="wdG-Fv-ORn" id="yge-JX-wJI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="action" id="7Sf-aB-1XH">
+                                <connections>
+                                    <action selector="shareAction:" destination="wdG-Fv-ORn" id="hal-wr-6BA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -1483,8 +1485,7 @@ Icons from icons8.com</string>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qO6-Z5-cN9"/>
-        <segue reference="enL-8U-OJm"/>
-        <segue reference="ttn-0Z-kbs"/>
+        <segue reference="XpD-MD-kjc"/>
+        <segue reference="GML-Qg-vpG"/>
     </inferredMetricsTieBreakers>
 </document>
