@@ -5,11 +5,7 @@
   <h3 align="center">coWeave iOS App</h3>
 </p>
 
-This repository provides the source code of the coWeave iOS App.
-
-### About coWeave
-
-coWeave is the essential tool for educational usage to document any kind of work by associating images with recorded audio.
+coWeave is a very useful tool for educational usage to document any kind of work by associating images with recorded audio.
 It has been built in order to be usable by children in Kindergarten and is also developed in collaboration with teachers in Luxembourg.
 
 ### User Documentation
