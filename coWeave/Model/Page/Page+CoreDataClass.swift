@@ -17,21 +17,10 @@
  * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
  */
 
-import UIKit
+import Foundation
 import CoreData
 
-class DocumentDetailNavigationViewController: UINavigationController {
-    var managedObjectContext: NSManagedObjectContext!
-    var document: Document? = nil
-    var page: Page? = nil
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+public class Page: NSManagedObject {
 
-        let controller = self.viewControllers[0] as! DocumentDetailViewController
-        controller.managedObjectContext = managedObjectContext
-        controller.document = document
-        controller.openPage = page
-    }
 }
-

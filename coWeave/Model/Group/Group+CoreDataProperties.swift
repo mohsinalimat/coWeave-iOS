@@ -17,21 +17,36 @@
  * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
  */
 
-import UIKit
+import Foundation
 import CoreData
 
-class DocumentDetailNavigationViewController: UINavigationController {
-    var managedObjectContext: NSManagedObjectContext!
-    var document: Document? = nil
-    var page: Page? = nil
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+extension Group {
 
-        let controller = self.viewControllers[0] as! DocumentDetailViewController
-        controller.managedObjectContext = managedObjectContext
-        controller.document = document
-        controller.openPage = page
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Group> {
+        return NSFetchRequest<Group>(entityName: "Group")
     }
+
+    @NSManaged public var id: Int16
+    @NSManaged public var name: String?
+    @NSManaged public var users: NSSet?
+
 }
 
+// MARK: Generated accessors for users
+
+extension Group {
+
+    @objc(addUsersObject:)
+    @NSManaged public func addToUsers(_ value: User)
+
+    @objc(removeUsersObject:)
+    @NSManaged public func removeFromUsers(_ value: User)
+
+    @objc(addUsers:)
+    @NSManaged public func addToUsers(_ values: NSSet)
+
+    @objc(removeUsers:)
+    @NSManaged public func removeFromUsers(_ values: NSSet)
+
+}

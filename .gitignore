@@ -103,6 +103,4 @@ Carthage/Build.rbenv-vars
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 /coWeave/GoogleService-Info.plist
-
-
 GoogleService-Info.plist

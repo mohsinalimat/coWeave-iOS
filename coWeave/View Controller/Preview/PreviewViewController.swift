@@ -1,10 +1,21 @@
-//
-//  PreviewViewController.swift
-//  coWeave
-//
-//  Created by Benoît Frisch on 18/11/2017.
-//  Copyright © 2017 Benoît Frisch. All rights reserved.
-//
+/**
+ * This file is part of coWeave-iOS.
+ *
+ * Copyright (c) 2017-2018 Benoît FRISCH
+ *
+ * coWeave-iOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * coWeave-iOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
+ */
 
 import UIKit
 import MobileCoreServices
@@ -13,22 +24,22 @@ import AVFoundation
 import Firebase
 
 class PreviewViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    var image : UIImage!
+    var image: UIImage!
     var imagePicker = UIImagePickerController()
-    var document : Document? = nil
-    var page : Page!
-    var pageImage : Image! = nil
+    var document: Document? = nil
+    var page: Page!
+    var pageImage: Image! = nil
     var pageNumber: Int16 = 1
     var managedObjectContext: NSManagedObjectContext!
     /**
      *  Audio Recorder
      */
     var recorder: AVAudioRecorder!
-    var player:AVAudioPlayer!
-    var meterTimer:Timer!
-    var soundFileURL:URL!
-    var audio : Bool = false
-    var playing : Bool = false
+    var player: AVAudioPlayer!
+    var meterTimer: Timer!
+    var soundFileURL: URL!
+    var audio: Bool = false
+    var playing: Bool = false
     /**
      *  Toolbar Buttons
      */
@@ -43,35 +54,34 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
      * Background
      */
     @IBOutlet var backgroundImageView: UIImageView!
-    
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-            AnalyticsParameterItemID: "Preview" as NSObject,
-            AnalyticsParameterItemName: "Preview" as NSObject,
-            AnalyticsParameterContentType: "document-preview" as NSObject
-            ])
-        
+                AnalyticsParameterItemID: "Preview" as NSObject,
+                AnalyticsParameterItemName: "Preview" as NSObject,
+                AnalyticsParameterContentType: "document-preview" as NSObject
+        ])
+
         self.pageNumber = Int16(document!.pages!.count)
         self.page = document?.firstPage
         updatePage(page: self.page)
-        
+
         self.navigationItem.title = document?.name!
         updatePageControls(page: page)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = document?.name!
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func audioAction(_ sender: Any) {
         print("audio")
         if audio && !playing { // if sound recorded, play it.
@@ -84,8 +94,8 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             return
         }
     }
-    
-    
+
+
     func resetPage() {
         self.image = nil
         self.backgroundImageView.image = nil
@@ -96,14 +106,14 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         }
         removeAudioFile(url: self.soundFileURL)
     }
-    
+
     func updatePageControls(page: Page) {
         self.previousPageButton.isEnabled = (page.previous != nil) ? true : false;
         self.nextPageButton.isEnabled = (page.next != nil) ? true : false;
         self.pageNameButton.title = (page.title == nil) ? "\(NSLocalizedString("page", comment: "")) \(page.number)" : page.title
         self.audioButton.isEnabled = (page.audio == nil) ? false : true
     }
-    
+
     func updatePage(page: Page) {
         if (page.image != nil) {
             self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
@@ -117,19 +127,20 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             playing = true
         }
     }
-    
+
     func loadAudio(page: Page) {
         if (page.audio != nil) {
             let format = DateFormatter()
-            format.dateFormat="yyyy-MM-dd-HH-mm-ss"
+            format.dateFormat = "yyyy-MM-dd-HH-mm-ss"
             let currentFileName = "audio-page\(page.number)-\(format.string(from: Date())).m4a"
             print(currentFileName)
-            
+
             let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             self.soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
             do {
                 try page.audio?.write(to: self.soundFileURL, options: .atomic)
-            } catch {}
+            } catch {
+            }
             self.recorder = nil
             self.player = nil
             self.meterTimer = nil
@@ -144,8 +155,8 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             self.playing = false
         }
     }
-    
-    func removeAudioFile(url : URL? = nil) {
+
+    func removeAudioFile(url: URL? = nil) {
         if (url != nil) {
             do {
                 try FileManager.default.removeItem(at: url!)
@@ -154,7 +165,7 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             }
         }
     }
-    
+
     @IBAction func previousPage(_ sender: Any) {
         resetPage()
         if (page.previous != nil) {
@@ -162,57 +173,56 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         }
         updatePage(page: page)
         updatePageControls(page: page)
-        
+
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-            AnalyticsParameterItemID: "PreviousPage" as NSObject,
-            AnalyticsParameterItemName: "PreviousPage" as NSObject,
-            AnalyticsParameterContentType: "document-preview" as NSObject
-            ])
+                AnalyticsParameterItemID: "PreviousPage" as NSObject,
+                AnalyticsParameterItemName: "PreviousPage" as NSObject,
+                AnalyticsParameterContentType: "document-preview" as NSObject
+        ])
     }
-    
+
     @IBAction func nextPage(_ sender: Any) {
         print("next")
         page = page.next
         resetPage()
         updatePage(page: page)
         updatePageControls(page: page)
-        
+
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-            AnalyticsParameterItemID: "NextPage" as NSObject,
-            AnalyticsParameterItemName: "NextPage" as NSObject,
-            AnalyticsParameterContentType: "document-preview" as NSObject
-            ])
+                AnalyticsParameterItemID: "NextPage" as NSObject,
+                AnalyticsParameterItemName: "NextPage" as NSObject,
+                AnalyticsParameterContentType: "document-preview" as NSObject
+        ])
     }
-    
+
     /**
      * Save Image
      */
-    
+
     func startPlay() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-        }
-        catch {
+        } catch {
         }
         play()
         self.audioButton.image = UIImage(named: "stop")
         playing = true
-        
+
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-            AnalyticsParameterItemID: "PlayAudio" as NSObject,
-            AnalyticsParameterItemName: "PlayAudio" as NSObject,
-            AnalyticsParameterContentType: "document-preview" as NSObject
-            ])
+                AnalyticsParameterItemID: "PlayAudio" as NSObject,
+                AnalyticsParameterItemName: "PlayAudio" as NSObject,
+                AnalyticsParameterContentType: "document-preview" as NSObject
+        ])
     }
-    
+
     func stopPlay() {
         player.stop()
         self.audioButton.image = UIImage(named: "play")
         playing = false
     }
-    
-    
-    func updateAudioMeter(_ timer:Timer) {
+
+
+    func updateAudioMeter(_ timer: Timer) {
         if let recorder = self.recorder {
             if recorder.isRecording {
                 let min = Int(recorder.currentTime / 60)
@@ -222,17 +232,17 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             }
         }
     }
-    
+
     func play() {
         print("\(#function)")
-        var url:URL?
+        var url: URL?
         if self.recorder != nil {
             url = self.recorder.url
         } else {
             url = self.soundFileURL!
         }
         print("playing \(String(describing: url))")
-        
+
         do {
             self.player = try AVAudioPlayer(contentsOf: url!)
             self.audioButton.image = UIImage(named: "stop")
@@ -244,36 +254,36 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             self.player = nil
             print(error.localizedDescription)
         }
-        
+
     }
-    
-    
+
+
     func setupRecorder() {
         print("\(#function)")
-        
+
         let format = DateFormatter()
-        format.dateFormat="yyyy-MM-dd-HH-mm-ss"
+        format.dateFormat = "yyyy-MM-dd-HH-mm-ss"
         let currentFileName = "recording-\(format.string(from: Date())).m4a"
         print(currentFileName)
-        
+
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         self.soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
         print("writing to soundfile url: '\(soundFileURL!)'")
-        
+
         if FileManager.default.fileExists(atPath: soundFileURL.absoluteString) {
             // probably won't happen. want to do something about it?
             print("soundfile \(soundFileURL.absoluteString) exists")
         }
-        
-        let recordSettings:[String : Any] = [
-            AVFormatIDKey:             kAudioFormatAppleLossless,
-            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
-            AVEncoderBitRateKey :      32000,
-            AVNumberOfChannelsKey:     2,
-            AVSampleRateKey :          44100.0
+
+        let recordSettings: [String: Any] = [
+                AVFormatIDKey: kAudioFormatAppleLossless,
+                AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
+                AVEncoderBitRateKey: 32000,
+                AVNumberOfChannelsKey: 2,
+                AVSampleRateKey: 44100.0
         ]
-        
-        
+
+
         do {
             recorder = try AVAudioRecorder(url: soundFileURL, settings: recordSettings)
             recorder.delegate = self
@@ -283,16 +293,16 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             recorder = nil
             print(error.localizedDescription)
         }
-        
+
     }
-    
-    func recordWithPermission(_ setup:Bool) {
+
+    func recordWithPermission(_ setup: Bool) {
         print("\(#function)")
-        
+
         AVAudioSession.sharedInstance().requestRecordPermission() {
             [unowned self] granted in
             if granted {
-                
+
                 DispatchQueue.main.async {
                     print("Permission to record granted")
                     self.setSessionPlayAndRecord()
@@ -300,36 +310,36 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
                         self.setupRecorder()
                     }
                     self.recorder.record()
-                    
+
                     self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
-                                                           target:self,
-                                                           selector:#selector(self.updateAudioMeter(_:)),
-                                                           userInfo:nil,
-                                                           repeats:true)
+                            target: self,
+                            selector: #selector(self.updateAudioMeter(_:)),
+                            userInfo: nil,
+                            repeats: true)
                 }
             } else {
                 print("Permission to record not granted")
             }
         }
-        
+
         if AVAudioSession.sharedInstance().recordPermission() == .denied {
             print("permission denied")
         }
     }
-    
+
     func setSessionPlayback() {
         print("\(#function)")
-        
+
         let session = AVAudioSession.sharedInstance()
-        
+
         do {
             try session.setCategory(AVAudioSessionCategoryPlayback, with: .defaultToSpeaker)
-            
+
         } catch {
             print("could not set session category")
             print(error.localizedDescription)
         }
-        
+
         do {
             try session.setActive(true)
         } catch {
@@ -337,10 +347,10 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             print(error.localizedDescription)
         }
     }
-    
+
     func setSessionPlayAndRecord() {
         print("\(#function)")
-        
+
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
@@ -348,7 +358,7 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             print("could not set session category")
             print(error.localizedDescription)
         }
-        
+
         do {
             try session.setActive(true)
         } catch {
@@ -356,43 +366,43 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             print(error.localizedDescription)
         }
     }
-    
+
     func askForNotifications() {
         print("\(#function)")
-        
+
         NotificationCenter.default.addObserver(self,
-                                               selector:#selector(DocumentDetailViewController.background(_:)),
-                                               name:NSNotification.Name.UIApplicationWillResignActive,
-                                               object:nil)
-        
+                selector: #selector(DocumentDetailViewController.background(_:)),
+                name: NSNotification.Name.UIApplicationWillResignActive,
+                object: nil)
+
         NotificationCenter.default.addObserver(self,
-                                               selector:#selector(DocumentDetailViewController.foreground(_:)),
-                                               name:NSNotification.Name.UIApplicationWillEnterForeground,
-                                               object:nil)
-        
+                selector: #selector(DocumentDetailViewController.foreground(_:)),
+                name: NSNotification.Name.UIApplicationWillEnterForeground,
+                object: nil)
+
         NotificationCenter.default.addObserver(self,
-                                               selector:#selector(DocumentDetailViewController.routeChange(_:)),
-                                               name:NSNotification.Name.AVAudioSessionRouteChange,
-                                               object:nil)
+                selector: #selector(DocumentDetailViewController.routeChange(_:)),
+                name: NSNotification.Name.AVAudioSessionRouteChange,
+                object: nil)
     }
-    
-    func background(_ notification:Notification) {
+
+    func background(_ notification: Notification) {
         print("\(#function)")
-        
+
     }
-    
-    func foreground(_ notification:Notification) {
+
+    func foreground(_ notification: Notification) {
         print("\(#function)")
-        
+
     }
-    
-    
-    func routeChange(_ notification:Notification) {
+
+
+    func routeChange(_ notification: Notification) {
         print("\(#function)")
-        
+
         if let userInfo = (notification as NSNotification).userInfo {
             print("routeChange \(userInfo)")
-            
+
             //print("userInfo \(userInfo)")
             if let reason = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt {
                 //print("reason \(reason)")
@@ -417,15 +427,15 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
                     print("NoSuitableRouteForCategory")
                 case AVAudioSessionRouteChangeReason.routeConfigurationChange:
                     print("RouteConfigurationChange")
-                    
+
                 }
             }
         }
     }
-    
+
     func checkHeadphones() {
         print("\(#function)")
-        
+
         // check NewDeviceAvailable and OldDeviceUnavailable for them being plugged in/unplugged
         let currentRoute = AVAudioSession.sharedInstance().currentRoute
         if currentRoute.outputs.count > 0 {
@@ -441,7 +451,7 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             print("checking headphones requires a connection to a device")
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         if playing {
             print("stopping")
@@ -449,8 +459,8 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             return
         }
     }
-    
-    
+
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "close") {
@@ -459,34 +469,35 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
             classVc.document = self.document
         }
     }
-    
+
 }
 
 
 // MARK: AVAudioRecorderDelegate
-extension PreviewViewController : AVAudioRecorderDelegate {
+
+extension PreviewViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder,
                                          successfully flag: Bool) {
-        
+
         print("\(#function)")
-        
+
         print("finished recording \(flag)")
         self.play()
-        
+
         //recordButton.setTitle("Record", for:UIControlState())
-        
+
         // iOS8 and later
         let alert = UIAlertController(title: "Playing recorded audio...",
-                                      message: "Would you like to save or delete it?",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {action in
+                message: "Would you like to save or delete it?",
+                preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
             print("keep was tapped")
             self.recorder = nil
             self.audio = true
-           
-            
+
+
             do {
-                let audioData =  try Data(contentsOf: self.soundFileURL!)
+                let audioData = try Data(contentsOf: self.soundFileURL!)
                 self.page.audio = audioData as NSData
                 do {
                     try self.page.managedObjectContext?.save()
@@ -494,47 +505,49 @@ extension PreviewViewController : AVAudioRecorderDelegate {
                     let saveError = error as NSError
                     print("\(saveError), \(saveError.userInfo)")
                 }
-            } catch {}
+            } catch {
+            }
             self.player.stop()
         }))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             print("delete was tapped")
             self.recorder.deleteRecording()
             self.audio = false
             self.recorder = nil
             self.soundFileURL = nil
-            
+
             self.player.stop()
         }))
-        self.present(alert, animated:true, completion:nil)
+        self.present(alert, animated: true, completion: nil)
     }
-    
+
     func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder,
                                           error: Error?) {
         print("\(#function)")
-        
+
         if let e = error {
             print("\(e.localizedDescription)")
         }
     }
-    
+
 }
 
 // MARK: AVAudioPlayerDelegate
-extension PreviewViewController : AVAudioPlayerDelegate {
+
+extension PreviewViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("\(#function)")
-        
+
         print("finished playing \(flag)")
         self.audioButton.image = UIImage(named: "play")
     }
-    
+
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         print("\(#function)")
-        
+
         if let e = error {
             print("\(e.localizedDescription)")
         }
-        
+
     }
 }

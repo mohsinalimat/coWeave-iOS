@@ -1,10 +1,21 @@
-//
-//  SettingsTableViewController.swift
-//  coWeave
-//
-//  Created by Benoît Frisch on 12/10/2017.
-//  Copyright © 2017 Benoît Frisch. All rights reserved.
-//
+/**
+ * This file is part of coWeave-iOS.
+ *
+ * Copyright (c) 2017-2018 Benoît FRISCH
+ *
+ * coWeave-iOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * coWeave-iOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
+ */
 
 import UIKit
 import CoreData
@@ -17,18 +28,18 @@ class SettingsTableViewController: UITableViewController {
     let availableLanguages = Localize.availableLanguages()
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet var languageButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 55.0
-        
-        
+
+
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-            AnalyticsParameterItemID: "Settings" as NSObject,
-            AnalyticsParameterItemName: "Settings" as NSObject,
-            AnalyticsParameterContentType: "settings" as NSObject
-            ])
-        
+                AnalyticsParameterItemID: "Settings" as NSObject,
+                AnalyticsParameterItemName: "Settings" as NSObject,
+                AnalyticsParameterContentType: "settings" as NSObject
+        ])
+
         versionLabel.text = "Version \(Bundle.main.releaseVersionNumber!) (\(Bundle.main.buildVersionNumber!))"
     }
 
@@ -46,7 +57,7 @@ class SettingsTableViewController: UITableViewController {
             if displayName.count > 0 {
                 actionSheet.addAction(languageAction)
             }
-            
+
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
             (alert: UIAlertAction) -> Void in
@@ -58,6 +69,7 @@ class SettingsTableViewController: UITableViewController {
         }
         self.present(actionSheet, animated: true, completion: nil)
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

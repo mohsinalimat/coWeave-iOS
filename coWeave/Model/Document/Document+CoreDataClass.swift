@@ -1,20 +1,31 @@
-//
-//  Document+CoreDataClass.swift
-//  coWeave
-//
-//  Created by Benoît Frisch on 15/11/2017.
-//  Copyright © 2017 Benoît Frisch. All rights reserved.
-//
-//
+/**
+ * This file is part of coWeave-iOS.
+ *
+ * Copyright (c) 2017-2018 Benoît FRISCH
+ *
+ * coWeave-iOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * coWeave-iOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
+ */
 
 import Foundation
 import CoreData
 import Zip
 
 public class Document: NSManagedObject {
-    
-    
+
+
     // MARK: Keys
+
     fileprivate enum Keys: String {
         case addedDate = "addedDate"
         case modifyDate = "modifyDate"
@@ -33,130 +44,131 @@ public class Document: NSManagedObject {
         case title = "title"
         case document = "document"
         case page = "page"
-        
+
     }
 
 
-    func exportToFileURL(folder : String? = "coweaveExport") -> URL? {
-        var pages : [NSDictionary] = []
+    func exportToFileURL(folder: String? = "coweaveExport") -> URL? {
+        var pages: [NSDictionary] = []
         for p in self.pages! {
             let page = p as! Page
             let pageDic: NSDictionary = [
-                Keys.number.rawValue: page.number,
-                Keys.addedDate.rawValue: page.addedDate ?? "none",
-                Keys.modifyDate.rawValue: page.modifyDate ?? "none",
-                Keys.title.rawValue: page.title ?? "none",
-                Keys.image.rawValue: page.image?.image ?? "none",
-                Keys.audio.rawValue: page.audio ?? "none"
+                    Keys.number.rawValue: page.number,
+                    Keys.addedDate.rawValue: page.addedDate ?? "none",
+                    Keys.modifyDate.rawValue: page.modifyDate ?? "none",
+                    Keys.title.rawValue: page.title ?? "none",
+                    Keys.image.rawValue: page.image?.image ?? "none",
+                    Keys.audio.rawValue: page.audio ?? "none"
             ]
-            
+
             pages.append(pageDic)
         }
-        
+
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
         formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
-        
+
         var userString: String! = "none"
         var groupString: String! = "none"
         var fileName: String! = "\(self.name!)_\(formatter.string(from: NSDate() as Date))"
-       
+
         if (user != nil) {
             userString = user!.name
             groupString = user!.group!.name
             fileName = "\(groupString!)_\(userString!)_\(self.name!)_\(formatter.string(from: NSDate() as Date))"
         }
-        
+
         let contents: NSDictionary = [
-            Keys.name.rawValue: name ?? "none",
-            Keys.addedDate.rawValue: addedDate ?? "none",
-            Keys.modifyDate.rawValue: modifyDate ?? "none",
-            Keys.template.rawValue: template,
-            Keys.user.rawValue: userString,
-            Keys.group.rawValue: groupString,
-            Keys.pages.rawValue: pages
+                Keys.name.rawValue: name ?? "none",
+                Keys.addedDate.rawValue: addedDate ?? "none",
+                Keys.modifyDate.rawValue: modifyDate ?? "none",
+                Keys.template.rawValue: template,
+                Keys.user.rawValue: userString,
+                Keys.group.rawValue: groupString,
+                Keys.pages.rawValue: pages
         ]
-        
+
         let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         let exportPath = documentsDirectory.appendingPathComponent(folder!)
-        
+
         do {
             try FileManager.default.createDirectory(atPath: exportPath.path, withIntermediateDirectories: true, attributes: nil)
         } catch let error as NSError {
             NSLog("Unable to create directory \(error.debugDescription)")
         }
-        
+
         // 5
         let saveFileURL = exportPath.appendingPathComponent("/\(fileName.trimmingCharacters(in: .whitespaces)).coweave")
         contents.write(to: saveFileURL, atomically: true)
         return saveFileURL
     }
-    
-    func exportZipURL(folder : String? = "zipExport", zip : Bool? = true) -> URL? {
+
+    func exportZipURL(folder: String? = "zipExport", zip: Bool? = true) -> URL? {
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
         formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
-        
+
         var userString: String! = "none"
         var groupString: String! = "none"
         var fileName: String! = "\(self.name!)_\(formatter.string(from: NSDate() as Date))"
-        
+
         if (user != nil) {
             userString = user!.name
             groupString = user!.group!.name
             fileName = "\(groupString!)_\(userString!)_\(self.name!)_\(formatter.string(from: NSDate() as Date))"
         }
-        
+
         for p in self.pages! {
             let page = p as! Page
-            
+
             let formatter = DateFormatter()
             // initially set the format based on your datepicker date
             formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
-            
+
             let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             let folderName = "\(folder!)/\(fileName.trimmingCharacters(in: .whitespaces))/page\(page.number)";
             let exportPath = documentsDirectory.appendingPathComponent(folderName)
-            
+
             do {
                 try FileManager.default.createDirectory(atPath: exportPath.path, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
                 NSLog("Unable to create directory \(error.debugDescription)")
             }
-            
+
             if (page.audio != nil) {
                 let audioName = "\(folderName)/audio-page\(page.number).m4a"
                 do {
                     try page.audio?.write(to: documentsDirectory.appendingPathComponent(audioName), options: .atomic)
-                } catch {}
+                } catch {
+                }
             }
             if (page.image != nil) {
                 let imageName = "\(folderName)/photo-page\(page.number).png"
                 do {
                     try page.image?.image!.write(to: documentsDirectory.appendingPathComponent(imageName), options: .atomic)
-                } catch {}
+                } catch {
+                }
             }
         }
         let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         let folderName = "\(folder!)/\(fileName.trimmingCharacters(in: .whitespaces))";
         let exportPath = documentsDirectory.appendingPathComponent(folderName)
-        
+
         if (zip)! {
-        do {
-            let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: fileName.trimmingCharacters(in: .whitespaces)) // Zip
-            
-            let fileManager = FileManager.default
             do {
-                try fileManager.removeItem(atPath: exportPath.path)
+                let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: fileName.trimmingCharacters(in: .whitespaces)) // Zip
+
+                let fileManager = FileManager.default
+                do {
+                    try fileManager.removeItem(atPath: exportPath.path)
+                } catch let error as NSError {
+                    print("Ooops! Something went wrong: \(error)")
+                }
+                return zipFilePath
+
+            } catch {
+                print("Something went wrong")
             }
-            catch let error as NSError {
-                print("Ooops! Something went wrong: \(error)")
-            }
-            return zipFilePath
-            
-        } catch {
-            print("Something went wrong")
-        }
         }
         return exportPath
     }

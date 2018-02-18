@@ -17,21 +17,27 @@
  * along with coWeave-iOS If not, see <http://www.gnu.org/licenses/>.
  */
 
-import UIKit
+import Foundation
 import CoreData
 
-class DocumentDetailNavigationViewController: UINavigationController {
-    var managedObjectContext: NSManagedObjectContext!
-    var document: Document? = nil
-    var page: Page? = nil
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+extension Page {
 
-        let controller = self.viewControllers[0] as! DocumentDetailViewController
-        controller.managedObjectContext = managedObjectContext
-        controller.document = document
-        controller.openPage = page
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Page> {
+        return NSFetchRequest<Page>(entityName: "Page")
     }
-}
 
+    @NSManaged public var addedDate: NSDate?
+    @NSManaged public var audio: NSData?
+    @NSManaged public var id: Int16
+    @NSManaged public var modifyDate: NSDate?
+    @NSManaged public var number: Int16
+    @NSManaged public var title: String?
+    @NSManaged public var document: Document?
+    @NSManaged public var image: Image?
+    @NSManaged public var docLast: Document?
+    @NSManaged public var docFirst: Document?
+    @NSManaged public var next: Page?
+    @NSManaged public var previous: Page?
+
+}
